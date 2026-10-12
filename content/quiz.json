@@ -1,11 +1,20 @@
 {
-  "_meta": { "sample": true, "source": "Questions d'exemple : à vérifier", "revision": "" },
+  "_meta": {
+    "sample": true,
+    "source": "Exemples + Poster cockpit FSI PC-24 rév. 0.2 — à vérifier AFM",
+    "revision": ""
+  },
   "questions": [
     {
       "id": "eng-1",
       "chapter": "engines",
       "q": "Quel type de moteur équipe le PC-24 ?",
-      "choices": ["Williams FJ44-4A", "Pratt & Whitney PT6A-67D", "Honeywell HTF7000", "Pratt & Whitney PW535"],
+      "choices": [
+        "Williams FJ44-4A",
+        "Pratt & Whitney PT6A-67D",
+        "Honeywell HTF7000",
+        "Pratt & Whitney PW535"
+      ],
       "answer": 0,
       "explain": "Deux turbofans Williams FJ44-4A à FADEC."
     },
@@ -26,14 +35,271 @@
       "id": "av-1",
       "chapter": "avionics",
       "q": "Sur quelle suite avionique est basé le cockpit ACE ?",
-      "choices": ["Honeywell Primus Epic", "Garmin G1000 NXi", "Collins Pro Line Fusion", "Garmin G3000"],
+      "choices": [
+        "Honeywell Primus Epic",
+        "Garmin G1000 NXi",
+        "Collins Pro Line Fusion",
+        "Garmin G3000"
+      ],
       "answer": 0
     },
     {
       "id": "gen-1",
       "chapter": "general",
       "q": "Le PC-24 est certifié pour :",
-      "choices": ["L'exploitation monopilote", "L'équipage à deux uniquement", "Le vol VFR uniquement", "Les pistes revêtues uniquement"],
+      "choices": [
+        "L'exploitation monopilote",
+        "L'équipage à deux uniquement",
+        "Le vol VFR uniquement",
+        "Les pistes revêtues uniquement"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "ck-1",
+      "chapter": "ck-overhead",
+      "q": "Sur l'overhead, quel est l'ordre des interrupteurs électriques de gauche à droite ?",
+      "choices": [
+        "GEN 1 · BAT 1 · BAT 2 · GEN 2",
+        "BAT 1 · GEN 1 · GEN 2 · BAT 2",
+        "GEN 1 · GEN 2 · BAT 1 · BAT 2",
+        "BAT 1 · BAT 2 · GEN 1 · GEN 2"
+      ],
+      "answer": 0,
+      "explain": "Les batteries sont au centre, encadrées par les générateurs."
+    },
+    {
+      "id": "ck-2",
+      "chapter": "ck-overhead",
+      "q": "Quelles sont les positions du sélecteur moteur ?",
+      "choices": [
+        "DRY MOTOR · OFF · RUN · IGN",
+        "OFF · START · RUN · IGN",
+        "OFF · IGN · RUN · CRANK",
+        "STOP · RUN · START · MOTOR"
+      ],
+      "answer": 0,
+      "explain": "DRY MOTOR est sous OFF. Le démarrage se fait par le bouton START séparé."
+    },
+    {
+      "id": "ck-3",
+      "chapter": "ck-overhead",
+      "q": "Où se trouve le bouton BUS TIE ?",
+      "choices": [
+        "Overhead, au-dessus des interrupteurs BAT/GEN",
+        "Console centrale, près du TSC",
+        "Glareshield, à côté de FIRE EXTG",
+        "Console latérale gauche"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "ck-4",
+      "chapter": "ck-overhead",
+      "q": "Quel interrupteur d'éclairage intérieur a une position intermédiaire 50 % ?",
+      "choices": [
+        "COCKPIT DOME",
+        "CABIN LIGHTS",
+        "SEAT BELTS",
+        "NO SMOKING"
+      ],
+      "answer": 0,
+      "explain": "CABIN LIGHTS a une position AUTO, et COCKPIT DOME une position 50 %."
+    },
+    {
+      "id": "ck-5",
+      "chapter": "ck-front",
+      "q": "Quelles sont les positions du sélecteur BLEED ?",
+      "choices": [
+        "L / BOTH / R / OFF",
+        "OFF / AUTO / MAN",
+        "L / R / OFF",
+        "NORM / HP / OFF"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "ck-6",
+      "chapter": "ck-front",
+      "q": "Quelles sont les positions du sélecteur IPS ?",
+      "choices": [
+        "MAN / AUTO / NAI / ALL ON",
+        "OFF / NAI / WAI",
+        "AUTO / ON / OFF",
+        "OFF / ENG / WING / ALL"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "ck-7",
+      "chapter": "ck-front",
+      "q": "Quelles sont les positions du sélecteur WINDSHIELD ?",
+      "choices": [
+        "OFF / AUTO HI / LOW+SIDE / MAN HI",
+        "OFF / LOW / HIGH",
+        "AUTO / MAN / OFF",
+        "OFF / L / R / BOTH"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "ck-8",
+      "chapter": "ck-front",
+      "q": "Rhéostat PILOT PFD en position de réversion : sur quel AGM bascule-t-on ?",
+      "choices": [
+        "AGM2",
+        "AGM1",
+        "MAU 1A",
+        "Aucun : l'écran s'éteint"
+      ],
+      "answer": 0,
+      "explain": "Côté pilote, AGM2 ; côté copilote, AGM1. C'est croisé."
+    },
+    {
+      "id": "ck-9",
+      "chapter": "ck-front",
+      "q": "Comment passer la pressurisation en mode manuel ?",
+      "choices": [
+        "Tirer le sélecteur MODE et le tourner sur MAN",
+        "Appuyer sur DUMP",
+        "Tourner CABIN ALT sur CLIMB",
+        "Via le TSC uniquement"
+      ],
+      "answer": 0,
+      "explain": "MODE : AUTO / MAN, « PULL TO SEL ». Ensuite, CABIN ALT : DESCEND / CLIMB."
+    },
+    {
+      "id": "ck-10",
+      "chapter": "ck-front",
+      "q": "Où est le levier de train ?",
+      "choices": [
+        "Côté pilote gauche, à droite de la colonne, sous le glareshield",
+        "Console centrale, à côté des manettes",
+        "Overhead",
+        "Côté copilote"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "ck-11",
+      "chapter": "ck-front",
+      "q": "Que trouve-t-on en haut du glareshield, de chaque côté ?",
+      "choices": [
+        "FIRE EXTG et L/R ENG FIRE",
+        "MASTER WARNING et MASTER CAUTION seulement",
+        "Les boutons GEN",
+        "Le bouton BUS TIE"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "ck-12",
+      "chapter": "ck-console",
+      "q": "Quels sont les crans de volets ?",
+      "choices": [
+        "0° / 8° / 15° / 33°",
+        "0° / 10° / 20° / 30°",
+        "UP / APP / LDG",
+        "0° / 15° / 30° / 40°"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "ck-13",
+      "chapter": "ck-console",
+      "q": "Quelles sont les positions des manettes de poussée (de l'arrière vers l'avant) ?",
+      "choices": [
+        "IDLE · MCT · T/O · ATR",
+        "IDLE · CLB · MCT · T/O",
+        "IDLE · CRZ · CLB · TOGA",
+        "IDLE · T/O · MCT · MAX"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "ck-14",
+      "chapter": "ck-console",
+      "q": "Quelles sont les positions du levier AIRBRAKE ?",
+      "choices": [
+        "IN / 1/2 / OUT",
+        "RET / EXT",
+        "0 / 1 / 2 / 3",
+        "ARM / OFF / FULL"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "ck-15",
+      "chapter": "ck-console",
+      "q": "Que faut-il faire pour utiliser le trim de profondeur secondaire ?",
+      "choices": [
+        "Appuyer sur ENABLE, puis utiliser l'interrupteur DN/UP",
+        "Tourner RUD TRIM",
+        "Utiliser AIL TRIM",
+        "Tirer le disjoncteur PRIMARY STAB TRIM"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "ck-16",
+      "chapter": "ck-console",
+      "q": "Quelles sont les positions de SWPS ICE MODE ?",
+      "choices": [
+        "RESET / AUTO / OVRD",
+        "OFF / ON",
+        "NORM / ICE",
+        "AUTO / MAN / OFF"
+      ],
+      "answer": 0,
+      "explain": "SWPS = Stall Warning and Protection System. OVRD et RESET se sélectionnent en tirant le bouton."
+    },
+    {
+      "id": "ck-17",
+      "chapter": "ck-console",
+      "q": "Quelles sont les deux poignées rouges ou noires à l'arrière de la console ?",
+      "choices": [
+        "EMERG RAM AIR (gauche) et EMERG GEAR (droite)",
+        "PARK BRAKE et EMERG GEAR",
+        "FIRE EXTG 1 et 2",
+        "CPCS DUMP et RAM AIR"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "ck-18",
+      "chapter": "ck-console",
+      "q": "Quelles sont les positions de PASSENGER OXYGEN ?",
+      "choices": [
+        "OFF / AUTO / ON",
+        "AUTO / DEPLOY",
+        "NORM / 100% / EMER",
+        "OFF / ON"
+      ],
+      "answer": 0,
+      "explain": "Sur la console latérale gauche, à côté du masque."
+    },
+    {
+      "id": "ck-19",
+      "chapter": "ck-console",
+      "q": "Quelles sont les positions de CABIN EMER LTS ?",
+      "choices": [
+        "OFF / ARM / ON",
+        "AUTO / ON",
+        "OFF / TEST / ON",
+        "DIM / BRT"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "ck-20",
+      "chapter": "ck-console",
+      "q": "Quelles sont les positions de RUD TRIM ?",
+      "choices": [
+        "NL / OFF / NR",
+        "L / R",
+        "LWD / RWD",
+        "DN / UP"
+      ],
       "answer": 0
     }
   ]

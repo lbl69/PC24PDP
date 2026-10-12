@@ -1,25 +1,112 @@
 {
-  "_meta": { "sample": true, "source": "Données publiques constructeur : à vérifier dans l'AFM/POH", "revision": "" },
+  "_meta": {
+    "sample": true,
+    "source": "Données publiques + Poster cockpit FSI PC-24 rév. 0.2 — à vérifier AFM",
+    "revision": ""
+  },
   "chapters": [
     {
       "id": "general",
       "title": "Généralités",
       "sections": [
-        { "title": "Présentation", "body": "Biréacteur d'affaires Pilatus, certifié pour l'exploitation monopilote.\n\nConçu pour des pistes courtes et non revêtues (« Super Versatile Jet »).\n\n- Grande porte cargo arrière\n- Cabine modulable\n- **À compléter** avec ton cours de QT" }
+        {
+          "title": "Présentation",
+          "body": "Biréacteur d'affaires Pilatus, certifié pour l'exploitation monopilote.\n\nConçu pour des pistes courtes et non revêtues (« Super Versatile Jet »).\n\n- Grande porte cargo arrière\n- Cabine modulable\n- **À compléter** avec ton cours de QT"
+        }
       ]
     },
     {
       "id": "engines",
       "title": "Moteurs",
       "sections": [
-        { "title": "Généralités", "body": "Deux turbofans **Williams International FJ44-4A**, régulés par FADEC.\n\nLe moteur droit dispose d'un mode **QPM** (Quiet Power Mode) : il peut tourner au sol avec la soufflante ralentie et fournir l'électricité et le conditionnement d'air sans APU.\n\n- Poussée : à vérifier dans l'AFM\n- Logique de démarrage : à compléter" }
+        {
+          "title": "Généralités",
+          "body": "Deux turbofans **Williams International FJ44-4A**, régulés par FADEC.\n\nLe moteur droit dispose d'un mode **QPM** (Quiet Power Mode) : il peut tourner au sol avec la soufflante ralentie et fournir l'électricité et le conditionnement d'air sans APU.\n\n- Poussée : à vérifier dans l'AFM\n- Logique de démarrage : à compléter"
+        }
       ]
     },
     {
       "id": "avionics",
       "title": "Avionique",
       "sections": [
-        { "title": "ACE", "body": "Cockpit **Pilatus ACE** (Advanced Cockpit Environment), basé sur le **Honeywell Primus Epic**.\n\n- Écrans, FMS, pilote automatique : à compléter\n- Messages CAS : à compléter" }
+        {
+          "title": "ACE",
+          "body": "Cockpit **Pilatus ACE** (Advanced Cockpit Environment), basé sur le **Honeywell Primus Epic**.\n\n- Écrans, FMS, pilote automatique : à compléter\n- Messages CAS : à compléter"
+        }
+      ]
+    },
+    {
+      "id": "ck-overhead",
+      "title": "Cockpit : panneau overhead",
+      "sections": [
+        {
+          "title": "Éclairage intérieur",
+          "body": "Rangée du haut, quatre interrupteurs :\n- **COCKPIT DOME** : position haute / 50% / OFF\n- **CABIN LIGHTS** : position haute / AUTO / OFF\n- **NO SMOKING** : ON / OFF\n- **SEAT BELTS** : ON / OFF"
+        },
+        {
+          "title": "Électrique",
+          "body": "Au centre, dans l'ordre de gauche à droite : **GEN 1 · BAT 1 · BAT 2 · GEN 2** (ON / OFF).\n\nAu-dessus, le bouton-poussoir **BUS TIE**. En dessous, le bouton **GPU** (ON/OFF)."
+        },
+        {
+          "title": "Moteurs",
+          "body": "Un ensemble par côté (LEFT / RIGHT) :\n- bouton-poussoir **START**\n- sélecteur rotatif : **DRY MOTOR · OFF · RUN · IGN**\n\nDRY MOTOR est sous OFF : ventilation sans allumage ni carburant."
+        },
+        {
+          "title": "Éclairage extérieur",
+          "body": "Rangée du bas, de gauche à droite : **WING · LOGO · STROBE/BEACON · TAXI · LANDING · RECOG**."
+        }
+      ]
+    },
+    {
+      "id": "ck-front",
+      "title": "Cockpit : glareshield et console avant",
+      "sections": [
+        {
+          "title": "Glareshield",
+          "body": "De chaque côté, en haut : **FIRE EXTG** et **L ENG FIRE** / **R ENG FIRE**.\n\nLe levier de **train** (UP / DN) est côté pilote gauche, à droite de la colonne.\n\nChaque pilote a un **instrument de secours** à l'extérieur de son PFD, et un bouton **OXYGEN PUSH TO ACTIVATE** sous le glareshield.\n\n4 écrans Honeywell : 2 PFD, plus un MFD haut et un MFD bas au centre."
+        },
+        {
+          "title": "Console avant, à gauche",
+          "body": "Trois sélecteurs empilés :\n- **WINDSHIELD** : OFF / AUTO HI / LOW+SIDE / MAN HI\n- **BLEED** : L / BOTH / R / OFF\n- **IPS** (protection givrage) : MAN / AUTO / NAI / ALL ON"
+        },
+        {
+          "title": "Console avant : TSC",
+          "body": "Au centre, le **TSC** (contrôleur tactile Honeywell).\n- Onglets : Home, DU & CCD, COM, NAV, XPDR\n- Tuiles Home : Direct-To, Inhibits, MFD Format, Show Info, Timers, SATCOM, WX LX TAWS, Datalink, Checklist\n- Touches physiques : Datalink, MFD Swap, Event, et deux molettes DU Scroll / Push Enter"
+        },
+        {
+          "title": "Console avant, à droite : CPCS",
+          "body": "Pressurisation (**CPCS**) :\n- bouton-poussoir **DUMP** (gardé)\n- sélecteur **MODE** : AUTO / MAN (tirer pour sélectionner)\n- **CABIN ALT** : DESCEND / CLIMB (en mode manuel)"
+        },
+        {
+          "title": "Rhéostats et réversion d'écrans",
+          "body": "Rangée du bas : PILOT PFD · UPPER MFD · TSC · FLOODS · PANELS · LOWER MFD · CO-PILOT PFD.\n\nLes rhéostats de PFD ont une position de réversion :\n- **PILOT PFD** : NORM / **AGM2** / MIN / OFF/REV\n- **CO-PILOT PFD** : NORM / **AGM1** / MIN / OFF/REV\n\nRepère : le PFD pilote bascule sur l'AGM **2**, le PFD copilote sur l'AGM **1**."
+        }
+      ]
+    },
+    {
+      "id": "ck-console",
+      "title": "Cockpit : console centrale et latérales",
+      "sections": [
+        {
+          "title": "Leviers",
+          "body": "De gauche à droite :\n- **AIRBRAKE** : IN / 1/2 / OUT\n- **Manettes de poussée** : IDLE / MCT / T/O / ATR\n- **FLAP** : 0° / 8° / 15° / 33°"
+        },
+        {
+          "title": "Compensateurs",
+          "body": "- **SEC STAB TRIM** : bouton ENABLE + interrupteur DN / UP\n- **AIL TRIM** : LWD / RWD\n- **RUD TRIM** : NL / OFF / NR (rotatif)\n\nLe trim de profondeur principal se commande depuis le yoke. Le trim secondaire est sur la console."
+        },
+        {
+          "title": "Partie basse",
+          "body": "- **PARK/EMER BRAKE** : poignée rouge, à gauche\n- **MIC SELECT** : LEFT / OFF / RIGHT\n- **FLAPS EMER PWR** et **WS EMER PWR** : boutons-poussoirs à droite\n- **SWPS ICE MODE** (avertisseur de décrochage) : RESET / AUTO / OVRD (tirer pour sélectionner)"
+        },
+        {
+          "title": "Arrière : poignées de secours",
+          "body": "- **EMERG RAM AIR** : poignée rouge à gauche (presser pour libérer)\n- **EMERG GEAR** : poignée à droite (OPEN)"
+        },
+        {
+          "title": "Consoles latérales",
+          "body": "Côté gauche :\n- verrou de commandes : **CONTROLS LOCKED — REMOVE BEFORE FLIGHT**\n- disjoncteurs de l'**ESSENTIAL BUS** (CABIN PWR, MAU 1A, DCPU 1A/1B, MMDR 1, PILOT AUDIO, PRIMARY STAB TRIM, PITOT HEAT L)\n- panneau SATVOICE\n- **ELT**\n- **CABIN EMER LTS** : OFF / ARM / ON\n- **CVR TEST/ERASE**, **AURAL DISABLE**, **COCKPIT LAMP TEST**\n- masque oxygène EROS (PRESS TO TEST AND RESET)\n- **PASSENGER OXYGEN** : OFF / AUTO / ON\n\nCôté droit : masque oxygène et prises."
+        }
       ]
     }
   ]
