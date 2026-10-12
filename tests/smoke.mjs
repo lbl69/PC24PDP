@@ -1,6 +1,6 @@
 // Test de fumée : node tests/smoke.mjs (serveur sur http://localhost:8124)
 import { chromium } from 'playwright';
-import { mkdirSync } from 'node:fs';
+import { mkdirSync, readFileSync } from 'node:fs';
 
 const BASE = process.env.BASE || 'http://localhost:8124/';
 const shots = process.env.SHOTS;
@@ -69,6 +69,52 @@ ok(true, 'import de pack');
 await page.goto(BASE + '#/lim');
 await page.waitForSelector('.limits');
 ok((await page.textContent('main')).includes('42'), 'pack importé utilisé');
+
+// Cockpit : sans images (schéma), puis avec un pack d'images (réel si PACK=…, sinon factice).
+await page.goto(BASE + '#/cockpit/overhead');
+await page.waitForSelector('.ck-stage.noimg');
+await page.click('.ck-hs[data-id="bleed"], .ck-hs[data-id="gen1"]');
+ok((await page.textContent('#panel')).includes('GEN 1'), 'cockpit : explorer affiche le nom');
+
+const pngPx = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==';
+const views = JSON.parse(readFileSync(new URL('../content/cockpit.json', import.meta.url))).views;
+const pack = process.env.PACK
+  ? readFileSync(process.env.PACK)
+  : Buffer.from(JSON.stringify({ images: Object.fromEntries(views.map((v) => [v.image, pngPx])) }));
+await page.goto(BASE + '#/settings');
+await page.setInputFiles('#file', { name: 'c.json', mimeType: 'application/json', buffer: pack });
+await page.waitForSelector('#msg:has-text("image(s) cockpit")');
+await page.goto(BASE + '#/lim');
+await page.waitForSelector('.limits');
+ok((await page.textContent('main')).includes('42'), 'import images : le pack de contenu précédent est conservé');
+
+await page.goto(BASE + '#/cockpit/overview');
+await page.waitForSelector('.ck-stage img');
+await snap('cockpit-overview');
+await page.click('.ck-hs[data-id="v-ovh"]');
+await page.waitForSelector('.ck-hs[data-id="gen1"]');
+ok(true, 'cockpit : navigation depuis la vue d\'ensemble');
+
+await page.click('.chip[data-mode="find"]');
+await page.waitForSelector('.ck-prompt');
+const target = (await page.textContent('.ck-prompt strong')).trim();
+const h = views.find((v) => v.id === 'overhead').hotspots.find((x) => x.label === target);
+const box = await page.locator('#stage').boundingBox();
+await page.mouse.click(box.x + (h.x + h.w / 2) / 100 * box.width, box.y + (h.y + h.h / 2) / 100 * box.height);
+ok((await page.textContent('#panel')).includes('✓ Exact'), 'cockpit : « Trouve » accepte un toucher dans la zone');
+await page.click('#next');
+const box2 = await page.locator('#stage').boundingBox();
+ok(Math.abs(box2.y - box.y) < 1, 'cockpit : l\'image ne bouge pas entre deux questions');
+await page.mouse.click(box2.x + 30, box2.y + 30); // coin vide de l'overhead
+ok((await page.textContent('#panel')).includes('✗ Non'), 'cockpit : « Trouve » refuse un toucher hors zone');
+await snap('cockpit-find');
+
+await page.click('.chip[data-mode="name"]');
+await page.waitForSelector('.ck-hs.ask');
+const asked = await page.getAttribute('.ck-hs.ask', 'aria-label');
+await page.click(`.choice:text-is("${asked}")`);
+ok((await page.textContent('#panel')).includes('✓ Exact'), 'cockpit : « Identifie » corrige la réponse');
+await snap('cockpit-name');
 
 await page.setViewportSize({ width: 375, height: 800 });
 await page.goto(BASE + '#/abn/engine-fire');

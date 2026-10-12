@@ -1,0 +1,1012 @@
+{
+  "_meta": {
+    "sample": false,
+    "source": "Zones relevées sur le poster cockpit FSI rév. 0.2 (images non incluses)",
+    "revision": "0.2"
+  },
+  "views": [
+    {
+      "id": "overview",
+      "title": "Vue d'ensemble",
+      "image": "overview",
+      "aspect": [
+        881,
+        1203
+      ],
+      "hotspots": [
+        {
+          "id": "v-ovh",
+          "label": "Panneau overhead",
+          "x": 36,
+          "y": 1,
+          "w": 30,
+          "h": 24,
+          "go": "overhead"
+        },
+        {
+          "id": "v-gl",
+          "label": "Glareshield gauche",
+          "x": 2,
+          "y": 28,
+          "w": 35,
+          "h": 24,
+          "go": "glare-left"
+        },
+        {
+          "id": "v-gc",
+          "label": "Glareshield centre",
+          "x": 37,
+          "y": 27,
+          "w": 25,
+          "h": 25,
+          "go": "glare-center"
+        },
+        {
+          "id": "v-gr",
+          "label": "Glareshield droit",
+          "x": 62,
+          "y": 28,
+          "w": 36,
+          "h": 24,
+          "go": "glare-right"
+        },
+        {
+          "id": "v-cf",
+          "label": "Console centrale avant",
+          "x": 42,
+          "y": 53,
+          "w": 18,
+          "h": 10,
+          "go": "console-fwd"
+        },
+        {
+          "id": "v-cc",
+          "label": "Console centrale",
+          "x": 42,
+          "y": 63,
+          "w": 18,
+          "h": 18,
+          "go": "console-center"
+        },
+        {
+          "id": "v-ca",
+          "label": "Console centrale arrière",
+          "x": 44,
+          "y": 82,
+          "w": 15,
+          "h": 10,
+          "go": "console-aft"
+        },
+        {
+          "id": "v-sl",
+          "label": "Console latérale gauche",
+          "x": 2,
+          "y": 70,
+          "w": 38,
+          "h": 30,
+          "go": "side"
+        },
+        {
+          "id": "v-sr",
+          "label": "Console latérale droite",
+          "x": 61,
+          "y": 70,
+          "w": 37,
+          "h": 30,
+          "go": "side"
+        }
+      ]
+    },
+    {
+      "id": "overhead",
+      "title": "Overhead",
+      "image": "overhead",
+      "aspect": [
+        908,
+        1060
+      ],
+      "hotspots": [
+        {
+          "id": "cockpit-dome",
+          "label": "COCKPIT DOME",
+          "x": 34,
+          "y": 30,
+          "w": 7,
+          "h": 9,
+          "info": "Position haute / 50% / OFF"
+        },
+        {
+          "id": "cabin-lights",
+          "label": "CABIN LIGHTS",
+          "x": 43,
+          "y": 30,
+          "w": 7,
+          "h": 9,
+          "info": "Position haute / AUTO / OFF"
+        },
+        {
+          "id": "no-smoking",
+          "label": "NO SMOKING",
+          "x": 52,
+          "y": 30,
+          "w": 7,
+          "h": 9,
+          "info": "ON / OFF"
+        },
+        {
+          "id": "seat-belts",
+          "label": "SEAT BELTS",
+          "x": 61,
+          "y": 30,
+          "w": 7,
+          "h": 9,
+          "info": "ON / OFF"
+        },
+        {
+          "id": "bus-tie",
+          "label": "BUS TIE",
+          "x": 48,
+          "y": 41,
+          "w": 6,
+          "h": 6,
+          "info": "Bouton-poussoir, au-dessus des interrupteurs BAT/GEN"
+        },
+        {
+          "id": "gen1",
+          "label": "GEN 1",
+          "x": 38.5,
+          "y": 48,
+          "w": 6,
+          "h": 9,
+          "info": "ON / OFF"
+        },
+        {
+          "id": "bat1",
+          "label": "BAT 1",
+          "x": 44.5,
+          "y": 48,
+          "w": 6,
+          "h": 9,
+          "info": "ON / OFF"
+        },
+        {
+          "id": "bat2",
+          "label": "BAT 2",
+          "x": 50.5,
+          "y": 48,
+          "w": 6,
+          "h": 9,
+          "info": "ON / OFF"
+        },
+        {
+          "id": "gen2",
+          "label": "GEN 2",
+          "x": 56.5,
+          "y": 48,
+          "w": 6,
+          "h": 9,
+          "info": "ON / OFF"
+        },
+        {
+          "id": "gpu",
+          "label": "GPU",
+          "x": 48,
+          "y": 57.5,
+          "w": 5.5,
+          "h": 6,
+          "info": "Bouton-poussoir ON/OFF"
+        },
+        {
+          "id": "start-l",
+          "label": "START gauche",
+          "x": 27,
+          "y": 51,
+          "w": 6,
+          "h": 6,
+          "info": "Bouton-poussoir de démarrage moteur gauche"
+        },
+        {
+          "id": "eng-l",
+          "label": "Sélecteur moteur gauche",
+          "x": 27,
+          "y": 55.5,
+          "w": 14,
+          "h": 13,
+          "info": "DRY MOTOR · OFF · RUN · IGN"
+        },
+        {
+          "id": "start-r",
+          "label": "START droit",
+          "x": 69,
+          "y": 51,
+          "w": 6,
+          "h": 6,
+          "info": "Bouton-poussoir de démarrage moteur droit"
+        },
+        {
+          "id": "eng-r",
+          "label": "Sélecteur moteur droit",
+          "x": 60,
+          "y": 55.5,
+          "w": 14,
+          "h": 13,
+          "info": "DRY MOTOR · OFF · RUN · IGN"
+        },
+        {
+          "id": "wing",
+          "label": "WING (phare d'aile)",
+          "x": 28,
+          "y": 69,
+          "w": 6,
+          "h": 8,
+          "info": "ON / OFF"
+        },
+        {
+          "id": "logo",
+          "label": "LOGO",
+          "x": 35,
+          "y": 69,
+          "w": 6,
+          "h": 8,
+          "info": "ON / OFF"
+        },
+        {
+          "id": "strobe",
+          "label": "STROBE / BEACON",
+          "x": 42,
+          "y": 69,
+          "w": 6,
+          "h": 8,
+          "info": "ON / OFF"
+        },
+        {
+          "id": "taxi",
+          "label": "TAXI",
+          "x": 53,
+          "y": 69,
+          "w": 6,
+          "h": 8,
+          "info": "ON / OFF"
+        },
+        {
+          "id": "landing",
+          "label": "LANDING",
+          "x": 60,
+          "y": 69,
+          "w": 6,
+          "h": 8,
+          "info": "ON / OFF"
+        },
+        {
+          "id": "recog",
+          "label": "RECOG",
+          "x": 67,
+          "y": 69,
+          "w": 6,
+          "h": 8,
+          "info": "ON / OFF"
+        }
+      ]
+    },
+    {
+      "id": "glare-left",
+      "title": "Glareshield gauche",
+      "image": "glare-left",
+      "aspect": [
+        1026,
+        939
+      ],
+      "hotspots": [
+        {
+          "id": "gl-xting",
+          "label": "FIRE XTING (gauche)",
+          "x": 89,
+          "y": 9,
+          "w": 5,
+          "h": 7,
+          "info": "Bouton de l'extincteur moteur gauche"
+        },
+        {
+          "id": "gl-isol",
+          "label": "L ENG ISOL",
+          "x": 94,
+          "y": 9,
+          "w": 6,
+          "h": 7,
+          "info": "Isolation du moteur gauche (voir AFM)"
+        },
+        {
+          "id": "gl-audio",
+          "label": "Panneau audio pilote",
+          "x": 56,
+          "y": 14,
+          "w": 26,
+          "h": 11
+        },
+        {
+          "id": "gl-wc",
+          "label": "WARNING / CAUTION pilote",
+          "x": 49,
+          "y": 16,
+          "w": 5,
+          "h": 8,
+          "info": "Voyants maîtres"
+        },
+        {
+          "id": "gl-elt",
+          "label": "Voyant ELT ON",
+          "x": 34,
+          "y": 34,
+          "w": 4,
+          "h": 5
+        },
+        {
+          "id": "gl-stby",
+          "label": "Instrument de secours (pilote)",
+          "x": 21,
+          "y": 39,
+          "w": 16,
+          "h": 17
+        },
+        {
+          "id": "gl-pfd",
+          "label": "PFD pilote",
+          "x": 45,
+          "y": 32,
+          "w": 26,
+          "h": 33
+        },
+        {
+          "id": "gl-eng",
+          "label": "Indications moteurs (N1, ITT, N2…)",
+          "x": 71,
+          "y": 32,
+          "w": 13,
+          "h": 16
+        },
+        {
+          "id": "gl-dcp",
+          "label": "Panneau BARO / CRS / RADIO pilote",
+          "x": 90,
+          "y": 29,
+          "w": 9,
+          "h": 32
+        },
+        {
+          "id": "gl-gear",
+          "label": "Levier de train",
+          "x": 89,
+          "y": 72,
+          "w": 7,
+          "h": 13,
+          "info": "UP / DN, côté pilote, à droite de la colonne"
+        },
+        {
+          "id": "gl-vplac",
+          "label": "Plaque des vitesses",
+          "x": 70,
+          "y": 72,
+          "w": 11,
+          "h": 10,
+          "info": "VMO 290 KIAS · MMO 0,74 · VFE 8°/15° 200 KIAS · VFE 33° 175 KIAS"
+        },
+        {
+          "id": "gl-oplim",
+          "label": "Plaque OPERATIONAL LIMITATIONS",
+          "x": 20,
+          "y": 71,
+          "w": 18,
+          "h": 9,
+          "info": "Catégorie commuter · VFR/IFR, jour/nuit, givrage"
+        }
+      ]
+    },
+    {
+      "id": "glare-center",
+      "title": "Glareshield centre",
+      "image": "glare-center",
+      "aspect": [
+        1044,
+        952
+      ],
+      "hotspots": [
+        {
+          "id": "gc-xting-l",
+          "label": "FIRE XTING (gauche)",
+          "x": 15,
+          "y": 10,
+          "w": 5,
+          "h": 7
+        },
+        {
+          "id": "gc-isol-l",
+          "label": "L ENG ISOL",
+          "x": 20,
+          "y": 10,
+          "w": 5,
+          "h": 7
+        },
+        {
+          "id": "gc-isol-r",
+          "label": "R ENG ISOL",
+          "x": 74,
+          "y": 10,
+          "w": 5,
+          "h": 7
+        },
+        {
+          "id": "gc-xting-r",
+          "label": "FIRE XTING (droit)",
+          "x": 79,
+          "y": 10,
+          "w": 5,
+          "h": 7
+        },
+        {
+          "id": "gc-gp",
+          "label": "Panneau du pilote automatique",
+          "x": 26,
+          "y": 8,
+          "w": 46,
+          "h": 10,
+          "info": "Modes HDG, NAV, APR, ALT, VS, FLC, AP, YD…"
+        },
+        {
+          "id": "gc-umfd",
+          "label": "MFD haut (carte / FMS)",
+          "x": 25,
+          "y": 24,
+          "w": 47,
+          "h": 36
+        },
+        {
+          "id": "gc-cas",
+          "label": "Fenêtre CAS",
+          "x": 27,
+          "y": 65,
+          "w": 15,
+          "h": 17,
+          "info": "Messages d'alerte du MFD bas"
+        },
+        {
+          "id": "gc-config",
+          "label": "Synoptique CONFIGURATION (train / volets)",
+          "x": 43,
+          "y": 65,
+          "w": 13,
+          "h": 12
+        },
+        {
+          "id": "gc-fuel",
+          "label": "Synoptique FUEL",
+          "x": 56,
+          "y": 65,
+          "w": 14,
+          "h": 14
+        },
+        {
+          "id": "gc-trims",
+          "label": "Indications de trims",
+          "x": 43,
+          "y": 78,
+          "w": 13,
+          "h": 8
+        },
+        {
+          "id": "gc-elec",
+          "label": "Synoptique ELECTRICAL",
+          "x": 43,
+          "y": 87,
+          "w": 13,
+          "h": 8
+        },
+        {
+          "id": "gc-env",
+          "label": "Synoptique ENVIRONMENTAL",
+          "x": 56,
+          "y": 80,
+          "w": 14,
+          "h": 18,
+          "info": "Pressurisation et températures"
+        },
+        {
+          "id": "gc-oxy",
+          "label": "OXYGEN PUSH TO ACTIVATE",
+          "x": 79,
+          "y": 72,
+          "w": 9,
+          "h": 14,
+          "info": "Bouton unique, côté copilote"
+        },
+        {
+          "id": "gc-extplac",
+          "label": "Plaque : extincteur derrière le siège copilote",
+          "x": 74,
+          "y": 62,
+          "w": 9,
+          "h": 4
+        }
+      ]
+    },
+    {
+      "id": "glare-right",
+      "title": "Glareshield droit",
+      "image": "glare-right",
+      "aspect": [
+        1017,
+        939
+      ],
+      "hotspots": [
+        {
+          "id": "gr-isol",
+          "label": "R ENG ISOL",
+          "x": 1,
+          "y": 9,
+          "w": 5,
+          "h": 7
+        },
+        {
+          "id": "gr-xting",
+          "label": "FIRE XTING (droit)",
+          "x": 6,
+          "y": 9,
+          "w": 5,
+          "h": 7
+        },
+        {
+          "id": "gr-audio",
+          "label": "Panneau audio copilote",
+          "x": 18,
+          "y": 14,
+          "w": 26,
+          "h": 11
+        },
+        {
+          "id": "gr-wc",
+          "label": "WARNING / CAUTION copilote",
+          "x": 45,
+          "y": 16,
+          "w": 5,
+          "h": 8
+        },
+        {
+          "id": "gr-dcp",
+          "label": "Panneau BARO / CRS / RADIO copilote",
+          "x": 2,
+          "y": 29,
+          "w": 9,
+          "h": 32
+        },
+        {
+          "id": "gr-eng",
+          "label": "Indications moteurs copilote",
+          "x": 16,
+          "y": 32,
+          "w": 13,
+          "h": 16
+        },
+        {
+          "id": "gr-pfd",
+          "label": "PFD copilote",
+          "x": 29,
+          "y": 32,
+          "w": 28,
+          "h": 33
+        },
+        {
+          "id": "gr-stby",
+          "label": "Instrument de secours (copilote)",
+          "x": 63,
+          "y": 40,
+          "w": 17,
+          "h": 16
+        },
+        {
+          "id": "gr-oxy",
+          "label": "OXYGEN PUSH TO ACTIVATE",
+          "x": 7,
+          "y": 72,
+          "w": 8,
+          "h": 12
+        }
+      ]
+    },
+    {
+      "id": "console-fwd",
+      "title": "Console avant",
+      "image": "console-fwd",
+      "aspect": [
+        1380,
+        1013
+      ],
+      "hotspots": [
+        {
+          "id": "windshield",
+          "label": "WINDSHIELD",
+          "x": 8,
+          "y": 4,
+          "w": 16,
+          "h": 21,
+          "info": "OFF / AUTO HI / LOW+SIDE / MAN HI"
+        },
+        {
+          "id": "bleed",
+          "label": "BLEED",
+          "x": 8,
+          "y": 29,
+          "w": 16,
+          "h": 21,
+          "info": "L / BOTH / R / OFF"
+        },
+        {
+          "id": "ips",
+          "label": "IPS",
+          "x": 7,
+          "y": 53,
+          "w": 17,
+          "h": 20,
+          "info": "MAN / AUTO / NAI / ALL ON"
+        },
+        {
+          "id": "tsc",
+          "label": "TSC (écran tactile)",
+          "x": 29,
+          "y": 15,
+          "w": 42,
+          "h": 48,
+          "info": "Home, DU & CCD, COM, NAV, XPDR…"
+        },
+        {
+          "id": "tsc-keys",
+          "label": "Touches Datalink / MFD Swap / Event",
+          "x": 41,
+          "y": 62,
+          "w": 18,
+          "h": 9
+        },
+        {
+          "id": "dump",
+          "label": "CPCS DUMP",
+          "x": 80,
+          "y": 8,
+          "w": 10,
+          "h": 17,
+          "info": "Bouton-poussoir gardé"
+        },
+        {
+          "id": "cpcs-mode",
+          "label": "CPCS MODE",
+          "x": 78,
+          "y": 30,
+          "w": 14,
+          "h": 20,
+          "info": "AUTO / MAN (tirer pour sélectionner)"
+        },
+        {
+          "id": "cabin-alt",
+          "label": "CABIN ALT",
+          "x": 76,
+          "y": 53,
+          "w": 17,
+          "h": 19,
+          "info": "DESCEND / CLIMB (mode manuel)"
+        },
+        {
+          "id": "dim-ppfd",
+          "label": "Rhéostat PILOT PFD",
+          "x": 10,
+          "y": 76,
+          "w": 15,
+          "h": 23,
+          "info": "NORM / AGM2 / MIN / OFF/REV"
+        },
+        {
+          "id": "dim-umfd",
+          "label": "Rhéostat UPPER MFD",
+          "x": 25,
+          "y": 76,
+          "w": 10,
+          "h": 23
+        },
+        {
+          "id": "dim-tsc",
+          "label": "Rhéostat TSC",
+          "x": 36,
+          "y": 76,
+          "w": 9,
+          "h": 23
+        },
+        {
+          "id": "dim-floods",
+          "label": "Rhéostat FLOODS",
+          "x": 46,
+          "y": 76,
+          "w": 9,
+          "h": 23
+        },
+        {
+          "id": "dim-panels",
+          "label": "Rhéostat PANELS",
+          "x": 56,
+          "y": 76,
+          "w": 9,
+          "h": 23
+        },
+        {
+          "id": "dim-lmfd",
+          "label": "Rhéostat LOWER MFD",
+          "x": 66,
+          "y": 76,
+          "w": 10,
+          "h": 23
+        },
+        {
+          "id": "dim-cpfd",
+          "label": "Rhéostat CO-PILOT PFD",
+          "x": 77,
+          "y": 76,
+          "w": 13,
+          "h": 23,
+          "info": "NORM / AGM1 / MIN / OFF/REV"
+        }
+      ]
+    },
+    {
+      "id": "console-center",
+      "title": "Console centrale",
+      "image": "console-center",
+      "aspect": [
+        826,
+        1020
+      ],
+      "hotspots": [
+        {
+          "id": "airbrake",
+          "label": "AIRBRAKE",
+          "x": 10,
+          "y": 10,
+          "w": 17,
+          "h": 30,
+          "info": "IN / 1/2 / OUT"
+        },
+        {
+          "id": "thrust",
+          "label": "Manettes de poussée",
+          "x": 31,
+          "y": 4,
+          "w": 38,
+          "h": 33,
+          "info": "IDLE · MCT · T/O · ATR"
+        },
+        {
+          "id": "flap",
+          "label": "FLAP",
+          "x": 72,
+          "y": 14,
+          "w": 18,
+          "h": 26,
+          "info": "0° / 8° / 15° / 33°"
+        },
+        {
+          "id": "sec-stab",
+          "label": "SEC STAB TRIM",
+          "x": 12,
+          "y": 43,
+          "w": 30,
+          "h": 14,
+          "info": "ENABLE + interrupteur DN / UP"
+        },
+        {
+          "id": "ail-trim",
+          "label": "AIL TRIM",
+          "x": 48,
+          "y": 46,
+          "w": 13,
+          "h": 12,
+          "info": "LWD / RWD"
+        },
+        {
+          "id": "rud-trim",
+          "label": "RUD TRIM",
+          "x": 75,
+          "y": 43,
+          "w": 13,
+          "h": 14,
+          "info": "NL / OFF / NR"
+        },
+        {
+          "id": "park",
+          "label": "PARK/EMER BRAKE",
+          "x": 12,
+          "y": 68,
+          "w": 15,
+          "h": 22,
+          "info": "Poignée rouge"
+        },
+        {
+          "id": "mic",
+          "label": "MIC SELECT",
+          "x": 34,
+          "y": 86,
+          "w": 14,
+          "h": 13,
+          "info": "LEFT / OFF / RIGHT"
+        },
+        {
+          "id": "flaps-emer",
+          "label": "FLAPS EMER PWR",
+          "x": 80,
+          "y": 60,
+          "w": 15,
+          "h": 10
+        },
+        {
+          "id": "ws-emer",
+          "label": "WS EMER PWR",
+          "x": 80,
+          "y": 72,
+          "w": 15,
+          "h": 10
+        },
+        {
+          "id": "swps",
+          "label": "SWPS ICE MODE",
+          "x": 77,
+          "y": 86,
+          "w": 18,
+          "h": 13,
+          "info": "RESET / AUTO / OVRD (tirer pour sélectionner)"
+        }
+      ]
+    },
+    {
+      "id": "console-aft",
+      "title": "Console arrière",
+      "image": "console-aft",
+      "aspect": [
+        1253,
+        1013
+      ],
+      "hotspots": [
+        {
+          "id": "ram-air",
+          "label": "EMERG RAM AIR",
+          "x": 25,
+          "y": 18,
+          "w": 16,
+          "h": 60,
+          "info": "Poignée rouge, presser pour libérer"
+        },
+        {
+          "id": "emer-gear",
+          "label": "EMERG GEAR",
+          "x": 57,
+          "y": 20,
+          "w": 18,
+          "h": 58,
+          "info": "Poignée de sortie du train de secours (OPEN)"
+        }
+      ]
+    },
+    {
+      "id": "side",
+      "title": "Consoles latérales",
+      "image": "side",
+      "aspect": [
+        1734,
+        884
+      ],
+      "hotspots": [
+        {
+          "id": "gust-lock",
+          "label": "Verrou de commandes",
+          "x": 6,
+          "y": 43,
+          "w": 8,
+          "h": 27,
+          "info": "CONTROLS LOCKED — REMOVE BEFORE FLIGHT"
+        },
+        {
+          "id": "cb-ess",
+          "label": "Disjoncteurs ESSENTIAL BUS",
+          "x": 16,
+          "y": 43,
+          "w": 23,
+          "h": 14,
+          "info": "CABIN PWR, MAU 1A, DCPU 1A/1B, MMDR 1, PILOT AUDIO, PRIMARY STAB TRIM, PITOT HEAT L"
+        },
+        {
+          "id": "satvoice",
+          "label": "SATVOICE",
+          "x": 15.5,
+          "y": 61,
+          "w": 14.5,
+          "h": 13
+        },
+        {
+          "id": "egear-plac-l",
+          "label": "Plaque EMERGENCY GEAR EXTENSION (gauche)",
+          "x": 28.5,
+          "y": 6,
+          "w": 11.5,
+          "h": 9
+        },
+        {
+          "id": "egear-plac-r",
+          "label": "Plaque EMERGENCY GEAR EXTENSION (droite)",
+          "x": 64.5,
+          "y": 5,
+          "w": 11,
+          "h": 9
+        },
+        {
+          "id": "elt",
+          "label": "ELT",
+          "x": 5.5,
+          "y": 78,
+          "w": 2.6,
+          "h": 10
+        },
+        {
+          "id": "emer-lts",
+          "label": "CABIN EMER LTS",
+          "x": 9.6,
+          "y": 79,
+          "w": 3.4,
+          "h": 8,
+          "info": "OFF / ARM / ON"
+        },
+        {
+          "id": "cvr",
+          "label": "CVR TEST/ERASE",
+          "x": 4.4,
+          "y": 88,
+          "w": 2.8,
+          "h": 8
+        },
+        {
+          "id": "aural",
+          "label": "AURAL DISABLE",
+          "x": 7.5,
+          "y": 88,
+          "w": 2.8,
+          "h": 8
+        },
+        {
+          "id": "lamp",
+          "label": "COCKPIT LAMP TEST",
+          "x": 10.5,
+          "y": 88,
+          "w": 2.8,
+          "h": 8
+        },
+        {
+          "id": "mask-l",
+          "label": "Masque oxygène pilote",
+          "x": 23,
+          "y": 75,
+          "w": 13,
+          "h": 21,
+          "info": "PRESS TO TEST AND RESET"
+        },
+        {
+          "id": "pax-oxy",
+          "label": "PASSENGER OXYGEN",
+          "x": 37,
+          "y": 75,
+          "w": 5,
+          "h": 10,
+          "info": "OFF / AUTO / ON"
+        },
+        {
+          "id": "mask-r",
+          "label": "Masque oxygène copilote",
+          "x": 61.5,
+          "y": 76,
+          "w": 13.5,
+          "h": 21
+        }
+      ]
+    }
+  ]
+}

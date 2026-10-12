@@ -185,12 +185,13 @@
       "chapter": "ck-front",
       "q": "Que trouve-t-on en haut du glareshield, de chaque côté ?",
       "choices": [
-        "FIRE EXTG et L/R ENG FIRE",
+        "FIRE XTING et L/R ENG ISOL",
         "MASTER WARNING et MASTER CAUTION seulement",
         "Les boutons GEN",
         "Le bouton BUS TIE"
       ],
-      "answer": 0
+      "answer": 0,
+      "explain": "Côté gauche : FIRE XTING et L ENG ISOL. Côté droit : R ENG ISOL et FIRE XTING."
     },
     {
       "id": "ck-12",
@@ -299,6 +300,18 @@
         "L / R",
         "LWD / RWD",
         "DN / UP"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "ck-21",
+      "chapter": "ck-front",
+      "q": "Où se trouve l'extincteur portatif, d'après la plaque du glareshield ?",
+      "choices": [
+        "Derrière le siège copilote",
+        "Derrière le siège pilote",
+        "Dans la console centrale",
+        "Dans la soute arrière"
       ],
       "answer": 0
     }

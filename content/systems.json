@@ -63,7 +63,7 @@
       "sections": [
         {
           "title": "Glareshield",
-          "body": "De chaque côté, en haut : **FIRE EXTG** et **L ENG FIRE** / **R ENG FIRE**.\n\nLe levier de **train** (UP / DN) est côté pilote gauche, à droite de la colonne.\n\nChaque pilote a un **instrument de secours** à l'extérieur de son PFD, et un bouton **OXYGEN PUSH TO ACTIVATE** sous le glareshield.\n\n4 écrans Honeywell : 2 PFD, plus un MFD haut et un MFD bas au centre."
+          "body": "De chaque côté, en haut : **FIRE XTING** et **L ENG ISOL** / **R ENG ISOL**.\n\nLe levier de **train** (UP / DN) est côté pilote gauche, à droite de la colonne.\n\nChaque pilote a un **instrument de secours** à l'extérieur de son PFD.\n\nIl n'y a qu'**un seul** bouton **OXYGEN PUSH TO ACTIVATE**, côté copilote, sous le glareshield. Une plaque rappelle que l'**extincteur** est derrière le siège copilote.\n\n4 écrans Honeywell : 2 PFD, plus un MFD haut et un MFD bas au centre (CAS, configuration, carburant, environnement, électrique)."
         },
         {
           "title": "Console avant, à gauche",

@@ -14,6 +14,7 @@ Elle tourne hors ligne et s'installe sur l'écran d'accueil (Safari → Partager
 | Normales | Check-list par phase, coche au toucher, **mode révision** (réponses floutées : 1er toucher révèle, 2e coche) |
 | Anormales & urgences | Liste type QRH, filtres par catégorie et message CAS, **memory items** encadrés en rouge |
 | Systèmes | Fiches par chapitre et quiz QCM par chapitre |
+| Cockpit interactif | Vues du poster cockpit : **Explorer** (toucher une commande pour voir son nom et ses positions), **Trouve la commande** (toucher la commande demandée), **Identifie** (nommer la commande encadrée). 105 zones sur 9 vues. |
 | Limitations | Tableau avec valeurs masquables et flashcards (méthode Leitner, boîtes 0 à 5) |
 | Entraînement | Memory items en flashcards, quiz général, « revoir mes erreurs » |
 
@@ -73,6 +74,20 @@ Avec `sample: true`, la bannière « exemple » s'affiche.
 `chapter` = `id` d'un chapitre systèmes, `answer` = index de la bonne réponse (les choix sont mélangés à l'affichage).
 
 **limitations** : `{ "groups": [ { "title", "items": [ { "label", "value", "ref?" } ] } ] }`
+
+## Images du cockpit
+
+Les zones cliquables (`content/cockpit.json`) sont dans le repo. Les images, elles, viennent du poster
+FlightSafety (sous copyright) et **n'y sont pas** : elles s'importent sur l'appareil via ⚙︎ Réglages et sont
+stockées dans IndexedDB. Sans images, chaque vue s'affiche comme un schéma avec les zones nommées.
+
+Pour fabriquer le pack à partir du PDF (poppler et Pillow nécessaires) :
+
+```bash
+python3 tools/build-cockpit-pack.py poster.pdf private/pc24-cockpit.pack.json
+```
+
+Si tu changes les découpes dans le script, il faut recaler les zones et `aspect` dans `content/cockpit.json`.
 
 ## Progression
 

@@ -2,7 +2,7 @@
 // Le contenu vit dans content/*.json ; un pack importé (Réglages) le remplace,
 // stocké uniquement sur l'appareil.
 
-const MODULES = ['normal', 'abnormal', 'systems', 'quiz', 'limitations'];
+const MODULES = ['normal', 'abnormal', 'systems', 'quiz', 'limitations', 'cockpit'];
 const app = document.getElementById('app');
 
 // ---------- Stockage local (peut être indisponible : navigation privée…) ----------
@@ -21,6 +21,35 @@ const store = {
   del(key) {
     try { localStorage.removeItem('pc24:' + key); } catch { /* rien */ }
   },
+};
+
+// ---------- Images cockpit (IndexedDB : trop lourdes pour localStorage) ----------
+
+const images = {
+  db: null,
+  open() {
+    if (this.db) return this.db;
+    this.db = new Promise((resolve, reject) => {
+      const req = indexedDB.open('pc24', 1);
+      req.onupgradeneeded = () => req.result.createObjectStore('images');
+      req.onsuccess = () => resolve(req.result);
+      req.onerror = () => reject(req.error);
+    });
+    return this.db;
+  },
+  async tx(mode, fn) {
+    const db = await this.open();
+    return new Promise((resolve, reject) => {
+      const t = db.transaction('images', mode);
+      const r = fn(t.objectStore('images'));
+      t.oncomplete = () => resolve(r?.result);
+      t.onerror = () => reject(t.error);
+    });
+  },
+  get(key) { return this.tx('readonly', (st) => st.get(key)).catch(() => undefined); },
+  keys() { return this.tx('readonly', (st) => st.getAllKeys()).catch(() => []); },
+  putAll(map) { return this.tx('readwrite', (st) => { for (const [k, v] of Object.entries(map)) st.put(v, k); }); },
+  clear() { return this.tx('readwrite', (st) => st.clear()); },
 };
 
 // ---------- Contenu ----------
@@ -43,7 +72,11 @@ async function loadContent() {
 function validatePack(pack) {
   if (!pack || typeof pack !== 'object') return 'Le fichier n\'est pas un objet JSON.';
   const found = MODULES.filter((m) => pack[m]);
-  if (!found.length) return `Aucun module reconnu. Clés attendues : ${MODULES.join(', ')}.`;
+  if (!found.length && !pack.images) return `Aucun module reconnu. Clés attendues : ${MODULES.join(', ')}, images.`;
+  if (pack.images && (typeof pack.images !== 'object' || Object.values(pack.images).some((v) => !String(v).startsWith('data:image/')))) {
+    return 'images doit associer chaque vue à une image data:image/….';
+  }
+  if (pack.cockpit && !Array.isArray(pack.cockpit.views)) return 'cockpit.views doit être une liste.';
   if (pack.normal && !Array.isArray(pack.normal.phases)) return 'normal.phases doit être une liste.';
   if (pack.abnormal && !Array.isArray(pack.abnormal.procedures)) return 'abnormal.procedures doit être une liste.';
   if (pack.systems && !Array.isArray(pack.systems.chapters)) return 'systems.chapters doit être une liste.';
@@ -149,6 +182,7 @@ function viewHome() {
       <a class="tile" href="#/normal"><strong>Procédures normales</strong><span class="muted">${n} phases</span></a>
       <a class="tile" href="#/abn"><strong>Anormales & urgences</strong><span class="muted">${a} procédures</span></a>
       <a class="tile" href="#/sys"><strong>Systèmes</strong><span class="muted">${s} chapitres · ${q} questions</span></a>
+      <a class="tile" href="#/cockpit"><strong>Cockpit interactif</strong><span class="muted">${C.cockpit.views.length} vues · ${cockpitTargets().length} commandes</span></a>
       <a class="tile" href="#/lim"><strong>Limitations & chiffres</strong><span class="muted">${l} valeurs</span>
         <div class="progress" title="${mastered}/${limIds.length} maîtrisées"><span style="width:${pct}%"></span></div></a>
     </div>
@@ -185,6 +219,11 @@ function viewSearch(query) {
   for (const ch of C.systems.chapters) {
     for (const sec of ch.sections) {
       if (hit(sec.title) || hit(sec.body)) hits.push(['Systèmes', `${ch.title} — ${sec.title}`, `#/sys/${ch.id}`]);
+    }
+  }
+  for (const v of C.cockpit.views) {
+    for (const h of v.hotspots) {
+      if (!h.go && (hit(h.label) || hit(h.info))) hits.push(['Cockpit', `${v.title} — ${h.label}`, `#/cockpit/${v.id}/${h.id}`]);
     }
   }
   for (const g of C.limitations.groups) {
@@ -546,10 +585,172 @@ function viewDrill(deck) {
   show();
 }
 
+// ---------- Cockpit interactif ----------
+// Zones en % de l'image (content/cockpit.json). Images importées à part (IndexedDB).
+
+const cockpitTargets = (view) => (view ? [view] : C.cockpit.views).flatMap((v) => v.hotspots.filter((h) => !h.go));
+
+let cockpitMode = 'explore';
+
+async function viewCockpitList() {
+  const keys = new Set(await images.keys());
+  const best = store.get('cockpitBest', {});
+  const missing = C.cockpit.views.filter((v) => !keys.has(v.image)).length;
+  render(`
+    ${crumbs(['#/', 'Accueil'], [null, 'Cockpit interactif'])}
+    <h1>Cockpit interactif</h1>
+    ${missing ? `<div class="card small"><strong>Images non importées.</strong> Les zones s'affichent sur un fond neutre.
+      Importe <code>pc24-cockpit.pack.json</code> dans <a href="#/settings">⚙︎ Réglages</a> pour voir le vrai cockpit.</div>` : ''}
+    <ul class="list card">${C.cockpit.views.map((v) => {
+      const n = v.hotspots.filter((h) => !h.go).length;
+      return `<li><a href="#/cockpit/${esc(v.id)}">${esc(v.title)}<span class="small muted">${n ? `${n} commandes` : 'navigation'}${best[v.id] !== undefined ? ` · meilleur ${best[v.id]}%` : ''}</span></a></li>`;
+    }).join('')}</ul>
+  `);
+}
+
+async function viewCockpit(id, focus) {
+  const v = C.cockpit.views.find((x) => x.id === id);
+  if (!v) return viewNotFound();
+  const targets = cockpitTargets(v);
+  if (!targets.length) cockpitMode = 'explore';
+  const src = await images.get(v.image);
+  const [aw, ah] = v.aspect || [4, 3];
+
+  render(`
+    ${crumbs(['#/', 'Accueil'], ['#/cockpit', 'Cockpit'], [null, v.title])}
+    <h1>${esc(v.title)}</h1>
+    ${targets.length ? `<div class="chips">${[['explore', 'Explorer'], ['find', 'Trouve la commande'], ['name', 'Identifie']].map(([m, l]) => (
+      `<button class="chip" data-mode="${m}" aria-pressed="${m === cockpitMode}">${l}</button>`
+    )).join('')}</div>` : ''}
+    <div class="ck-stage ${src ? '' : 'noimg'}" id="stage" style="aspect-ratio:${aw}/${ah};max-width:max(320px, calc((100dvh - 210px) * ${(aw / ah).toFixed(3)}))">
+      ${src ? `<img src="${src}" alt="${esc(v.title)}" draggable="false">` : ''}
+      ${v.hotspots.map((h) => `<button class="ck-hs${h.go ? ' go' : ''}" data-id="${esc(h.id)}"
+        style="left:${h.x}%;top:${h.y}%;width:${h.w}%;height:${h.h}%" aria-label="${esc(h.label)}"><span>${esc(h.label)}</span></button>`).join('')}
+    </div>
+    <div class="ck-panel" id="panel"></div>
+  `);
+
+  const stage = document.getElementById('stage');
+  const panel = document.getElementById('panel');
+  const hsEl = (hid) => stage.querySelector(`.ck-hs[data-id="${CSS.escape(hid)}"]`);
+  const clearMarks = () => {
+    stage.querySelectorAll('.ck-hs').forEach((b) => b.classList.remove('sel', 'right', 'wrong', 'ask'));
+    stage.querySelectorAll('.ck-tap').forEach((d) => d.remove());
+  };
+  app.querySelectorAll('.chip[data-mode]').forEach((b) => b.addEventListener('click', () => {
+    cockpitMode = b.dataset.mode;
+    viewCockpit(id);
+  }));
+
+  // --- Explorer : toucher une zone affiche son nom et ses positions.
+  if (cockpitMode === 'explore') {
+    stage.classList.add('explore');
+    const show = (h) => {
+      clearMarks();
+      hsEl(h.id).classList.add('sel');
+      panel.innerHTML = `<div class="card"><strong>${esc(h.label)}</strong>${h.info ? `<div class="muted">${esc(h.info)}</div>` : ''}</div>`;
+    };
+    panel.innerHTML = `<p class="small muted">${src ? 'Touche une commande pour voir son nom.' : 'Touche une zone.'}
+      <button class="btn" id="zones" aria-pressed="false" style="min-height:32px;margin-left:8px">Afficher les zones</button></p>`;
+    document.getElementById('zones')?.addEventListener('click', (e) => {
+      const on = e.currentTarget.getAttribute('aria-pressed') !== 'true';
+      e.currentTarget.setAttribute('aria-pressed', String(on));
+      stage.classList.toggle('show', on);
+    });
+    stage.querySelectorAll('.ck-hs').forEach((b) => b.addEventListener('click', () => {
+      const h = v.hotspots.find((x) => x.id === b.dataset.id);
+      if (h.go) location.hash = '#/cockpit/' + h.go;
+      else show(h);
+    }));
+    const f = v.hotspots.find((h) => h.id === focus);
+    if (f) show(f);
+    return;
+  }
+
+  // --- Modes entraînement : une série sur toutes les commandes de la vue.
+  const queue = shuffle(targets);
+  let i = 0;
+  let good = 0;
+  const finish = () => {
+    const pct = Math.round((good / queue.length) * 100);
+    const best = store.get('cockpitBest', {});
+    best[v.id] = Math.max(best[v.id] ?? 0, pct);
+    store.set('cockpitBest', best);
+    clearMarks();
+    panel.innerHTML = `<div class="card" style="text-align:center"><div class="score">${pct}%</div>
+      <p>${good} / ${queue.length} du premier coup</p>
+      <div class="btns" style="justify-content:center"><button class="btn primary" id="again">Recommencer</button></div></div>`;
+    document.getElementById('again').addEventListener('click', () => viewCockpit(id));
+  };
+  const nextBtn = (ok, h) => `<div class="card ${ok ? '' : 'ck-bad'}"><strong>${ok ? '✓ Exact' : '✗ Non'} : ${esc(h.label)}</strong>
+    ${h.info ? `<div class="muted">${esc(h.info)}</div>` : ''}
+    <div class="btns"><button class="btn primary" id="next">${i + 1 < queue.length ? 'Suivante' : 'Résultat'}</button></div></div>`;
+  const bindNext = () => document.getElementById('next').addEventListener('click', () => {
+    i++;
+    if (i < queue.length) ask(); else finish();
+  });
+
+  let answered = false;
+  const ask = () => {
+    answered = false;
+    clearMarks();
+    const h = queue[i];
+    const head = `<p class="small muted">${i + 1} / ${queue.length} · ${good} bonne(s)</p>`;
+    if (cockpitMode === 'find') {
+      stage.classList.add('find');
+      panel.innerHTML = `${head}<div class="card ck-prompt">Touche : <strong>${esc(h.label)}</strong></div>`;
+    } else {
+      stage.classList.add('name');
+      hsEl(h.id).classList.add('ask');
+      const others = shuffle(cockpitTargets().filter((x) => x.label !== h.label).map((x) => x.label));
+      const choices = shuffle([h.label, ...[...new Set(others)].slice(0, 3)]);
+      panel.innerHTML = `${head}<div class="card">Quelle est la commande encadrée ?
+        <div class="choices">${choices.map((c) => `<button class="choice">${esc(c)}</button>`).join('')}</div></div>`;
+      panel.querySelectorAll('.choice').forEach((b) => b.addEventListener('click', () => {
+        if (answered) return;
+        answered = true;
+        const ok = b.textContent === h.label;
+        if (ok) good++;
+        hsEl(h.id).classList.replace('ask', ok ? 'right' : 'wrong');
+        panel.innerHTML = head + nextBtn(ok, h);
+        bindNext();
+      }));
+    }
+  };
+
+  if (cockpitMode === 'find') {
+    stage.addEventListener('click', (e) => {
+      if (answered || i >= queue.length) return;
+      const r = stage.getBoundingClientRect();
+      const px = ((e.clientX - r.left) / r.width) * 100;
+      const py = ((e.clientY - r.top) / r.height) * 100;
+      const h = queue[i];
+      const tol = 1.5; // marge en %, pour le doigt
+      const ok = px >= h.x - tol && px <= h.x + h.w + tol && py >= h.y - tol && py <= h.y + h.h + tol;
+      answered = true;
+      if (ok) good++;
+      hsEl(h.id).classList.add('right');
+      if (!ok) {
+        const dot = document.createElement('div');
+        dot.className = 'ck-tap';
+        dot.style.left = px + '%';
+        dot.style.top = py + '%';
+        stage.appendChild(dot);
+      }
+      panel.innerHTML = `<p class="small muted">${i + 1} / ${queue.length} · ${good} bonne(s)</p>` + nextBtn(ok, h);
+      bindNext();
+    });
+  }
+  ask();
+}
+
 // ---------- Réglages ----------
 
-function viewSettings() {
+async function viewSettings() {
   const custom = store.get('content', null);
+  const imgKeys = await images.keys();
+  const needed = new Set((C.cockpit?.views || []).map((v) => v.image));
+  const have = imgKeys.filter((k) => needed.has(k)).length;
   const metas = MODULES.map((m) => [m, C[m]?._meta || {}]);
   render(`
     ${crumbs(['#/', 'Accueil'], [null, 'Réglages'])}
@@ -568,6 +769,12 @@ function viewSettings() {
       </div>
       <p class="small muted" id="msg"></p>
       <p class="small muted">Le pack importé reste sur cet appareil (stockage du navigateur). Il n'est ni envoyé ni publié.</p>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0">Images du cockpit</h3>
+      <p class="small muted">${have} / ${needed.size} vue(s) avec image. Elles s'importent avec le même bouton (fichier <code>pc24-cockpit.pack.json</code>) et restent sur cet appareil.</p>
+      ${imgKeys.length ? '<div class="btns"><button class="btn danger" id="dropimg">Supprimer les images</button></div>' : ''}
     </div>
 
     <div class="card">
@@ -597,11 +804,23 @@ function viewSettings() {
       const pack = JSON.parse(await f.text());
       const err = validatePack(pack);
       if (err) { msg.textContent = '✗ ' + err; return; }
-      // Les modules absents du pack gardent le contenu fourni.
-      if (!store.set('content', pack)) { msg.textContent = '✗ Stockage impossible (navigation privée ou espace plein).'; return; }
+      const { images: imgs, ...rest } = pack;
+      const mods = MODULES.filter((m) => rest[m]);
+      // Fusion : un pack ne contenant qu'un module ne remplace pas les autres.
+      if (mods.length && !store.set('content', { ...store.get('content', {}), ...rest })) {
+        msg.textContent = '✗ Stockage impossible (navigation privée ou espace plein).';
+        return;
+      }
+      if (imgs) {
+        try { await images.putAll(imgs); } catch {
+          msg.textContent = '✗ Impossible d\'enregistrer les images (navigation privée ?).';
+          return;
+        }
+      }
       await loadContent();
-      viewSettings();
-      document.getElementById('msg').textContent = '✓ Pack importé : ' + MODULES.filter((m) => pack[m]).join(', ');
+      await viewSettings();
+      const parts = [...mods, ...(imgs ? [`${Object.keys(imgs).length} image(s) cockpit`] : [])];
+      document.getElementById('msg').textContent = '✓ Pack importé : ' + parts.join(', ');
     } catch (err) {
       msg.textContent = '✗ JSON invalide : ' + err.message;
     }
@@ -620,9 +839,14 @@ function viewSettings() {
     await loadContent();
     viewSettings();
   });
+  document.getElementById('dropimg')?.addEventListener('click', async () => {
+    if (!confirm('Supprimer les images du cockpit de cet appareil ?')) return;
+    await images.clear();
+    viewSettings();
+  });
   document.getElementById('resetprog').addEventListener('click', () => {
     if (!confirm('Effacer toute la progression ?')) return;
-    ['leitner', 'best', 'wrong'].forEach((k) => store.del(k));
+    ['leitner', 'best', 'wrong', 'cockpitBest'].forEach((k) => store.del(k));
     msg.textContent = '✓ Progression effacée.';
   });
   app.querySelectorAll('[data-theme-set]').forEach((b) => b.addEventListener('click', () => {
@@ -645,8 +869,8 @@ function viewNotFound() {
 // ---------- Routeur ----------
 
 function route() {
-  const [, a = '', b = ''] = decodeURIComponent(location.hash.replace(/^#/, '')).split('/');
-  const tab = { normal: 'normal', abn: 'abn', sys: 'sys', quiz: 'sys', lim: 'lim' }[a];
+  const [, a = '', b = '', c = ''] = decodeURIComponent(location.hash.replace(/^#/, '')).split('/');
+  const tab = { normal: 'normal', abn: 'abn', sys: 'sys', quiz: 'sys', lim: 'lim', cockpit: 'cockpit' }[a];
   document.querySelectorAll('.tabs a').forEach((x) => x.classList.toggle('active', x.dataset.tab === tab));
 
   switch (a) {
@@ -656,6 +880,7 @@ function route() {
     case 'sys': return b ? viewSys(b) : viewSysList();
     case 'quiz': return viewQuiz(b || 'all');
     case 'lim': return viewLim();
+    case 'cockpit': return b ? viewCockpit(b, c) : viewCockpitList();
     case 'drill': return viewDrill(b === 'memory' ? 'memory' : 'lim');
     case 'search': return viewSearch(location.hash.split('/').slice(2).map(decodeURIComponent).join('/'));
     case 'settings': return viewSettings();
