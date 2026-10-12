@@ -65,8 +65,11 @@ async function loadContent() {
     out[m] = await res.json();
   }
   C = out;
-  const sample = MODULES.some((m) => C[m]?._meta?.sample);
-  document.getElementById('sample-banner').hidden = !sample;
+  const names = { normal: 'normales', abnormal: 'anormales', systems: 'systèmes', quiz: 'quiz', limitations: 'limitations', cockpit: 'cockpit' };
+  const samples = MODULES.filter((m) => C[m]?._meta?.sample).map((m) => names[m]);
+  const banner = document.getElementById('sample-banner');
+  banner.hidden = !samples.length;
+  banner.textContent = `Contenu d'exemple, non conforme à l'AFM : ${samples.join(', ')}. Importe ton propre contenu dans ⚙︎ Réglages.`;
 }
 
 function validatePack(pack) {
@@ -361,7 +364,7 @@ function viewAbn(id) {
     </div>
     <div id="cl">
       ${p.memory?.length ? `<div class="memory"><div class="label">MEMORY ITEMS</div>${stepsHtml(p.memory)}</div>` : ''}
-      <div class="card">${stepsHtml(p.steps)}</div>
+      ${p.steps?.length ? `<div class="card">${stepsHtml(p.steps)}</div>` : ''}
     </div>
     ${p.ref ? `<p class="small muted">Réf. : ${esc(p.ref)}</p>` : ''}
   `);
