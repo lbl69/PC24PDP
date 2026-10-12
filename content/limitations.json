@@ -1,0 +1,84 @@
+{
+  "_meta": {
+    "sample": true,
+    "source": "Plaques cockpit (poster FSI rév. 0.2) + valeurs AFM à remplir",
+    "revision": ""
+  },
+  "groups": [
+    {
+      "title": "Masses",
+      "items": [
+        {
+          "label": "Masse max au décollage (MTOW)",
+          "value": "à remplir",
+          "ref": "AFM 2 — à compléter"
+        },
+        {
+          "label": "Masse max à l'atterrissage (MLW)",
+          "value": "à remplir",
+          "ref": "AFM 2 — à compléter"
+        },
+        {
+          "label": "Masse max sans carburant (MZFW)",
+          "value": "à remplir",
+          "ref": "AFM 2 — à compléter"
+        }
+      ]
+    },
+    {
+      "title": "Vitesses",
+      "items": [
+        {
+          "label": "VMO",
+          "value": "290 KIAS",
+          "ref": "Plaque cockpit, Poster cockpit FSI PC-24 rév. 0.2 — à vérifier AFM"
+        },
+        {
+          "label": "MMO",
+          "value": "M 0,74",
+          "ref": "Plaque cockpit, Poster cockpit FSI PC-24 rév. 0.2 — à vérifier AFM"
+        },
+        {
+          "label": "VFE volets 8° et 15°",
+          "value": "200 KIAS",
+          "ref": "Plaque cockpit, Poster cockpit FSI PC-24 rév. 0.2 — à vérifier AFM"
+        },
+        {
+          "label": "VFE volets 33°",
+          "value": "175 KIAS",
+          "ref": "Plaque cockpit, Poster cockpit FSI PC-24 rév. 0.2 — à vérifier AFM"
+        },
+        {
+          "label": "VLO / VLE",
+          "value": "à remplir",
+          "ref": "AFM 2 — à compléter"
+        }
+      ]
+    },
+    {
+      "title": "Opérations",
+      "items": [
+        {
+          "label": "Catégorie de certification",
+          "value": "Commuter",
+          "ref": "Plaque cockpit, Poster cockpit FSI PC-24 rév. 0.2 — à vérifier AFM"
+        },
+        {
+          "label": "Types d'exploitation approuvés",
+          "value": "VFR, IFR, jour, nuit, givrage",
+          "ref": "Plaque cockpit, Poster cockpit FSI PC-24 rév. 0.2 — à vérifier AFM"
+        },
+        {
+          "label": "Altitude max d'exploitation",
+          "value": "à remplir",
+          "ref": "AFM 2 — à compléter"
+        },
+        {
+          "label": "Composante max de vent traversier démontrée",
+          "value": "à remplir",
+          "ref": "AFM 2 — à compléter"
+        }
+      ]
+    }
+  ]
+}

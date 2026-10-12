@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>PC-24 PDP</title>
+  <meta name="description" content="Révision personnelle PC-24 : procédures, systèmes, limitations.">
+  <meta name="theme-color" content="#0e1116">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="PC-24 PDP">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a href="#/" class="brand" aria-label="Accueil">PC-24 <span>PDP</span></a>
+    <nav class="tabs" aria-label="Modules">
+      <a href="#/normal" data-tab="normal">Normales</a>
+      <a href="#/abn" data-tab="abn">Anormales</a>
+      <a href="#/sys" data-tab="sys">Systèmes</a>
+      <a href="#/cockpit" data-tab="cockpit">Cockpit</a>
+      <a href="#/lim" data-tab="lim">Limitations</a>
+    </nav>
+    <a href="#/settings" class="gear" aria-label="Réglages">⚙︎</a>
+  </header>
+  <div id="sample-banner" class="banner" hidden>
+    Contenu d'exemple, non conforme à l'AFM. Importe ton propre contenu dans ⚙︎ Réglages.
+  </div>
+  <main id="app" tabindex="-1"></main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#0e1116"/>
+  <path d="M256 92 L278 230 L430 290 L430 318 L278 288 L270 380 L320 414 L320 436 L256 420 L192 436 L192 414 L242 380 L234 288 L82 318 L82 290 L234 230 Z" fill="#58a6ff"/>
+  <text x="256" y="490" font-family="Helvetica, Arial, sans-serif" font-size="64" font-weight="800" fill="#e8ebf0" text-anchor="middle">PC-24</text>
+</svg>

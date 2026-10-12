@@ -1,0 +1,43 @@
+{
+  "_meta": { "sample": true, "source": "Exemple générique : à remplacer par la check-list de ton exploitant", "revision": "" },
+  "phases": [
+    {
+      "id": "preflight",
+      "title": "Cockpit preparation",
+      "intro": "EXEMPLE de structure. Remplace les items par ceux de ta check-list.",
+      "items": [
+        { "c": "Documents", "r": "CHECKED" },
+        { "c": "Parking brake", "r": "SET" },
+        { "c": "Batteries", "r": "ON" },
+        { "note": "Exemple de note insérée entre deux items." },
+        { "c": "Emergency lights", "r": "ARMED" },
+        { "c": "CAS messages", "r": "CHECKED" },
+        { "c": "Fuel quantity", "r": "CHECKED" }
+      ]
+    },
+    {
+      "id": "before-start",
+      "title": "Before start",
+      "items": [
+        { "c": "Doors", "r": "CLOSED" },
+        { "c": "Seat belts", "r": "FASTENED" },
+        { "c": "Beacon", "r": "ON" },
+        { "if": "Si démarrage sur GPU :", "then": [
+          { "c": "GPU", "r": "CONNECTED" }
+        ] },
+        { "c": "Takeoff data", "r": "SET" }
+      ]
+    },
+    {
+      "id": "before-takeoff",
+      "title": "Before takeoff",
+      "items": [
+        { "c": "Flight controls", "r": "FREE & CORRECT" },
+        { "c": "Trims", "r": "SET" },
+        { "c": "Flaps", "r": "SET" },
+        { "c": "Takeoff briefing", "r": "COMPLETED" },
+        { "c": "Transponder", "r": "ON" }
+      ]
+    }
+  ]
+}

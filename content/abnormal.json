@@ -1,0 +1,70 @@
+{
+  "_meta": { "sample": true, "source": "Exemple générique : à remplacer par ta QRH", "revision": "" },
+  "procedures": [
+    {
+      "id": "engine-fire",
+      "title": "Engine fire in flight",
+      "cas": "L/R ENG FIRE",
+      "type": "emergency",
+      "category": "Moteur",
+      "condition": "EXEMPLE de procédure avec memory items.",
+      "memory": [
+        { "c": "Thrust lever (affected)", "r": "IDLE" },
+        { "c": "Fuel shutoff (affected)", "r": "CLOSED" },
+        { "c": "Fire extinguisher", "r": "DISCHARGE" }
+      ],
+      "steps": [
+        { "if": "Si le feu persiste après 30 s :", "then": [
+          { "t": "Atterrir dès que possible." }
+        ] },
+        { "warning": "Exemple de bloc DANGER." },
+        { "c": "ATC", "r": "NOTIFY" }
+      ],
+      "ref": "QRH — à compléter"
+    },
+    {
+      "id": "emergency-descent",
+      "title": "Emergency descent",
+      "cas": "CABIN ALTITUDE",
+      "type": "emergency",
+      "category": "Pressurisation",
+      "memory": [
+        { "c": "Oxygen masks", "r": "ON / 100 %" },
+        { "c": "Crew communication", "r": "ESTABLISHED" }
+      ],
+      "steps": [
+        { "c": "Descent", "r": "INITIATE" },
+        { "c": "Transponder", "r": "7700" },
+        { "caution": "Exemple de bloc ATTENTION." }
+      ],
+      "ref": "QRH — à compléter"
+    },
+    {
+      "id": "gen-fail",
+      "title": "Generator failure",
+      "cas": "L/R GEN FAIL",
+      "type": "abnormal",
+      "category": "Électrique",
+      "steps": [
+        { "c": "Generator (affected)", "r": "RESET" },
+        { "if": "Si le générateur ne revient pas :", "then": [
+          { "c": "Generator (affected)", "r": "OFF" },
+          { "t": "Délester selon la QRH." }
+        ] }
+      ],
+      "ref": "QRH — à compléter"
+    },
+    {
+      "id": "hyd-low",
+      "title": "Hydraulic low pressure",
+      "cas": "HYD PRESS LO",
+      "type": "abnormal",
+      "category": "Hydraulique",
+      "steps": [
+        { "t": "EXEMPLE : remplace par les étapes de ta QRH." },
+        { "note": "Prévoir une distance d'atterrissage majorée." }
+      ],
+      "ref": "QRH — à compléter"
+    }
+  ]
+}
