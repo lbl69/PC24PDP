@@ -1,0 +1,40 @@
+{
+  "_meta": { "sample": true, "source": "Questions d'exemple : à vérifier", "revision": "" },
+  "questions": [
+    {
+      "id": "eng-1",
+      "chapter": "engines",
+      "q": "Quel type de moteur équipe le PC-24 ?",
+      "choices": ["Williams FJ44-4A", "Pratt & Whitney PT6A-67D", "Honeywell HTF7000", "Pratt & Whitney PW535"],
+      "answer": 0,
+      "explain": "Deux turbofans Williams FJ44-4A à FADEC."
+    },
+    {
+      "id": "eng-2",
+      "chapter": "engines",
+      "q": "À quoi sert le mode QPM ?",
+      "choices": [
+        "Faire tourner le moteur droit au sol, soufflante ralentie, à la place d'un APU",
+        "Réduire le bruit en croisière",
+        "Démarrer le moteur gauche sans batterie",
+        "Limiter la poussée au décollage sur piste contaminée"
+      ],
+      "answer": 0,
+      "explain": "Quiet Power Mode : électricité et conditionnement d'air au sol, sans APU."
+    },
+    {
+      "id": "av-1",
+      "chapter": "avionics",
+      "q": "Sur quelle suite avionique est basé le cockpit ACE ?",
+      "choices": ["Honeywell Primus Epic", "Garmin G1000 NXi", "Collins Pro Line Fusion", "Garmin G3000"],
+      "answer": 0
+    },
+    {
+      "id": "gen-1",
+      "chapter": "general",
+      "q": "Le PC-24 est certifié pour :",
+      "choices": ["L'exploitation monopilote", "L'équipage à deux uniquement", "Le vol VFR uniquement", "Les pistes revêtues uniquement"],
+      "answer": 0
+    }
+  ]
+}

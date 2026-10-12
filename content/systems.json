@@ -1,0 +1,26 @@
+{
+  "_meta": { "sample": true, "source": "Données publiques constructeur : à vérifier dans l'AFM/POH", "revision": "" },
+  "chapters": [
+    {
+      "id": "general",
+      "title": "Généralités",
+      "sections": [
+        { "title": "Présentation", "body": "Biréacteur d'affaires Pilatus, certifié pour l'exploitation monopilote.\n\nConçu pour des pistes courtes et non revêtues (« Super Versatile Jet »).\n\n- Grande porte cargo arrière\n- Cabine modulable\n- **À compléter** avec ton cours de QT" }
+      ]
+    },
+    {
+      "id": "engines",
+      "title": "Moteurs",
+      "sections": [
+        { "title": "Généralités", "body": "Deux turbofans **Williams International FJ44-4A**, régulés par FADEC.\n\nLe moteur droit dispose d'un mode **QPM** (Quiet Power Mode) : il peut tourner au sol avec la soufflante ralentie et fournir l'électricité et le conditionnement d'air sans APU.\n\n- Poussée : à vérifier dans l'AFM\n- Logique de démarrage : à compléter" }
+      ]
+    },
+    {
+      "id": "avionics",
+      "title": "Avionique",
+      "sections": [
+        { "title": "ACE", "body": "Cockpit **Pilatus ACE** (Advanced Cockpit Environment), basé sur le **Honeywell Primus Epic**.\n\n- Écrans, FMS, pilote automatique : à compléter\n- Messages CAS : à compléter" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+node_modules
+# Packs perso tirés de tes manuels : ne jamais les commiter
+private/
+*.pack.json
+test-results/

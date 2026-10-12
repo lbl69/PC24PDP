@@ -1,0 +1,10 @@
+{
+  "name": "pc24-pdp",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "http-server -p 8124 -c-1 .",
+    "icons": "node tests/icons.mjs",
+    "test": "node tests/smoke.mjs"
+  }
+}
