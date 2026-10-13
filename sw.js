@@ -1,5 +1,5 @@
 // Hors ligne : on sert le cache tout de suite, puis on le rafraîchit en arrière-plan.
-const CACHE = 'pc24-pdp-v2';
+const CACHE = 'pc24-pdp-v3';
 const SHELL = [
   './', 'index.html', 'styles.css', 'app.js', 'manifest.webmanifest',
   'icons/icon.svg', 'icons/icon-180.png', 'icons/icon-512.png',

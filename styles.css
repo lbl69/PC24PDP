@@ -440,6 +440,9 @@ mark { background: color-mix(in srgb, var(--accent) 30%, transparent); color: in
 .ck-panel .card { margin-bottom: 0; box-shadow: 0 -4px 16px rgb(0 0 0 / .12); }
 .ck-prompt { font-size: 19px; }
 .ck-bad { border-color: var(--danger); }
+.ck-sum { margin-top: 8px; }
+.ck-sum > summary { cursor: pointer; color: var(--accent); font-weight: 600; }
+.ck-sum > .prose { max-height: 40dvh; overflow-y: auto; -webkit-overflow-scrolling: touch; }
 
 /* ---------- Chapitres systèmes longs ---------- */
 

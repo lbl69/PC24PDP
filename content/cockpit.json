@@ -113,7 +113,11 @@
           "y": 30,
           "w": 7,
           "h": 9,
-          "info": "COCKPIT DOME (100 %) / 50 % / OFF. Plafonnier et éclairage des pieds."
+          "info": "COCKPIT DOME (100 %) / 50 % / OFF. Plafonnier et éclairage des pieds.",
+          "sys": [
+            "lighting",
+            "Interior Lights"
+          ]
         },
         {
           "id": "cabin-lights",
@@ -122,7 +126,11 @@
           "y": 30,
           "w": 7,
           "h": 9,
-          "info": "CABIN LIGHTS (100 %) / AUTO (50 %) / OFF"
+          "info": "CABIN LIGHTS (100 %) / AUTO (50 %) / OFF",
+          "sys": [
+            "lighting",
+            "Interior Lights"
+          ]
         },
         {
           "id": "no-smoking",
@@ -131,7 +139,11 @@
           "y": 30,
           "w": 7,
           "h": 9,
-          "info": "NO SMOKING / OFF"
+          "info": "NO SMOKING / OFF",
+          "sys": [
+            "lighting",
+            "Interior Lights"
+          ]
         },
         {
           "id": "seat-belts",
@@ -140,7 +152,11 @@
           "y": 30,
           "w": 7,
           "h": 9,
-          "info": "SEAT BELTS / OFF"
+          "info": "SEAT BELTS / OFF",
+          "sys": [
+            "lighting",
+            "Interior Lights"
+          ]
         },
         {
           "id": "bus-tie",
@@ -149,7 +165,11 @@
           "y": 41,
           "w": 6,
           "h": 6,
-          "info": "Sorti = automatique (barre blanche si couplé). Enfoncé = OPEN, côtés séparés."
+          "info": "Sorti = automatique (barre blanche si couplé). Enfoncé = OPEN, côtés séparés.",
+          "sys": [
+            "electrical",
+            "Load Distribution"
+          ]
         },
         {
           "id": "gen1",
@@ -158,7 +178,11 @@
           "y": 48,
           "w": 6,
           "h": 9,
-          "info": "ON / OFF"
+          "info": "ON / OFF",
+          "sys": [
+            "electrical",
+            "Generator Power"
+          ]
         },
         {
           "id": "bat1",
@@ -167,7 +191,11 @@
           "y": 48,
           "w": 6,
           "h": 9,
-          "info": "ON / OFF"
+          "info": "ON / OFF",
+          "sys": [
+            "electrical",
+            "Battery Power"
+          ]
         },
         {
           "id": "bat2",
@@ -176,7 +204,11 @@
           "y": 48,
           "w": 6,
           "h": 9,
-          "info": "ON / OFF"
+          "info": "ON / OFF",
+          "sys": [
+            "electrical",
+            "Battery Power"
+          ]
         },
         {
           "id": "gen2",
@@ -185,7 +217,11 @@
           "y": 48,
           "w": 6,
           "h": 9,
-          "info": "ON / OFF"
+          "info": "ON / OFF",
+          "sys": [
+            "electrical",
+            "Generator Power"
+          ]
         },
         {
           "id": "gpu",
@@ -194,7 +230,11 @@
           "y": 57.5,
           "w": 5.5,
           "h": 6,
-          "info": "AVAIL (source branchée) / ON (alimente l'avion)"
+          "info": "AVAIL (source branchée) / ON (alimente l'avion)",
+          "sys": [
+            "electrical",
+            "External and Ground Power"
+          ]
         },
         {
           "id": "start-l",
@@ -203,7 +243,11 @@
           "y": 51,
           "w": 6,
           "h": 6,
-          "info": "Bouton-poussoir de démarrage moteur gauche"
+          "info": "Bouton-poussoir de démarrage moteur gauche",
+          "sys": [
+            "powerplant",
+            "Engine Control"
+          ]
         },
         {
           "id": "eng-l",
@@ -212,7 +256,11 @@
           "y": 55.5,
           "w": 14,
           "h": 13,
-          "info": "DRY MOTOR · OFF · RUN (1 bougie) · IGN (2 bougies)"
+          "info": "DRY MOTOR · OFF · RUN (1 bougie) · IGN (2 bougies)",
+          "sys": [
+            "powerplant",
+            "Engine Control"
+          ]
         },
         {
           "id": "start-r",
@@ -221,7 +269,11 @@
           "y": 51,
           "w": 6,
           "h": 6,
-          "info": "Bouton-poussoir de démarrage moteur droit"
+          "info": "Bouton-poussoir de démarrage moteur droit",
+          "sys": [
+            "powerplant",
+            "Engine Control"
+          ]
         },
         {
           "id": "eng-r",
@@ -230,7 +282,11 @@
           "y": 55.5,
           "w": 14,
           "h": 13,
-          "info": "DRY MOTOR · OFF · RUN (1 bougie) · IGN (2 bougies)"
+          "info": "DRY MOTOR · OFF · RUN (1 bougie) · IGN (2 bougies)",
+          "sys": [
+            "powerplant",
+            "Engine Control"
+          ]
         },
         {
           "id": "wing",
@@ -239,7 +295,11 @@
           "y": 69,
           "w": 6,
           "h": 8,
-          "info": "ON / OFF. Phare d'inspection de l'aile gauche, obligatoire de nuit en givrage."
+          "info": "ON / OFF. Phare d'inspection de l'aile gauche, obligatoire de nuit en givrage.",
+          "sys": [
+            "lighting",
+            "Exterior Lights"
+          ]
         },
         {
           "id": "logo",
@@ -248,7 +308,11 @@
           "y": 69,
           "w": 6,
           "h": 8,
-          "info": "LOGO/NAV : LOGO / NAV / OFF"
+          "info": "LOGO/NAV : LOGO / NAV / OFF",
+          "sys": [
+            "lighting",
+            "Exterior Lights"
+          ]
         },
         {
           "id": "strobe",
@@ -257,7 +321,11 @@
           "y": 69,
           "w": 6,
           "h": 8,
-          "info": "STROBE / BEACON / OFF. BEACON au sol, STROBE en vol."
+          "info": "STROBE / BEACON / OFF. BEACON au sol, STROBE en vol.",
+          "sys": [
+            "lighting",
+            "Exterior Lights"
+          ]
         },
         {
           "id": "taxi",
@@ -266,7 +334,11 @@
           "y": 69,
           "w": 6,
           "h": 8,
-          "info": "ON / OFF"
+          "info": "ON / OFF",
+          "sys": [
+            "lighting",
+            "Exterior Lights"
+          ]
         },
         {
           "id": "landing",
@@ -275,7 +347,11 @@
           "y": 69,
           "w": 6,
           "h": 8,
-          "info": "LANDING / PULSE / OFF. Sur OFF, le TCAS fait clignoter les phares."
+          "info": "LANDING / PULSE / OFF. Sur OFF, le TCAS fait clignoter les phares.",
+          "sys": [
+            "lighting",
+            "Exterior Lights"
+          ]
         },
         {
           "id": "recog",
@@ -284,7 +360,11 @@
           "y": 69,
           "w": 6,
           "h": 8,
-          "info": "RECOG / PULSE / OFF"
+          "info": "RECOG / PULSE / OFF",
+          "sys": [
+            "lighting",
+            "Exterior Lights"
+          ]
         }
       ]
     },
@@ -304,7 +384,11 @@
           "y": 9,
           "w": 5,
           "h": 7,
-          "info": "Bouton de l'extincteur moteur gauche"
+          "info": "Bouton de l'extincteur moteur gauche",
+          "sys": [
+            "fire",
+            "Engine Detection/Extinguishing"
+          ]
         },
         {
           "id": "gl-isol",
@@ -313,7 +397,11 @@
           "y": 9,
           "w": 6,
           "h": 7,
-          "info": "Isolation du moteur gauche (voir AFM)"
+          "info": "Isolation du moteur gauche (voir AFM)",
+          "sys": [
+            "fire",
+            "Engine Detection/Extinguishing"
+          ]
         },
         {
           "id": "gl-audio",
@@ -321,7 +409,11 @@
           "x": 56,
           "y": 14,
           "w": 26,
-          "h": 11
+          "h": 11,
+          "sys": [
+            "communications",
+            "Voice Command System"
+          ]
         },
         {
           "id": "gl-wc",
@@ -330,7 +422,11 @@
           "y": 16,
           "w": 5,
           "h": 8,
-          "info": "Voyants maîtres"
+          "info": "Voyants maîtres",
+          "sys": [
+            "indicating",
+            "Master Warning System"
+          ]
         },
         {
           "id": "gl-elt",
@@ -346,7 +442,11 @@
           "x": 21,
           "y": 39,
           "w": 16,
-          "h": 17
+          "h": 17,
+          "sys": [
+            "indicating",
+            "Flight Instruments"
+          ]
         },
         {
           "id": "gl-pfd",
@@ -354,7 +454,11 @@
           "x": 45,
           "y": 32,
           "w": 26,
-          "h": 33
+          "h": 33,
+          "sys": [
+            "indicating",
+            "Display Units"
+          ]
         },
         {
           "id": "gl-eng",
@@ -362,7 +466,11 @@
           "x": 71,
           "y": 32,
           "w": 13,
-          "h": 16
+          "h": 16,
+          "sys": [
+            "powerplant",
+            "Engine Control"
+          ]
         },
         {
           "id": "gl-dcp",
@@ -370,7 +478,11 @@
           "x": 90,
           "y": 29,
           "w": 9,
-          "h": 32
+          "h": 32,
+          "sys": [
+            "indicating",
+            "Flight Instruments"
+          ]
         },
         {
           "id": "gl-gear",
@@ -379,7 +491,11 @@
           "y": 72,
           "w": 7,
           "h": 13,
-          "info": "UP / DN, côté pilote, à droite de la colonne"
+          "info": "UP / DN, côté pilote, à droite de la colonne",
+          "sys": [
+            "landing-gear",
+            "Landing Gear"
+          ]
         },
         {
           "id": "gl-vplac",
@@ -388,7 +504,11 @@
           "y": 72,
           "w": 11,
           "h": 10,
-          "info": "VMO 290 KIAS · MMO 0,74 · VFE 8°/15° 200 KIAS · VFE 33° 175 KIAS"
+          "info": "VMO 290 KIAS · MMO 0,74 · VFE 8°/15° 200 KIAS · VFE 33° 175 KIAS",
+          "sys": [
+            "general",
+            "Limitations"
+          ]
         },
         {
           "id": "gl-oplim",
@@ -397,7 +517,11 @@
           "y": 71,
           "w": 18,
           "h": 9,
-          "info": "Catégorie commuter · VFR/IFR, jour/nuit, givrage"
+          "info": "Catégorie commuter · VFR/IFR, jour/nuit, givrage",
+          "sys": [
+            "general",
+            "Limitations"
+          ]
         }
       ]
     },
@@ -416,7 +540,11 @@
           "x": 15,
           "y": 10,
           "w": 5,
-          "h": 7
+          "h": 7,
+          "sys": [
+            "fire",
+            "Engine Detection/Extinguishing"
+          ]
         },
         {
           "id": "gc-isol-l",
@@ -424,7 +552,11 @@
           "x": 20,
           "y": 10,
           "w": 5,
-          "h": 7
+          "h": 7,
+          "sys": [
+            "fire",
+            "Engine Detection/Extinguishing"
+          ]
         },
         {
           "id": "gc-isol-r",
@@ -432,7 +564,11 @@
           "x": 74,
           "y": 10,
           "w": 5,
-          "h": 7
+          "h": 7,
+          "sys": [
+            "fire",
+            "Engine Detection/Extinguishing"
+          ]
         },
         {
           "id": "gc-xting-r",
@@ -440,7 +576,11 @@
           "x": 79,
           "y": 10,
           "w": 5,
-          "h": 7
+          "h": 7,
+          "sys": [
+            "fire",
+            "Engine Detection/Extinguishing"
+          ]
         },
         {
           "id": "gc-gp",
@@ -449,7 +589,11 @@
           "y": 8,
           "w": 46,
           "h": 10,
-          "info": "Modes HDG, NAV, APR, ALT, VS, FLC, AP, YD…"
+          "info": "Modes HDG, NAV, APR, ALT, VS, FLC, AP, YD…",
+          "sys": [
+            "avionics",
+            "Automatic Flight Control System"
+          ]
         },
         {
           "id": "gc-umfd",
@@ -457,7 +601,11 @@
           "x": 25,
           "y": 24,
           "w": 47,
-          "h": 36
+          "h": 36,
+          "sys": [
+            "indicating",
+            "Display Units"
+          ]
         },
         {
           "id": "gc-cas",
@@ -466,7 +614,11 @@
           "y": 65,
           "w": 15,
           "h": 17,
-          "info": "Messages d'alerte du MFD bas"
+          "info": "Messages d'alerte du MFD bas",
+          "sys": [
+            "indicating",
+            "Master Warning System"
+          ]
         },
         {
           "id": "gc-config",
@@ -474,7 +626,11 @@
           "x": 43,
           "y": 65,
           "w": 13,
-          "h": 12
+          "h": 12,
+          "sys": [
+            "landing-gear",
+            "Landing Gear"
+          ]
         },
         {
           "id": "gc-fuel",
@@ -482,7 +638,11 @@
           "x": 56,
           "y": 65,
           "w": 14,
-          "h": 14
+          "h": 14,
+          "sys": [
+            "fuel",
+            "Distribution"
+          ]
         },
         {
           "id": "gc-trims",
@@ -490,7 +650,11 @@
           "x": 43,
           "y": 78,
           "w": 13,
-          "h": 8
+          "h": 8,
+          "sys": [
+            "flight-controls",
+            "Trim System"
+          ]
         },
         {
           "id": "gc-elec",
@@ -498,7 +662,11 @@
           "x": 43,
           "y": 87,
           "w": 13,
-          "h": 8
+          "h": 8,
+          "sys": [
+            "electrical",
+            "Load Distribution"
+          ]
         },
         {
           "id": "gc-env",
@@ -507,7 +675,11 @@
           "y": 80,
           "w": 14,
           "h": 18,
-          "info": "Pressurisation et températures"
+          "info": "Pressurisation et températures",
+          "sys": [
+            "environmental",
+            "Cabin Pressure Control System"
+          ]
         },
         {
           "id": "gc-oxy",
@@ -516,7 +688,11 @@
           "y": 72,
           "w": 9,
           "h": 14,
-          "info": "Bouton unique, côté copilote"
+          "info": "Bouton unique, côté copilote",
+          "sys": [
+            "oxygen",
+            "Passenger System"
+          ]
         },
         {
           "id": "gc-extplac",
@@ -524,7 +700,11 @@
           "x": 74,
           "y": 62,
           "w": 9,
-          "h": 4
+          "h": 4,
+          "sys": [
+            "fire",
+            "Cabin Detection/Extinguishing"
+          ]
         }
       ]
     },
@@ -543,7 +723,11 @@
           "x": 1,
           "y": 9,
           "w": 5,
-          "h": 7
+          "h": 7,
+          "sys": [
+            "fire",
+            "Engine Detection/Extinguishing"
+          ]
         },
         {
           "id": "gr-xting",
@@ -551,7 +735,11 @@
           "x": 6,
           "y": 9,
           "w": 5,
-          "h": 7
+          "h": 7,
+          "sys": [
+            "fire",
+            "Engine Detection/Extinguishing"
+          ]
         },
         {
           "id": "gr-audio",
@@ -559,7 +747,11 @@
           "x": 18,
           "y": 14,
           "w": 26,
-          "h": 11
+          "h": 11,
+          "sys": [
+            "communications",
+            "Voice Command System"
+          ]
         },
         {
           "id": "gr-wc",
@@ -567,7 +759,11 @@
           "x": 45,
           "y": 16,
           "w": 5,
-          "h": 8
+          "h": 8,
+          "sys": [
+            "indicating",
+            "Master Warning System"
+          ]
         },
         {
           "id": "gr-dcp",
@@ -575,7 +771,11 @@
           "x": 2,
           "y": 29,
           "w": 9,
-          "h": 32
+          "h": 32,
+          "sys": [
+            "indicating",
+            "Flight Instruments"
+          ]
         },
         {
           "id": "gr-eng",
@@ -583,7 +783,11 @@
           "x": 16,
           "y": 32,
           "w": 13,
-          "h": 16
+          "h": 16,
+          "sys": [
+            "powerplant",
+            "Engine Control"
+          ]
         },
         {
           "id": "gr-pfd",
@@ -591,7 +795,11 @@
           "x": 29,
           "y": 32,
           "w": 28,
-          "h": 33
+          "h": 33,
+          "sys": [
+            "indicating",
+            "Display Units"
+          ]
         },
         {
           "id": "gr-stby",
@@ -599,7 +807,11 @@
           "x": 63,
           "y": 40,
           "w": 17,
-          "h": 16
+          "h": 16,
+          "sys": [
+            "indicating",
+            "Flight Instruments"
+          ]
         },
         {
           "id": "gr-oxy",
@@ -607,7 +819,11 @@
           "x": 7,
           "y": 72,
           "w": 8,
-          "h": 12
+          "h": 12,
+          "sys": [
+            "oxygen",
+            "Passenger System"
+          ]
         }
       ]
     },
@@ -627,7 +843,11 @@
           "y": 4,
           "w": 16,
           "h": 21,
-          "info": "OFF / AUTO HI / LOW+SIDE / MAN HI"
+          "info": "OFF / AUTO HI / LOW+SIDE / MAN HI",
+          "sys": [
+            "ice",
+            "Anti-Ice and Deice"
+          ]
         },
         {
           "id": "bleed",
@@ -636,7 +856,11 @@
           "y": 29,
           "w": 16,
           "h": 21,
-          "info": "L / BOTH / R / OFF"
+          "info": "L / BOTH / R / OFF",
+          "sys": [
+            "environmental",
+            "Pneumatic System"
+          ]
         },
         {
           "id": "ips",
@@ -645,7 +869,11 @@
           "y": 53,
           "w": 17,
           "h": 20,
-          "info": "MAN / AUTO / NAI / ALL ON"
+          "info": "MAN / AUTO / NAI / ALL ON",
+          "sys": [
+            "ice",
+            "Anti-Ice and Deice"
+          ]
         },
         {
           "id": "tsc",
@@ -654,7 +882,11 @@
           "y": 15,
           "w": 42,
           "h": 48,
-          "info": "Home, DU & CCD, COM, NAV, XPDR…"
+          "info": "Home, DU & CCD, COM, NAV, XPDR…",
+          "sys": [
+            "indicating",
+            "Display Units"
+          ]
         },
         {
           "id": "tsc-keys",
@@ -662,7 +894,11 @@
           "x": 41,
           "y": 62,
           "w": 18,
-          "h": 9
+          "h": 9,
+          "sys": [
+            "indicating",
+            "Display Units"
+          ]
         },
         {
           "id": "dump",
@@ -671,7 +907,11 @@
           "y": 8,
           "w": 10,
           "h": 17,
-          "info": "Bouton-poussoir gardé"
+          "info": "Bouton-poussoir gardé",
+          "sys": [
+            "environmental",
+            "Cabin Pressure Control System"
+          ]
         },
         {
           "id": "cpcs-mode",
@@ -680,7 +920,11 @@
           "y": 30,
           "w": 14,
           "h": 20,
-          "info": "AUTO / MAN (tirer pour sélectionner)"
+          "info": "AUTO / MAN (tirer pour sélectionner)",
+          "sys": [
+            "environmental",
+            "Cabin Pressure Control System"
+          ]
         },
         {
           "id": "cabin-alt",
@@ -689,7 +933,11 @@
           "y": 53,
           "w": 17,
           "h": 19,
-          "info": "DESCEND / CLIMB (mode manuel)"
+          "info": "DESCEND / CLIMB (mode manuel)",
+          "sys": [
+            "environmental",
+            "Cabin Pressure Control System"
+          ]
         },
         {
           "id": "dim-ppfd",
@@ -698,7 +946,11 @@
           "y": 76,
           "w": 15,
           "h": 23,
-          "info": "NORM / AGM2 / MIN / OFF/REV"
+          "info": "NORM / AGM2 / MIN / OFF/REV",
+          "sys": [
+            "indicating",
+            "Display Units"
+          ]
         },
         {
           "id": "dim-umfd",
@@ -706,7 +958,11 @@
           "x": 25,
           "y": 76,
           "w": 10,
-          "h": 23
+          "h": 23,
+          "sys": [
+            "indicating",
+            "Display Units"
+          ]
         },
         {
           "id": "dim-tsc",
@@ -714,7 +970,11 @@
           "x": 36,
           "y": 76,
           "w": 9,
-          "h": 23
+          "h": 23,
+          "sys": [
+            "indicating",
+            "Display Units"
+          ]
         },
         {
           "id": "dim-floods",
@@ -722,7 +982,11 @@
           "x": 46,
           "y": 76,
           "w": 9,
-          "h": 23
+          "h": 23,
+          "sys": [
+            "lighting",
+            "Interior Lights"
+          ]
         },
         {
           "id": "dim-panels",
@@ -730,7 +994,11 @@
           "x": 56,
           "y": 76,
           "w": 9,
-          "h": 23
+          "h": 23,
+          "sys": [
+            "lighting",
+            "Interior Lights"
+          ]
         },
         {
           "id": "dim-lmfd",
@@ -738,7 +1006,11 @@
           "x": 66,
           "y": 76,
           "w": 10,
-          "h": 23
+          "h": 23,
+          "sys": [
+            "indicating",
+            "Display Units"
+          ]
         },
         {
           "id": "dim-cpfd",
@@ -747,7 +1019,11 @@
           "y": 76,
           "w": 13,
           "h": 23,
-          "info": "NORM / AGM1 / MIN / OFF/REV"
+          "info": "NORM / AGM1 / MIN / OFF/REV",
+          "sys": [
+            "indicating",
+            "Display Units"
+          ]
         }
       ]
     },
@@ -767,7 +1043,11 @@
           "y": 10,
           "w": 17,
           "h": 30,
-          "info": "IN / 1/2 / OUT"
+          "info": "IN / 1/2 / OUT",
+          "sys": [
+            "flight-controls",
+            "Spoiler System"
+          ]
         },
         {
           "id": "thrust",
@@ -776,7 +1056,11 @@
           "y": 4,
           "w": 38,
           "h": 33,
-          "info": "IDLE · MCT · T/O · ATR"
+          "info": "IDLE · MCT · T/O · ATR",
+          "sys": [
+            "powerplant",
+            "Engine Control"
+          ]
         },
         {
           "id": "flap",
@@ -785,7 +1069,11 @@
           "y": 14,
           "w": 18,
           "h": 26,
-          "info": "0° / 8° / 15° / 33°"
+          "info": "0° / 8° / 15° / 33°",
+          "sys": [
+            "flight-controls",
+            "Flaps System"
+          ]
         },
         {
           "id": "sec-stab",
@@ -794,7 +1082,11 @@
           "y": 43,
           "w": 30,
           "h": 14,
-          "info": "ENABLE + interrupteur DN / UP"
+          "info": "ENABLE + interrupteur DN / UP",
+          "sys": [
+            "flight-controls",
+            "Trim System"
+          ]
         },
         {
           "id": "ail-trim",
@@ -803,7 +1095,11 @@
           "y": 46,
           "w": 13,
           "h": 12,
-          "info": "LWD / RWD"
+          "info": "LWD / RWD",
+          "sys": [
+            "flight-controls",
+            "Trim System"
+          ]
         },
         {
           "id": "rud-trim",
@@ -812,7 +1108,11 @@
           "y": 43,
           "w": 13,
           "h": 14,
-          "info": "NL / OFF / NR"
+          "info": "NL / OFF / NR",
+          "sys": [
+            "flight-controls",
+            "Trim System"
+          ]
         },
         {
           "id": "park",
@@ -821,7 +1121,11 @@
           "y": 68,
           "w": 15,
           "h": 22,
-          "info": "Poignée rouge"
+          "info": "Poignée rouge",
+          "sys": [
+            "landing-gear",
+            "Wheels and Brakes"
+          ]
         },
         {
           "id": "emer-com",
@@ -830,7 +1134,11 @@
           "y": 75,
           "w": 10,
           "h": 9,
-          "info": "Bouton gardé : 121,5 en active sur COM 1 (2ᵉ appui en attente, 3ᵉ retour)."
+          "info": "Bouton gardé : 121,5 en active sur COM 1 (2ᵉ appui en attente, 3ᵉ retour).",
+          "sys": [
+            "communications",
+            "Very High Frequency"
+          ]
         },
         {
           "id": "mic",
@@ -839,7 +1147,11 @@
           "y": 86,
           "w": 14,
           "h": 13,
-          "info": "LEFT / OFF / RIGHT"
+          "info": "LEFT / OFF / RIGHT",
+          "sys": [
+            "communications",
+            "Voice Command System"
+          ]
         },
         {
           "id": "flaps-emer",
@@ -847,7 +1159,11 @@
           "x": 80,
           "y": 60,
           "w": 15,
-          "h": 10
+          "h": 10,
+          "sys": [
+            "flight-controls",
+            "Flaps System"
+          ]
         },
         {
           "id": "ws-emer",
@@ -855,7 +1171,11 @@
           "x": 80,
           "y": 72,
           "w": 15,
-          "h": 10
+          "h": 10,
+          "sys": [
+            "ice",
+            "Anti-Ice and Deice"
+          ]
         },
         {
           "id": "swps",
@@ -864,7 +1184,11 @@
           "y": 86,
           "w": 18,
           "h": 13,
-          "info": "RESET / AUTO / OVRD (tirer pour sélectionner)"
+          "info": "RESET / AUTO / OVRD (tirer pour sélectionner)",
+          "sys": [
+            "ice",
+            "Anti-Ice and Deice"
+          ]
         }
       ]
     },
@@ -884,7 +1208,11 @@
           "y": 18,
           "w": 16,
           "h": 60,
-          "info": "Poignée rouge, presser pour libérer"
+          "info": "Poignée rouge, presser pour libérer",
+          "sys": [
+            "environmental",
+            "Conditioned Air System"
+          ]
         },
         {
           "id": "emer-gear",
@@ -893,7 +1221,11 @@
           "y": 20,
           "w": 18,
           "h": 58,
-          "info": "Poignée de sortie du train de secours (OPEN)"
+          "info": "Poignée de sortie du train de secours (OPEN)",
+          "sys": [
+            "landing-gear",
+            "Landing Gear"
+          ]
         }
       ]
     },
@@ -913,7 +1245,11 @@
           "y": 43,
           "w": 8,
           "h": 27,
-          "info": "CONTROLS LOCKED — REMOVE BEFORE FLIGHT"
+          "info": "CONTROLS LOCKED — REMOVE BEFORE FLIGHT",
+          "sys": [
+            "flight-controls",
+            "Primary Flight Control System"
+          ]
         },
         {
           "id": "cb-ess",
@@ -922,7 +1258,11 @@
           "y": 43,
           "w": 23,
           "h": 14,
-          "info": "CABIN PWR, MAU 1A, DCPU 1A/1B, MMDR 1, PILOT AUDIO, PRIMARY STAB TRIM, PITOT HEAT L"
+          "info": "CABIN PWR, MAU 1A, DCPU 1A/1B, MMDR 1, PILOT AUDIO, PRIMARY STAB TRIM, PITOT HEAT L",
+          "sys": [
+            "electrical",
+            "Load Distribution"
+          ]
         },
         {
           "id": "satvoice",
@@ -930,7 +1270,11 @@
           "x": 15.5,
           "y": 61,
           "w": 14.5,
-          "h": 13
+          "h": 13,
+          "sys": [
+            "communications",
+            "SATCOM"
+          ]
         },
         {
           "id": "egear-plac-l",
@@ -938,7 +1282,11 @@
           "x": 28.5,
           "y": 6,
           "w": 11.5,
-          "h": 9
+          "h": 9,
+          "sys": [
+            "landing-gear",
+            "Landing Gear"
+          ]
         },
         {
           "id": "egear-plac-r",
@@ -946,7 +1294,11 @@
           "x": 64.5,
           "y": 5,
           "w": 11,
-          "h": 9
+          "h": 9,
+          "sys": [
+            "landing-gear",
+            "Landing Gear"
+          ]
         },
         {
           "id": "elt",
@@ -963,7 +1315,11 @@
           "y": 79,
           "w": 3.4,
           "h": 8,
-          "info": "OFF / ARM / ON"
+          "info": "OFF / ARM / ON",
+          "sys": [
+            "lighting",
+            "Emergency Lights"
+          ]
         },
         {
           "id": "cvr",
@@ -971,7 +1327,11 @@
           "x": 4.4,
           "y": 88,
           "w": 2.8,
-          "h": 8
+          "h": 8,
+          "sys": [
+            "indicating",
+            "Recording Systems"
+          ]
         },
         {
           "id": "aural",
@@ -979,7 +1339,11 @@
           "x": 7.5,
           "y": 88,
           "w": 2.8,
-          "h": 8
+          "h": 8,
+          "sys": [
+            "indicating",
+            "Master Warning System"
+          ]
         },
         {
           "id": "lamp",
@@ -987,7 +1351,11 @@
           "x": 10.5,
           "y": 88,
           "w": 2.8,
-          "h": 8
+          "h": 8,
+          "sys": [
+            "indicating",
+            "Master Warning System"
+          ]
         },
         {
           "id": "mask-l",
@@ -996,7 +1364,11 @@
           "y": 75,
           "w": 13,
           "h": 21,
-          "info": "PRESS TO TEST AND RESET"
+          "info": "PRESS TO TEST AND RESET",
+          "sys": [
+            "oxygen",
+            "Crew System"
+          ]
         },
         {
           "id": "pax-oxy",
@@ -1005,7 +1377,11 @@
           "y": 75,
           "w": 5,
           "h": 10,
-          "info": "OFF / AUTO / ON"
+          "info": "OFF / AUTO / ON",
+          "sys": [
+            "oxygen",
+            "Passenger System"
+          ]
         },
         {
           "id": "mask-r",
@@ -1013,7 +1389,11 @@
           "x": 61.5,
           "y": 76,
           "w": 13.5,
-          "h": 21
+          "h": 21,
+          "sys": [
+            "oxygen",
+            "Crew System"
+          ]
         }
       ]
     }

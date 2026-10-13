@@ -401,6 +401,7 @@ function viewSys(id, focus) {
   render(`
     ${crumbs(['#/', 'Accueil'], ['#/sys', 'Systèmes'], [null, ch.title])}
     <h1>${esc(ch.title)}</h1>
+    ${sysReturn ? `<div class="btns"><a class="btn" href="${esc(sysReturn.href)}">← Retour au cockpit : ${esc(sysReturn.label)}</a></div>` : ''}
     ${n ? `<div class="btns"><a class="btn primary" href="#/quiz/${esc(ch.id)}">Quiz : ${n} question(s)</a></div>` : ''}
     ${ch.summary ? `<div class="card prose essentiel"><h3>L'essentiel</h3>${md(ch.summary)}</div>` : ''}
     ${ch.source ? `<h2>${esc(ch.source)}</h2>` : ''}
@@ -614,6 +615,24 @@ function viewDrill(deck) {
 const cockpitTargets = (view) => (view ? [view] : C.cockpit.views).flatMap((v) => v.hotspots.filter((h) => !h.go));
 
 let cockpitMode = 'explore';
+let sysReturn = null; // retour au cockpit depuis un chapitre ouvert par une commande
+
+// Chapitre cockpit du dépôt, utilisé quand le manuel (pack privé) n'est pas importé.
+const ckChapter = { overhead: 'ck-overhead', 'glare-left': 'ck-front', 'glare-center': 'ck-front', 'glare-right': 'ck-front',
+  'console-fwd': 'ck-front', 'console-center': 'ck-console', 'console-aft': 'ck-console', side: 'ck-console' };
+
+// Lien d'une commande vers la description de son système : h.sys = [chapitre, titre de section].
+function cockpitSys(h, viewId) {
+  const [cid, sec] = h.sys || [];
+  let ch = C.systems.chapters.find((c) => c.id === cid);
+  let i = ch ? ch.sections.findIndex((s) => s.title === sec) : -1;
+  if (!ch) {
+    ch = C.systems.chapters.find((c) => c.id === ckChapter[viewId]);
+    i = -1;
+  }
+  if (!ch) return null;
+  return { ch, sec: i >= 0 ? ch.sections[i].title : '', href: `#/sys/${ch.id}${i >= 0 ? '/' + i : ''}` };
+}
 
 async function viewCockpitList() {
   const keys = new Set(await images.keys());
@@ -671,7 +690,13 @@ async function viewCockpit(id, focus) {
     const show = (h) => {
       clearMarks();
       hsEl(h.id).classList.add('sel');
-      panel.innerHTML = `<div class="card"><strong>${esc(h.label)}</strong>${h.info ? `<div class="muted">${esc(h.info)}</div>` : ''}</div>`;
+      const sys = cockpitSys(h, v.id);
+      panel.innerHTML = `<div class="card"><strong>${esc(h.label)}</strong>${h.info ? `<div class="muted">${esc(h.info)}</div>` : ''}
+        ${sys ? `${sys.ch.summary ? `<details class="ck-sum"><summary>L'essentiel : ${esc(sys.ch.title)}</summary><div class="prose">${md(sys.ch.summary)}</div></details>` : ''}
+        <div class="btns"><a class="btn primary" id="sysgo" href="${sys.href}">📖 Description complète${sys.sec ? ` : ${esc(sys.sec)}` : ` : ${esc(sys.ch.title)}`}</a></div>` : ''}</div>`;
+      document.getElementById('sysgo')?.addEventListener('click', () => {
+        sysReturn = { href: `#/cockpit/${v.id}/${h.id}`, label: v.title };
+      });
     };
     panel.innerHTML = `<p class="small muted">${src ? 'Touche une commande pour voir son nom.' : 'Touche une zone.'}
       <button class="btn" id="zones" aria-pressed="false" style="min-height:32px;margin-left:8px">Afficher les zones</button></p>`;
@@ -896,6 +921,7 @@ function route() {
   const tab = { normal: 'normal', abn: 'abn', sys: 'sys', quiz: 'sys', lim: 'lim', cockpit: 'cockpit' }[a];
   document.querySelectorAll('.tabs a').forEach((x) => x.classList.toggle('active', x.dataset.tab === tab));
 
+  if (a !== 'sys') sysReturn = null;
   switch (a) {
     case '': return viewHome();
     case 'normal': return b ? viewNormal(b) : viewNormalList();

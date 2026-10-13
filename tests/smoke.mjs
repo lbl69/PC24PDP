@@ -75,6 +75,12 @@ await page.goto(BASE + '#/cockpit/overhead');
 await page.waitForSelector('.ck-stage.noimg');
 await page.click('.ck-hs[data-id="bleed"], .ck-hs[data-id="gen1"]');
 ok((await page.textContent('#panel')).includes('GEN 1'), 'cockpit : explorer affiche le nom');
+await page.click('#sysgo');
+await page.waitForSelector('h1:has-text("panneau overhead")');
+ok(true, 'cockpit : la commande ouvre la description de son système');
+await page.click('a:has-text("Retour au cockpit")');
+await page.waitForSelector('.ck-hs.sel[data-id="gen1"]');
+ok(true, 'cockpit : retour sur la commande depuis le système');
 
 const pngPx = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==';
 const views = JSON.parse(readFileSync(new URL('../content/cockpit.json', import.meta.url))).views;
