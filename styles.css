@@ -440,6 +440,10 @@ mark { background: color-mix(in srgb, var(--accent) 30%, transparent); color: in
 .ck-panel .card { margin-bottom: 0; box-shadow: 0 -4px 16px rgb(0 0 0 / .12); }
 .ck-prompt { font-size: 19px; }
 .ck-bad { border-color: var(--danger); }
+.ck-panel .card { max-height: 50dvh; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+.ck-nav { display: flex; align-items: center; gap: 8px; margin: 0 0 12px; color: var(--muted); font-size: 14px; }
+.ck-nav select { flex: 1; min-width: 0; min-height: 40px; font: inherit; color: var(--text); background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 0 10px; }
+.ck-intro > summary { cursor: pointer; font-weight: 600; color: var(--accent); }
 .ck-sum { margin-top: 8px; }
 .ck-sum > summary { cursor: pointer; color: var(--accent); font-weight: 600; }
 .ck-sum > .prose { max-height: 40dvh; overflow-y: auto; -webkit-overflow-scrolling: touch; }

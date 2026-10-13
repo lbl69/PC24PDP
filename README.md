@@ -89,6 +89,19 @@ python3 tools/build-cockpit-pack.py poster.pdf private/pc24-cockpit.pack.json
 
 Si tu changes les découpes dans le script, il faut recaler les zones et `aspect` dans `content/cockpit.json`.
 
+### Écrans avioniques
+
+Les vues `ecr-*` (PFD, MFD, synoptiques, carte INAV, capteurs, radios, FMS) suivent le même principe.
+Leurs images viennent du poster « Synoptic ACE » FlightSafety, dans un pack séparé :
+
+```bash
+python3 tools/build-screens-pack.py "Synoptic ACE.pdf" private/pc24-ecrans.pack.json
+```
+
+Une vue peut avoir un `group` (liste et menu de navigation communs), un `intro` (markdown, « Comment lire
+cette page ») ; une zone peut avoir `to` (bouton vers une autre vue) et `sys` (`[chapitre, titre de section]`,
+lien vers la description du système).
+
 ## Progression
 
 Flashcards, meilleurs scores et erreurs de quiz sont stockés localement (localStorage).

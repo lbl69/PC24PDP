@@ -458,7 +458,8 @@
           "sys": [
             "indicating",
             "Display Units"
-          ]
+          ],
+          "to": "ecr-pfd"
         },
         {
           "id": "gl-eng",
@@ -470,7 +471,8 @@
           "sys": [
             "powerplant",
             "Engine Control"
-          ]
+          ],
+          "to": "ecr-syn-eng"
         },
         {
           "id": "gl-dcp",
@@ -482,7 +484,8 @@
           "sys": [
             "indicating",
             "Flight Instruments"
-          ]
+          ],
+          "to": "ecr-radios-1"
         },
         {
           "id": "gl-gear",
@@ -605,7 +608,8 @@
           "sys": [
             "indicating",
             "Display Units"
-          ]
+          ],
+          "to": "ecr-mfd-haut"
         },
         {
           "id": "gc-cas",
@@ -618,7 +622,8 @@
           "sys": [
             "indicating",
             "Master Warning System"
-          ]
+          ],
+          "to": "ecr-mfd-bas"
         },
         {
           "id": "gc-config",
@@ -630,7 +635,8 @@
           "sys": [
             "landing-gear",
             "Landing Gear"
-          ]
+          ],
+          "to": "ecr-mfd-bas"
         },
         {
           "id": "gc-fuel",
@@ -642,7 +648,8 @@
           "sys": [
             "fuel",
             "Distribution"
-          ]
+          ],
+          "to": "ecr-syn-fuel"
         },
         {
           "id": "gc-trims",
@@ -654,7 +661,8 @@
           "sys": [
             "flight-controls",
             "Trim System"
-          ]
+          ],
+          "to": "ecr-mfd-bas"
         },
         {
           "id": "gc-elec",
@@ -666,7 +674,8 @@
           "sys": [
             "electrical",
             "Load Distribution"
-          ]
+          ],
+          "to": "ecr-syn-elec"
         },
         {
           "id": "gc-env",
@@ -679,7 +688,8 @@
           "sys": [
             "environmental",
             "Cabin Pressure Control System"
-          ]
+          ],
+          "to": "ecr-syn-ecs"
         },
         {
           "id": "gc-oxy",
@@ -775,7 +785,8 @@
           "sys": [
             "indicating",
             "Flight Instruments"
-          ]
+          ],
+          "to": "ecr-radios-1"
         },
         {
           "id": "gr-eng",
@@ -787,7 +798,8 @@
           "sys": [
             "powerplant",
             "Engine Control"
-          ]
+          ],
+          "to": "ecr-syn-eng"
         },
         {
           "id": "gr-pfd",
@@ -799,7 +811,8 @@
           "sys": [
             "indicating",
             "Display Units"
-          ]
+          ],
+          "to": "ecr-pfd"
         },
         {
           "id": "gr-stby",
@@ -860,7 +873,8 @@
           "sys": [
             "environmental",
             "Pneumatic System"
-          ]
+          ],
+          "to": "ecr-syn-ecs"
         },
         {
           "id": "ips",
@@ -873,7 +887,8 @@
           "sys": [
             "ice",
             "Anti-Ice and Deice"
-          ]
+          ],
+          "to": "ecr-syn-ips"
         },
         {
           "id": "tsc",
@@ -950,7 +965,8 @@
           "sys": [
             "indicating",
             "Display Units"
-          ]
+          ],
+          "to": "ecr-composite"
         },
         {
           "id": "dim-umfd",
@@ -1023,7 +1039,8 @@
           "sys": [
             "indicating",
             "Display Units"
-          ]
+          ],
+          "to": "ecr-composite"
         }
       ]
     },
@@ -1125,7 +1142,8 @@
           "sys": [
             "landing-gear",
             "Wheels and Brakes"
-          ]
+          ],
+          "to": "ecr-syn-brakes"
         },
         {
           "id": "emer-com",
@@ -1262,7 +1280,8 @@
           "sys": [
             "electrical",
             "Load Distribution"
-          ]
+          ],
+          "to": "ecr-syn-ecb"
         },
         {
           "id": "satvoice",
@@ -1393,6 +1412,3273 @@
           "sys": [
             "oxygen",
             "Crew System"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ecr-pfd",
+      "title": "PFD pilote",
+      "group": "Écrans avioniques",
+      "image": "ecr-pfd",
+      "aspect": [
+        1428,
+        1017
+      ],
+      "intro": "Le PFD (DU 1 à gauche, DU 4 à droite) a trois fenêtres : à gauche les instruments de vol, en haut à droite l'**affichage moteur permanent**, en bas à droite la **fenêtre radios**. Les 12 boutons de lunette de chaque côté agissent sur la softkey placée en face (trait blanc).\n\n- PFD pilote et MFD haut : AGM1 (MAU 1), alimentés par la barre ESS.\n- PFD copilote et MFD bas : AGM2 (MAU 2), alimentés par l'EPDU 2.\n- Le PFD copilote est l'image miroir de celui-ci.",
+      "hotspots": [
+        {
+          "id": "pfd-spd",
+          "label": "Bande de vitesse",
+          "x": 12.5,
+          "y": 12,
+          "w": 6.5,
+          "h": 38,
+          "info": "Vitesse indiquée avec vitesse sélectionnée en haut (170). En bas, les V-speeds du décollage (93 V1, 98 VR, 109 V2, 170 VT) venues des données TOLD.",
+          "sys": [
+            "indicating",
+            "Flight Instruments"
+          ]
+        },
+        {
+          "id": "pfd-adi",
+          "label": "ADI et SVS",
+          "x": 19,
+          "y": 14,
+          "w": 33,
+          "h": 36,
+          "info": "Horizon artificiel avec vision synthétique (SmartView) : maquette, directeur de vol, échelle d'assiette, inclinaison et bille. Ici la piste 09 en vision synthétique.",
+          "sys": [
+            "indicating",
+            "Synthetic Vision System"
+          ]
+        },
+        {
+          "id": "pfd-fma",
+          "label": "FMA",
+          "x": 27,
+          "y": 10.5,
+          "w": 18,
+          "h": 4.5,
+          "info": "Modes du directeur de vol et du pilote automatique : latéral à gauche (HDG), vertical à droite (TO). Vert = actif.",
+          "sys": [
+            "avionics",
+            "Automatic Flight Control System"
+          ]
+        },
+        {
+          "id": "pfd-alt",
+          "label": "Bande d'altitude et vario",
+          "x": 51.5,
+          "y": 11,
+          "w": 11.0,
+          "h": 39,
+          "info": "Altitude avec altitude sélectionnée en haut (5000), calage baro en bas (29.92 IN) et variomètre à droite. Les hachures jaunes marquent la proximité du sol (radioaltimètre).",
+          "sys": [
+            "indicating",
+            "Flight Instruments"
+          ]
+        },
+        {
+          "id": "pfd-hsi",
+          "label": "HSI / carte",
+          "x": 21,
+          "y": 51,
+          "w": 29,
+          "h": 37,
+          "info": "Rose de cap en arc avec radar météo superposé, cap sélectionné (HDG 094 magenta), source de navigation (FMS1, waypoint actif XALT01, distance).",
+          "sys": [
+            "indicating",
+            "Flight Instruments"
+          ]
+        },
+        {
+          "id": "pfd-ovrly",
+          "label": "Softkey OVRLY et annonces",
+          "x": 11,
+          "y": 54,
+          "w": 10,
+          "h": 34,
+          "info": "OVRLY : choix des superpositions sur la carte du PFD (TRAFFIC, SV, TERRAIN, LX). Les étiquettes rappellent ce qui est affiché : TA/RA, SV, TERR, cellules de foudre.",
+          "sys": [
+            "indicating",
+            "Flight Instruments"
+          ]
+        },
+        {
+          "id": "pfd-data",
+          "label": "GSPD / TAS / SAT / RNP",
+          "x": 49.5,
+          "y": 76.5,
+          "w": 13.0,
+          "h": 11.5,
+          "info": "Vitesse sol, vitesse vraie, température statique et RNP en cours.",
+          "sys": [
+            "indicating",
+            "Flight Instruments"
+          ]
+        },
+        {
+          "id": "pfd-eng",
+          "label": "Affichage moteur permanent",
+          "x": 64.5,
+          "y": 10,
+          "w": 23.5,
+          "h": 39,
+          "info": "N1 et ITT en cadrans, N2, débit carburant, pression et température d'huile, pour les deux moteurs. L'annonce au-dessus du N1 (IDL) rappelle le cran de poussée. C'est aussi là qu'on sélectionne la QPM.",
+          "sys": [
+            "powerplant",
+            "Engine Control"
+          ],
+          "to": "ecr-syn-eng"
+        },
+        {
+          "id": "pfd-radio",
+          "label": "Fenêtre radios",
+          "x": 64.5,
+          "y": 51,
+          "w": 23.5,
+          "h": 36,
+          "info": "Fréquences actives (blanc) et en attente (cyan) de COM1, COM2, NAV1, NAV2, transpondeur et mode TCAS. Se règle avec le contrôleur PFD ; les softkeys à droite choisissent la radio à régler.",
+          "sys": [
+            "communications",
+            "Very High Frequency"
+          ],
+          "to": "ecr-radios-1"
+        },
+        {
+          "id": "pfd-keys",
+          "label": "Softkeys radios",
+          "x": 84.5,
+          "y": 52,
+          "w": 5.0,
+          "h": 35,
+          "info": "COM1, COM2, NAV1, NAV2, XPDR1, PAGE. La softkey encadrée en cyan a le focus : le bouton du contrôleur PFD règle sa fréquence en attente ; le bouton de lunette en face permute active/attente.",
+          "sys": [
+            "communications",
+            "Very High Frequency"
+          ],
+          "to": "ecr-radios-1"
+        },
+        {
+          "id": "pfd-bezel",
+          "label": "Boutons de lunette",
+          "x": 0,
+          "y": 9,
+          "w": 9.5,
+          "h": 77,
+          "info": "12 boutons physiques de chaque côté. Leur fonction dépend de la softkey affichée en face, à laquelle les relie un trait blanc.",
+          "sys": [
+            "indicating",
+            "Display Units"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ecr-mfd-haut",
+      "title": "MFD haut (situation)",
+      "group": "Écrans avioniques",
+      "image": "ecr-mfd-haut",
+      "aspect": [
+        1428,
+        1017
+      ],
+      "intro": "Le MFD haut (DU 2) est l'écran de **situation** : fenêtres FMS à gauche, **carte INAV** à droite et **VSD** (coupe verticale) en dessous. La fenêtre qui a le *focus* est entourée de cyan ; une seule fenêtre sur les quatre écrans a le focus. Sans action pendant 60 s, le focus revient à la fenêtre de droite du MFD haut.",
+      "hotspots": [
+        {
+          "id": "mh-fpln",
+          "label": "Fenêtre plan de vol (FMW)",
+          "x": 11.5,
+          "y": 10,
+          "w": 23.5,
+          "h": 38.5,
+          "info": "Plan de vol actif : route, distance, altitude, angle, vitesse et heure de chaque point. En bas, destination, distance restante, temps et carburant prévu à l'arrivée.",
+          "sys": [
+            "avionics",
+            "Flight Management System"
+          ],
+          "to": "ecr-fms-init"
+        },
+        {
+          "id": "mh-tabs",
+          "label": "Onglets FMS",
+          "x": 9.5,
+          "y": 50,
+          "w": 26.5,
+          "h": 5,
+          "info": "FPLN Active, INIT, puis trois onglets par phase : avion au sol (préparation : FPLN, Alt/Spd, Fuel/Weight), avion en montée (départ : SID, Takeoff Config, Takeoff Data), avion à l'atterrissage (arrivée : STAR/Ldg, Ldg Config, TComp, Flt Sum).",
+          "sys": [
+            "avionics",
+            "Flight Management System"
+          ],
+          "to": "ecr-fms-init"
+        },
+        {
+          "id": "mh-fmsp",
+          "label": "Page FPLN (préparation)",
+          "x": 9.5,
+          "y": 55,
+          "w": 26.5,
+          "h": 33,
+          "info": "Source du plan de vol (pilote, stocké, datalink), origine, destination, dégagement, enregistrement et insertion d'un plan de vol stocké.",
+          "sys": [
+            "avionics",
+            "Flight Management System"
+          ],
+          "to": "ecr-fms-init"
+        },
+        {
+          "id": "mh-bar",
+          "label": "Barre des calques",
+          "x": 37,
+          "y": 10,
+          "w": 45,
+          "h": 5.5,
+          "info": "Menus déroulants des superpositions de la carte : Aeronautical, FPLN, GEO, TERR, WX, TCAS. Une coche verte = calque affiché.",
+          "sys": [
+            "indicating",
+            "Interactive Navigation"
+          ],
+          "to": "ecr-inav"
+        },
+        {
+          "id": "mh-map",
+          "label": "Carte INAV",
+          "x": 37,
+          "y": 15.5,
+          "w": 46,
+          "h": 51.5,
+          "info": "Carte interactive : route, aéroport et fréquences, arc de cap. Portée par défaut 20 NM (molette du CCD ou bouton du TSC). Curseur au bord de la carte = défilement.",
+          "sys": [
+            "indicating",
+            "Interactive Navigation"
+          ],
+          "to": "ecr-inav"
+        },
+        {
+          "id": "mh-soft",
+          "label": "Softkeys de la carte",
+          "x": 83,
+          "y": 11,
+          "w": 5.5,
+          "h": 56,
+          "info": "HDG up / North up, Center A/C, Center TO Wpt, Skip Wpt, Recall Wpt, Msg Clear, Nrst (aéroports et fréquences les plus proches), Charts (cartes Jeppesen), VSD (coupe verticale).",
+          "sys": [
+            "indicating",
+            "Interactive Navigation"
+          ]
+        },
+        {
+          "id": "mh-vsd",
+          "label": "VSD (coupe verticale)",
+          "x": 37,
+          "y": 67.5,
+          "w": 51.5,
+          "h": 20.0,
+          "info": "Profil vertical le long de la route : relief, trajectoire prévue (verte au directeur de vol, magenta au pilote automatique), points avec contraintes, altitude sélectionnée. Mode FPL au sol ou sur la route, TRK si la route s'écarte de plus de 20° de la trace FMS.",
+          "sys": [
+            "indicating",
+            "Interactive Navigation"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ecr-mfd-bas",
+      "title": "MFD bas (systèmes)",
+      "group": "Écrans avioniques",
+      "image": "ecr-mfd-bas",
+      "aspect": [
+        1455,
+        1017
+      ],
+      "intro": "Le MFD bas (DU 3) est l'écran **systèmes**, en six fenêtres : CAS en haut à gauche, **check-list électronique** en bas à gauche, et le **résumé systèmes** (Configuration, carburant, trims, électrique, environnement) dans les quatre autres. La softkey **SYN** remplace le résumé par une page synoptique.\n\nLe bouton **MFD Swap** (entre les boutons du TSC) permute les MFD haut et bas.",
+      "hotspots": [
+        {
+          "id": "mb-cas",
+          "label": "Fenêtre CAS",
+          "x": 11,
+          "y": 9.5,
+          "w": 26,
+          "h": 38.5,
+          "info": "Fenêtre CAS, toujours en haut à gauche du MFD bas. Warnings en rouge (non défilables), cautions en ambre (à acquitter au Master Caution avant de pouvoir les faire défiler), advisories en cyan, statuts en blanc.",
+          "sys": [
+            "indicating",
+            "Master Warning System"
+          ]
+        },
+        {
+          "id": "mb-ecl",
+          "label": "Check-list électronique (ECL)",
+          "x": 11,
+          "y": 49.5,
+          "w": 26,
+          "h": 39.5,
+          "info": "Check-lists NORMAL, ABNORMAL, EMERGENCY et USER DEFINED. Une flèche verte suit l'item en cours ; un item se valide avec ENT, ENTER du CCD ou le bouton CHKL du volant. Une check-list terminée reçoit une coche verte. Certains items ouvrent directement la page synoptique à vérifier.",
+          "sys": [
+            "indicating",
+            "Electronic Checklist"
+          ]
+        },
+        {
+          "id": "mb-eclkeys",
+          "label": "Softkeys de la check-list",
+          "x": 11.5,
+          "y": 52,
+          "w": 5.5,
+          "h": 35,
+          "info": "RESET ALL, PREV ITEM, NEXT ITEM, ACTIVE QUEUE et ENT pour parcourir et valider la check-list.",
+          "sys": [
+            "indicating",
+            "Electronic Checklist"
+          ]
+        },
+        {
+          "id": "mb-config",
+          "label": "Configuration (train, volets)",
+          "x": 37.5,
+          "y": 9.5,
+          "w": 25.5,
+          "h": 31.5,
+          "info": "Trois voyants de train (DN vert = verrouillé bas) et position des volets (8°). Une configuration non conforme au décollage apparaît en cyan (Takeoff CONFIG) ou en rouge (NO TAKEOFF).",
+          "sys": [
+            "landing-gear",
+            "Landing Gear"
+          ]
+        },
+        {
+          "id": "mb-tat",
+          "label": "TAT et IPS",
+          "x": 37.5,
+          "y": 42.5,
+          "w": 25.5,
+          "h": 6.5,
+          "info": "Température totale et état de l'antigivrage : ICE s'affiche ici quand du givre est détecté.",
+          "sys": [
+            "ice",
+            "Detection"
+          ],
+          "to": "ecr-syn-ips"
+        },
+        {
+          "id": "mb-trims",
+          "label": "Trims",
+          "x": 37.5,
+          "y": 50,
+          "w": 25.5,
+          "h": 19,
+          "info": "Position des trims STAB (et sens UP/DN), AIL et RUD, avec leur repère.",
+          "sys": [
+            "flight-controls",
+            "Trim System"
+          ]
+        },
+        {
+          "id": "mb-elec",
+          "label": "Electrical",
+          "x": 37.5,
+          "y": 70,
+          "w": 25.5,
+          "h": 17.5,
+          "info": "Batteries 1 et 2 : courant (A) et tension (V).",
+          "sys": [
+            "electrical",
+            "Battery Power"
+          ],
+          "to": "ecr-syn-elec"
+        },
+        {
+          "id": "mb-fuel",
+          "label": "Fuel",
+          "x": 64,
+          "y": 9.5,
+          "w": 20,
+          "h": 32.5,
+          "info": "Jauges L et R (repères ambre et rouge = bas et vide), quantité de chaque réservoir, total, débit, autonomie (END) et carburant consommé (USED).",
+          "sys": [
+            "fuel",
+            "Storage"
+          ],
+          "to": "ecr-syn-fuel"
+        },
+        {
+          "id": "mb-env",
+          "label": "Environmental",
+          "x": 64,
+          "y": 50,
+          "w": 19.5,
+          "h": 20,
+          "info": "Altitude de destination (FMS ELEV, magenta, ou saisie avec DEST ELEV), altitude cabine, ΔP et vario cabine. FIELD HI s'affiche pour un terrain élevé, CAB LO quand la softkey CAB LO est choisie.",
+          "sys": [
+            "environmental",
+            "Cabin Pressure Control System"
+          ],
+          "to": "ecr-syn-ecs"
+        },
+        {
+          "id": "mb-temps",
+          "label": "Températures cockpit et cabine",
+          "x": 64,
+          "y": 74,
+          "w": 19.5,
+          "h": 13.5,
+          "info": "Température mesurée et réglage (repère magenta sur l'échelle).",
+          "sys": [
+            "environmental",
+            "Conditioned Air System"
+          ]
+        },
+        {
+          "id": "mb-dest",
+          "label": "Softkey DEST ELEV",
+          "x": 84,
+          "y": 51.5,
+          "w": 5,
+          "h": 6.0,
+          "info": "Saisie manuelle de l'altitude du terrain de destination pour la pressurisation, à la place de celle du FMS.",
+          "sys": [
+            "environmental",
+            "Cabin Pressure Control System"
+          ]
+        },
+        {
+          "id": "mb-cablo",
+          "label": "Softkey CAB LO",
+          "x": 84,
+          "y": 57.5,
+          "w": 5,
+          "h": 5.5,
+          "info": "Demande une altitude cabine plus basse ; l'annonce CAB LO s'affiche dans Environmental.",
+          "sys": [
+            "environmental",
+            "Cabin Pressure Control System"
+          ]
+        },
+        {
+          "id": "mb-ckpt",
+          "label": "Softkeys CKPT TEMP / CAB TEMP",
+          "x": 84,
+          "y": 63.5,
+          "w": 5,
+          "h": 23.0,
+          "info": "Flèches haut/bas pour régler la température du cockpit et de la cabine.",
+          "sys": [
+            "environmental",
+            "Conditioned Air System"
+          ]
+        },
+        {
+          "id": "mb-syn",
+          "label": "Softkey SYN",
+          "x": 84,
+          "y": 10,
+          "w": 5,
+          "h": 5.5,
+          "info": "Softkey SYN : ouvre le menu des pages synoptiques (SYS SUM, ENG, FUEL, ELEC, ECB, BRKS, IPS, ECS). La page choisie remplace les fenêtres du milieu et de droite.",
+          "sys": [
+            "indicating",
+            "Display Units"
+          ],
+          "to": "ecr-syn-eng"
+        }
+      ]
+    },
+    {
+      "id": "ecr-composite",
+      "title": "PFD composite (réversion)",
+      "group": "Écrans avioniques",
+      "image": "ecr-composite",
+      "aspect": [
+        1455,
+        1018
+      ],
+      "intro": "Quand il ne reste qu'**un seul écran**, il affiche le **PFD composite** : instruments de vol, CAS, résumé systèmes et radios réunis. Ici « Check DU 3+4 » : les écrans en panne ont été coupés au DRCP (OFF/REV).\n\n- **Panne d'écran** (noir, image déformée, fendu) : tourner son bouton du DRCP sur OFF/REV ; l'affichage bascule.\n- **Panne d'AGM** (grande croix rouge sur deux écrans) : tourner la bague du bouton PFD sur l'autre AGM, puis mettre les écrans en croix sur OFF/REV.",
+      "hotspots": [
+        {
+          "id": "cp-flight",
+          "label": "Instruments de vol",
+          "x": 11.5,
+          "y": 9.5,
+          "w": 51.5,
+          "h": 60.5,
+          "info": "PFD habituel : vitesse, ADI, altitude, HSI.",
+          "sys": [
+            "indicating",
+            "Flight Instruments"
+          ],
+          "to": "ecr-pfd"
+        },
+        {
+          "id": "cp-check",
+          "label": "Message Check DU",
+          "x": 19.5,
+          "y": 70,
+          "w": 15.5,
+          "h": 3.5,
+          "info": "« Check DU 3+4 » : le contrôle de l'image (CRC) a détecté une différence sur ces écrans. Les couper au DRCP.",
+          "sys": [
+            "indicating",
+            "Display Units"
+          ]
+        },
+        {
+          "id": "cp-eng",
+          "label": "Moteurs condensés",
+          "x": 64.5,
+          "y": 9.5,
+          "w": 24.0,
+          "h": 5.5,
+          "info": "ITT et N1 des deux moteurs, avec le cran de poussée (CRZ).",
+          "sys": [
+            "powerplant",
+            "Engine Control"
+          ],
+          "to": "ecr-syn-eng"
+        },
+        {
+          "id": "cp-sum",
+          "label": "Résumé systèmes condensé",
+          "x": 64.5,
+          "y": 15,
+          "w": 24.0,
+          "h": 32.5,
+          "info": "Train, volets, carburant, trims, détection de givre, cabine et batteries, en une seule fenêtre.",
+          "sys": [
+            "indicating",
+            "Display Units"
+          ],
+          "to": "ecr-mfd-bas"
+        },
+        {
+          "id": "cp-menu",
+          "label": "Menu de la fenêtre",
+          "x": 63.5,
+          "y": 49,
+          "w": 10.0,
+          "h": 26,
+          "info": "Radios, CKLST, Sensors, WX/LX/TAWS, AVIONICS, Datalink, SCMS/DL : choisit le contenu de la fenêtre en bas à droite.",
+          "sys": [
+            "indicating",
+            "Display Units"
+          ],
+          "to": "ecr-capteurs"
+        },
+        {
+          "id": "cp-pfdset",
+          "label": "Réglages PFD",
+          "x": 73.5,
+          "y": 49,
+          "w": 15.0,
+          "h": 38,
+          "info": "Onglet PFD : Baro Corr (IN/HPA), Met Alt, Wind (X-Y/Vector), Hdg (Magnetic/True), Baro Synch.",
+          "sys": [
+            "indicating",
+            "Flight Instruments"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ecr-syn-eng",
+      "title": "Synoptique ENG",
+      "group": "Écrans avioniques",
+      "image": "ecr-syn-eng",
+      "aspect": [
+        1125,
+        803
+      ],
+      "intro": "Une page synoptique s'ouvre depuis la softkey **SYN** du MFD bas. Elle occupe les fenêtres du milieu et de droite ; la CAS reste en haut à gauche et la fenêtre avionique en bas à gauche. Les softkeys de droite affichent leur état à gauche (AUTO en magenta = commande automatique de l'UMS) ; les toucher ouvre un menu pour passer en manuel.\n\nLa page **ENG** reprend l'affichage moteur permanent et ajoute le N2 en cadran, l'huile en échelles, le canal FADEC actif, la synchronisation et l'état des **extincteurs**.",
+      "hotspots": [
+        {
+          "id": "eng-cas",
+          "label": "Fenêtre CAS",
+          "x": 1,
+          "y": 1,
+          "w": 32,
+          "h": 47,
+          "info": "Fenêtre CAS, toujours en haut à gauche du MFD bas. Warnings en rouge (non défilables), cautions en ambre (à acquitter au Master Caution avant de pouvoir les faire défiler), advisories en cyan, statuts en blanc.",
+          "sys": [
+            "indicating",
+            "Master Warning System"
+          ]
+        },
+        {
+          "id": "eng-ll",
+          "label": "Menu Performance / capteurs",
+          "x": 1,
+          "y": 51,
+          "w": 32,
+          "h": 48,
+          "info": "Fenêtre avionique, menu déroulant : Performance (RNP, position et EPU des FMS), FMS, GPS, IRS, AHRS, Sensor Sel.",
+          "sys": [
+            "avionics",
+            "Flight Management System"
+          ],
+          "to": "ecr-capteurs"
+        },
+        {
+          "id": "eng-syn",
+          "label": "Softkey SYN",
+          "x": 91.5,
+          "y": 5,
+          "w": 6.0,
+          "h": 5.5,
+          "info": "Softkey SYN : ouvre le menu des pages synoptiques (SYS SUM, ENG, FUEL, ELEC, ECB, BRKS, IPS, ECS). La page choisie remplace les fenêtres du milieu et de droite.",
+          "sys": [
+            "indicating",
+            "Display Units"
+          ]
+        },
+        {
+          "id": "eng-pss",
+          "label": "Résumé système permanent",
+          "x": 34.5,
+          "y": 77.5,
+          "w": 48.0,
+          "h": 22.5,
+          "info": "Résumé système permanent, en bas de chaque synoptique : train et volets, trims STAB/AIL/RUD, TAT et IPS, carburant L/R avec annonces PUMP, BAT1/BAT2 (A, V), et altitude cabine, ΔP, vario cabine. Les annonces Lift Dump, AIRBRK, CPCS MANUAL et ICE s'y affichent aussi.",
+          "sys": [
+            "indicating",
+            "Display Units"
+          ],
+          "to": "ecr-mfd-bas"
+        },
+        {
+          "id": "eng-n1",
+          "label": "N1",
+          "x": 39.5,
+          "y": 5,
+          "w": 12.5,
+          "h": 15,
+          "info": "Vitesse de soufflante en %, aiguille et valeur. Au-dessus, le cran de poussée (IDL). Repère rouge = limite.",
+          "sys": [
+            "powerplant",
+            "Engine Control"
+          ]
+        },
+        {
+          "id": "eng-itt",
+          "label": "ITT",
+          "x": 39.5,
+          "y": 20.5,
+          "w": 12.5,
+          "h": 11.5,
+          "info": "Température entre turbines (moyenne de 6 sondes). Un drapeau FIRE s'y affiche en cas de feu moteur.",
+          "sys": [
+            "fire",
+            "Engine Detection/Extinguishing"
+          ]
+        },
+        {
+          "id": "eng-n2",
+          "label": "N2",
+          "x": 39.5,
+          "y": 33,
+          "w": 12.5,
+          "h": 13,
+          "info": "Vitesse du corps haute pression, en cadran et valeur (le N2 n'est en cadran que sur cette page).",
+          "sys": [
+            "powerplant",
+            "Engine Control"
+          ]
+        },
+        {
+          "id": "eng-n1r",
+          "label": "N1 / ITT / N2 droit",
+          "x": 71,
+          "y": 5,
+          "w": 12.5,
+          "h": 41,
+          "info": "Mêmes indications pour le moteur droit.",
+          "sys": [
+            "powerplant",
+            "Engine Control"
+          ]
+        },
+        {
+          "id": "eng-ff",
+          "label": "Débit carburant (FF)",
+          "x": 34.5,
+          "y": 46.5,
+          "w": 17.5,
+          "h": 4.5,
+          "info": "Débit de chaque moteur en LB/H.",
+          "sys": [
+            "powerplant",
+            "Engine Control"
+          ]
+        },
+        {
+          "id": "eng-oil",
+          "label": "Huile (TEMP / PRESS)",
+          "x": 38,
+          "y": 52,
+          "w": 15,
+          "h": 23,
+          "info": "Température et pression d'huile en échelles et valeurs. Vert = normal, ambre = caution, rouge = warning, blanc = statut FADEC invalide.",
+          "sys": [
+            "powerplant",
+            "Engine Control"
+          ]
+        },
+        {
+          "id": "eng-oilr",
+          "label": "Huile moteur droit",
+          "x": 70,
+          "y": 52,
+          "w": 15,
+          "h": 23,
+          "info": "Mêmes indications pour le moteur droit.",
+          "sys": [
+            "powerplant",
+            "Engine Control"
+          ]
+        },
+        {
+          "id": "eng-xting",
+          "label": "Extinguisher",
+          "x": 53.5,
+          "y": 15,
+          "w": 14.0,
+          "h": 30,
+          "info": "Deux bouteilles (avant en haut, arrière en bas) et icônes des moteurs. Bouteille grise = pleine (FULL), verte = armée (ARMED, après ENG ISOL), noire cerclée d'ambre = vide (EMPTY). Le moteur devient rouge en cas de feu. Avant vol : les deux cases affichent FULL.",
+          "sys": [
+            "fire",
+            "Engine Detection/Extinguishing"
+          ]
+        },
+        {
+          "id": "eng-fadec",
+          "label": "FADEC A–B / SYNC",
+          "x": 55.5,
+          "y": 54,
+          "w": 10.5,
+          "h": 15,
+          "info": "Canal FADEC actif de chaque moteur (A ou B) et synchronisation des moteurs : SYNC ou NO SYNC.",
+          "sys": [
+            "powerplant",
+            "Engine Control"
+          ]
+        },
+        {
+          "id": "eng-tat",
+          "label": "TAT",
+          "x": 54,
+          "y": 4,
+          "w": 12.5,
+          "h": 4.5,
+          "info": "Température totale."
+        },
+        {
+          "id": "eng-atr",
+          "label": "Softkey ATR",
+          "x": 86.5,
+          "y": 13.5,
+          "w": 11.0,
+          "h": 5.5,
+          "info": "Réserve automatique de poussée : AUTO (affiché à gauche) ou OFF. En cas de panne moteur au décollage, l'ATR donne la poussée de réserve sur l'autre moteur.",
+          "sys": [
+            "powerplant",
+            "Engine Control"
+          ]
+        },
+        {
+          "id": "eng-reset",
+          "label": "Softkey FADEC RESET",
+          "x": 92,
+          "y": 56,
+          "w": 5.5,
+          "h": 5,
+          "info": "Grisée en temps normal. RESET s'affiche quand un FADEC doit être réinitialisé (L/R FADEC Fail).",
+          "sys": [
+            "powerplant",
+            "Engine Control"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ecr-syn-fuel",
+      "title": "Synoptique FUEL",
+      "group": "Écrans avioniques",
+      "image": "ecr-syn-fuel",
+      "aspect": [
+        1125,
+        803
+      ],
+      "intro": "Une page synoptique s'ouvre depuis la softkey **SYN** du MFD bas. Elle occupe les fenêtres du milieu et de droite ; la CAS reste en haut à gauche et la fenêtre avionique en bas à gauche. Les softkeys de droite affichent leur état à gauche (AUTO en magenta = commande automatique de l'UMS) ; les toucher ouvre un menu pour passer en manuel.\n\nLa page **FUEL** montre les réservoirs et la distribution. En AUTO, l'UMS gère seul pompes et transferts : transfert automatique à partir d'environ **220 lb** d'écart (jusqu'à 4,5 lb), message Fuel Imbalance à **330 lb**, équilibrage automatique coupé à **440 lb**.\n\nCode des icônes : vert = ouvert/en marche, blanc = fermé/arrêté, ambre ou rouge = panne, X = invalide.",
+      "hotspots": [
+        {
+          "id": "fuel-cas",
+          "label": "Fenêtre CAS",
+          "x": 1,
+          "y": 1,
+          "w": 32,
+          "h": 47,
+          "info": "Fenêtre CAS, toujours en haut à gauche du MFD bas. Warnings en rouge (non défilables), cautions en ambre (à acquitter au Master Caution avant de pouvoir les faire défiler), advisories en cyan, statuts en blanc.",
+          "sys": [
+            "indicating",
+            "Master Warning System"
+          ]
+        },
+        {
+          "id": "fuel-ll",
+          "label": "Menu des pages de la fenêtre",
+          "x": 1,
+          "y": 51,
+          "w": 32,
+          "h": 48,
+          "info": "Menu de la fenêtre avionique : FMW (fenêtre FMS), Waypoint, CKLST, SENSORS, RAD/WX/LX/TAWS, AVIONICS, DATALINK, SCMS/DL.",
+          "sys": [
+            "indicating",
+            "Display Units"
+          ],
+          "to": "ecr-capteurs"
+        },
+        {
+          "id": "fuel-syn",
+          "label": "Softkey SYN",
+          "x": 92.5,
+          "y": 5,
+          "w": 5.0,
+          "h": 5,
+          "info": "Softkey SYN : ouvre le menu des pages synoptiques (SYS SUM, ENG, FUEL, ELEC, ECB, BRKS, IPS, ECS). La page choisie remplace les fenêtres du milieu et de droite.",
+          "sys": [
+            "indicating",
+            "Display Units"
+          ]
+        },
+        {
+          "id": "fuel-pss",
+          "label": "Résumé système permanent",
+          "x": 34.5,
+          "y": 77.5,
+          "w": 48.0,
+          "h": 22.5,
+          "info": "Résumé système permanent, en bas de chaque synoptique : train et volets, trims STAB/AIL/RUD, TAT et IPS, carburant L/R avec annonces PUMP, BAT1/BAT2 (A, V), et altitude cabine, ΔP, vario cabine. Les annonces Lift Dump, AIRBRK, CPCS MANUAL et ICE s'y affichent aussi.",
+          "sys": [
+            "indicating",
+            "Display Units"
+          ],
+          "to": "ecr-mfd-bas"
+        },
+        {
+          "id": "fuel-total",
+          "label": "Total / FF / Endurance",
+          "x": 45,
+          "y": 1,
+          "w": 25,
+          "h": 15,
+          "info": "Quantité totale, débit total, autonomie (heures:minutes) et carburant consommé (Used).",
+          "sys": [
+            "fuel",
+            "Storage"
+          ]
+        },
+        {
+          "id": "fuel-qty",
+          "label": "Quantité par réservoir",
+          "x": 36.5,
+          "y": 19,
+          "w": 9.0,
+          "h": 5.5,
+          "info": "Quantité de chaque réservoir (aussi rappelée dans le résumé en bas).",
+          "sys": [
+            "fuel",
+            "Storage"
+          ]
+        },
+        {
+          "id": "fuel-tank",
+          "label": "Réservoir principal et collecteur",
+          "x": 39,
+          "y": 29,
+          "w": 15,
+          "h": 14,
+          "info": "Rectangle gris = réservoir principal (le gris donne le niveau). Rectangle vertical à l'intérieur = réservoir collecteur, réserve de chaque moteur. Repères ambre et rouge à l'extérieur = bas et vide.",
+          "sys": [
+            "fuel",
+            "Storage"
+          ]
+        },
+        {
+          "id": "fuel-valve",
+          "label": "Vanne refuel/defuel",
+          "x": 50,
+          "y": 23.5,
+          "w": 4.5,
+          "h": 6.0,
+          "info": "Sert au remplissage, à la vidange et au transfert entre ailes. L'UMS l'ouvre seule pour équilibrer.",
+          "sys": [
+            "fuel",
+            "Distribution"
+          ]
+        },
+        {
+          "id": "fuel-boost",
+          "label": "Pompe booster",
+          "x": 53.5,
+          "y": 33.5,
+          "w": 4.5,
+          "h": 5.5,
+          "info": "Pompe électrique du collecteur, pour démarrage, transfert, crossfeed, vidange ou panne de motive flow. En marche (verte) au démarrage, coupée par l'UMS au-dessus de 40 % N2. Gauche sur la barre ESS, droite sur la barre R.",
+          "sys": [
+            "fuel",
+            "Distribution"
+          ]
+        },
+        {
+          "id": "fuel-eject",
+          "label": "Pompe éjecteur",
+          "x": 52,
+          "y": 39,
+          "w": 5.5,
+          "h": 3.5,
+          "info": "Alimente le moteur en fonctionnement normal grâce au retour de carburant (motive flow, effet Venturi). Inhibée quand la booster tourne.",
+          "sys": [
+            "fuel",
+            "Distribution"
+          ]
+        },
+        {
+          "id": "fuel-temp",
+          "label": "Température carburant",
+          "x": 43.5,
+          "y": 45.5,
+          "w": 8.5,
+          "h": 4.5,
+          "info": "Température du carburant de chaque réservoir.",
+          "sys": [
+            "fuel",
+            "Storage"
+          ]
+        },
+        {
+          "id": "fuel-xfeed",
+          "label": "Vanne de crossfeed",
+          "x": 57,
+          "y": 49,
+          "w": 6,
+          "h": 6.5,
+          "info": "Normalement fermée. Ouverte, les deux moteurs sont alimentés par un seul réservoir (équilibrage si le transfert est en panne).",
+          "sys": [
+            "fuel",
+            "Distribution"
+          ]
+        },
+        {
+          "id": "fuel-fso",
+          "label": "FSO (vanne coupe-feu carburant)",
+          "x": 54,
+          "y": 63,
+          "w": 5.5,
+          "h": 9,
+          "info": "Vanne d'arrêt carburant du moteur, normalement ouverte, alimentée par la barre ESS. La fermer arrête le moteur. ENG ISOL la ferme.",
+          "sys": [
+            "fuel",
+            "Distribution"
+          ]
+        },
+        {
+          "id": "fuel-filter",
+          "label": "Filtre carburant",
+          "x": 50,
+          "y": 63,
+          "w": 4,
+          "h": 7.5,
+          "info": "État du filtre avant le moteur (colmatage : Fuel IMP Bypass).",
+          "sys": [
+            "fuel",
+            "Distribution"
+          ]
+        },
+        {
+          "id": "fuel-eng",
+          "label": "Carburant moteur",
+          "x": 37,
+          "y": 58.5,
+          "w": 12,
+          "h": 13.5,
+          "info": "Température, pression et débit du carburant envoyé au moteur gauche.",
+          "sys": [
+            "fuel",
+            "Distribution"
+          ]
+        },
+        {
+          "id": "fuel-xfer",
+          "label": "Softkey XFER",
+          "x": 86,
+          "y": 18.5,
+          "w": 11.5,
+          "h": 5.5,
+          "info": "Transfert : AUTO (UMS), L◁R ou L▷R (manuel, avec annonce TRANSFER et flèche) ou OFF.",
+          "sys": [
+            "fuel",
+            "Distribution"
+          ]
+        },
+        {
+          "id": "fuel-pumps",
+          "label": "Softkeys Left / Right Pump",
+          "x": 86,
+          "y": 25.5,
+          "w": 11.5,
+          "h": 12.5,
+          "info": "Pompes booster : AUTO (UMS), ON ou OFF.",
+          "sys": [
+            "fuel",
+            "Distribution"
+          ]
+        },
+        {
+          "id": "fuel-xfeedk",
+          "label": "Softkey X-FEED",
+          "x": 86,
+          "y": 55.5,
+          "w": 11.5,
+          "h": 5.5,
+          "info": "Crossfeed : CLOSE (normal) ou OPEN.",
+          "sys": [
+            "fuel",
+            "Distribution"
+          ]
+        },
+        {
+          "id": "fuel-refuel",
+          "label": "Fenêtre REFUEL",
+          "x": 82.5,
+          "y": 81,
+          "w": 16.0,
+          "h": 17.5,
+          "info": "Quantité demandée pour le plein (0 à 5965 lb), par pas de 100 lb avec les flèches. Elle se retrouve sur le panneau de remplissage (PRESELECT).",
+          "sys": [
+            "fuel",
+            "Refuel/Defuel"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ecr-syn-elec",
+      "title": "Synoptique ELEC",
+      "group": "Écrans avioniques",
+      "image": "ecr-syn-elec",
+      "aspect": [
+        1124,
+        803
+      ],
+      "intro": "Une page synoptique s'ouvre depuis la softkey **SYN** du MFD bas. Elle occupe les fenêtres du milieu et de droite ; la CAS reste en haut à gauche et la fenêtre avionique en bas à gauche. Les softkeys de droite affichent leur état à gauche (AUTO en magenta = commande automatique de l'UMS) ; les toucher ouvre un menu pour passer en manuel.\n\nLa page **ELEC** montre batteries, barres, contacteurs et génératrices. Blanc = non alimenté, vert = alimenté ou fermé, ambre/rouge = panne. Les annonces sous les barres L et R donnent l'état du délestage (ALL Loads, S/GEN Loads, GPU Loads, QPM Loads…).",
+      "hotspots": [
+        {
+          "id": "elec-cas",
+          "label": "Fenêtre CAS",
+          "x": 1,
+          "y": 1,
+          "w": 32,
+          "h": 47,
+          "info": "Fenêtre CAS, toujours en haut à gauche du MFD bas. Warnings en rouge (non défilables), cautions en ambre (à acquitter au Master Caution avant de pouvoir les faire défiler), advisories en cyan, statuts en blanc.",
+          "sys": [
+            "indicating",
+            "Master Warning System"
+          ]
+        },
+        {
+          "id": "elec-ll",
+          "label": "Onglet PFD",
+          "x": 1,
+          "y": 51,
+          "w": 32,
+          "h": 48,
+          "info": "Réglages PFD : Baro Corr (IN/HPA), Met Alt (altitude en mètres), Wind (X-Y ou vecteur), Hdg (magnétique ou vrai), Baro Synch (calages couplés).",
+          "sys": [
+            "indicating",
+            "Flight Instruments"
+          ]
+        },
+        {
+          "id": "elec-syn",
+          "label": "Softkey SYN",
+          "x": 92.5,
+          "y": 5,
+          "w": 5.0,
+          "h": 5,
+          "info": "Softkey SYN : ouvre le menu des pages synoptiques (SYS SUM, ENG, FUEL, ELEC, ECB, BRKS, IPS, ECS). La page choisie remplace les fenêtres du milieu et de droite.",
+          "sys": [
+            "indicating",
+            "Display Units"
+          ]
+        },
+        {
+          "id": "elec-pss",
+          "label": "Résumé système permanent",
+          "x": 34.5,
+          "y": 77.5,
+          "w": 48.0,
+          "h": 22.5,
+          "info": "Résumé système permanent, en bas de chaque synoptique : train et volets, trims STAB/AIL/RUD, TAT et IPS, carburant L/R avec annonces PUMP, BAT1/BAT2 (A, V), et altitude cabine, ΔP, vario cabine. Les annonces Lift Dump, AIRBRK, CPCS MANUAL et ICE s'y affichent aussi.",
+          "sys": [
+            "indicating",
+            "Display Units"
+          ],
+          "to": "ecr-mfd-bas"
+        },
+        {
+          "id": "elec-bat1",
+          "label": "BAT 1",
+          "x": 36.5,
+          "y": 8.5,
+          "w": 16.5,
+          "h": 12.0,
+          "info": "Température, courant et tension de la batterie 1.",
+          "sys": [
+            "electrical",
+            "Battery Power"
+          ]
+        },
+        {
+          "id": "elec-bat2",
+          "label": "BAT 2",
+          "x": 70.5,
+          "y": 8.5,
+          "w": 16.5,
+          "h": 12.0,
+          "info": "Température, courant et tension de la batterie 2.",
+          "sys": [
+            "electrical",
+            "Battery Power"
+          ]
+        },
+        {
+          "id": "elec-ess",
+          "label": "Barre ESS",
+          "x": 51,
+          "y": 24.5,
+          "w": 19.5,
+          "h": 5.0,
+          "info": "Barre essentielle, alimentée par les deux batteries. Elle reste alimentée même génératrices perdues (environ 60 min sur batteries).",
+          "sys": [
+            "electrical",
+            "Load Distribution"
+          ]
+        },
+        {
+          "id": "elec-ec",
+          "label": "Contacteurs EC1 / EC2",
+          "x": 51.5,
+          "y": 29,
+          "w": 3.5,
+          "h": 8,
+          "info": "Relient la barre ESS aux barres principales.",
+          "sys": [
+            "electrical",
+            "Load Distribution"
+          ]
+        },
+        {
+          "id": "elec-bc",
+          "label": "BC1 / BC2",
+          "x": 38.5,
+          "y": 29,
+          "w": 3.0,
+          "h": 5.5,
+          "info": "Contacteurs batterie.",
+          "sys": [
+            "electrical",
+            "Battery Power"
+          ]
+        },
+        {
+          "id": "elec-lbus",
+          "label": "Barre L",
+          "x": 38.5,
+          "y": 38,
+          "w": 17.5,
+          "h": 5,
+          "info": "Barre gauche (EPDU 1 et 3).",
+          "sys": [
+            "electrical",
+            "Load Distribution"
+          ]
+        },
+        {
+          "id": "elec-rbus",
+          "label": "Barre R",
+          "x": 63.5,
+          "y": 38,
+          "w": 17.5,
+          "h": 5,
+          "info": "Barre droite (EPDU 2 et 4).",
+          "sys": [
+            "electrical",
+            "Load Distribution"
+          ]
+        },
+        {
+          "id": "elec-xc2",
+          "label": "XC2",
+          "x": 57.5,
+          "y": 36,
+          "w": 4.5,
+          "h": 6,
+          "info": "Contacteur entre barres L et R.",
+          "sys": [
+            "electrical",
+            "Load Distribution"
+          ]
+        },
+        {
+          "id": "elec-loads",
+          "label": "Annonce de délestage",
+          "x": 46.5,
+          "y": 43,
+          "w": 31.0,
+          "h": 4,
+          "info": "État fonctionnel de la distribution : ALL Loads (tout alimenté), S/GEN Loads (une génératrice), GPU Loads, QPM Loads…",
+          "sys": [
+            "electrical",
+            "Load Distribution"
+          ]
+        },
+        {
+          "id": "elec-btc",
+          "label": "BTC1 / BTC2",
+          "x": 38.5,
+          "y": 46,
+          "w": 3.0,
+          "h": 4.5,
+          "info": "Contacteurs de couplage (bus tie) de chaque côté.",
+          "sys": [
+            "electrical",
+            "Load Distribution"
+          ]
+        },
+        {
+          "id": "elec-tie",
+          "label": "Bus Tie / XC1",
+          "x": 55.5,
+          "y": 46.5,
+          "w": 6.5,
+          "h": 7.0,
+          "info": "Couplage gauche-droite. Le bouton BUS TIE de l'overhead l'ouvre (OPEN) pour séparer les côtés.",
+          "sys": [
+            "electrical",
+            "Load Distribution"
+          ]
+        },
+        {
+          "id": "elec-sgc",
+          "label": "SGC1 / SGC2",
+          "x": 38.5,
+          "y": 54.5,
+          "w": 3.0,
+          "h": 5.0,
+          "info": "Contacteurs des démarreurs-génératrices.",
+          "sys": [
+            "electrical",
+            "Generator Power"
+          ]
+        },
+        {
+          "id": "elec-gen1",
+          "label": "GEN 1",
+          "x": 34.5,
+          "y": 61,
+          "w": 10.5,
+          "h": 15,
+          "info": "Démarreur-génératrice gauche : courant débité. Passe en mode génératrice au-dessus du ralenti. Limite 400 A (250 A en QPM).",
+          "sys": [
+            "electrical",
+            "Generator Power"
+          ]
+        },
+        {
+          "id": "elec-gen2",
+          "label": "GEN 2",
+          "x": 78,
+          "y": 61,
+          "w": 11,
+          "h": 15,
+          "info": "Démarreur-génératrice droite.",
+          "sys": [
+            "electrical",
+            "Generator Power"
+          ]
+        },
+        {
+          "id": "elec-gpu",
+          "label": "GPU",
+          "x": 59.5,
+          "y": 53.5,
+          "w": 8.5,
+          "h": 20.5,
+          "info": "Groupe de parc et son contacteur. Contour vert = en service, blanc = arrêté, ambre = branché mais n'alimente pas. Au démarrage du moteur droit, le GPU aide puis se déconnecte quand GEN 2 débite.",
+          "sys": [
+            "electrical",
+            "External and Ground Power"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ecr-syn-ecb",
+      "title": "Synoptique ECB",
+      "group": "Écrans avioniques",
+      "image": "ecr-syn-ecb",
+      "aspect": [
+        1126,
+        803
+      ],
+      "intro": "Une page synoptique s'ouvre depuis la softkey **SYN** du MFD bas. Elle occupe les fenêtres du milieu et de droite ; la CAS reste en haut à gauche et la fenêtre avionique en bas à gauche. Les softkeys de droite affichent leur état à gauche (AUTO en magenta = commande automatique de l'UMS) ; les toucher ouvre un menu pour passer en manuel.\n\nLa page **ECB** liste les disjoncteurs électroniques (16 lignes). Chaque EPDU en contient 41 ; l'UMS les surveille et déleste seul. Plusieurs check-lists demandent d'y réarmer un ECB (une seule fois). On le sélectionne avec le CCD, le pavé du TSC ou le joystick du MFC.",
+      "hotspots": [
+        {
+          "id": "ecb-cas",
+          "label": "Fenêtre CAS",
+          "x": 1,
+          "y": 1,
+          "w": 32,
+          "h": 47,
+          "info": "Fenêtre CAS, toujours en haut à gauche du MFD bas. Warnings en rouge (non défilables), cautions en ambre (à acquitter au Master Caution avant de pouvoir les faire défiler), advisories en cyan, statuts en blanc.",
+          "sys": [
+            "indicating",
+            "Master Warning System"
+          ]
+        },
+        {
+          "id": "ecb-ll",
+          "label": "Onglet FCS",
+          "x": 1,
+          "y": 51,
+          "w": 32,
+          "h": 48,
+          "info": "Réglages du directeur de vol : symbole S-Cue (barre unique), X-Ptr (barres croisées) ou Flt-Path (vecteur trajectoire, demande la SVS) ; FPS On/Off ; Steep Appr (approche forte pente) Enable/Disable.",
+          "sys": [
+            "indicating",
+            "Flight Instruments"
+          ]
+        },
+        {
+          "id": "ecb-syn",
+          "label": "Softkey SYN",
+          "x": 92,
+          "y": 5,
+          "w": 5.5,
+          "h": 5.5,
+          "info": "Softkey SYN : ouvre le menu des pages synoptiques (SYS SUM, ENG, FUEL, ELEC, ECB, BRKS, IPS, ECS). La page choisie remplace les fenêtres du milieu et de droite.",
+          "sys": [
+            "indicating",
+            "Display Units"
+          ]
+        },
+        {
+          "id": "ecb-pss",
+          "label": "Résumé système permanent",
+          "x": 34.5,
+          "y": 77.5,
+          "w": 48.0,
+          "h": 22.5,
+          "info": "Résumé système permanent, en bas de chaque synoptique : train et volets, trims STAB/AIL/RUD, TAT et IPS, carburant L/R avec annonces PUMP, BAT1/BAT2 (A, V), et altitude cabine, ΔP, vario cabine. Les annonces Lift Dump, AIRBRK, CPCS MANUAL et ICE s'y affichent aussi.",
+          "sys": [
+            "indicating",
+            "Display Units"
+          ],
+          "to": "ecr-mfd-bas"
+        },
+        {
+          "id": "ecb-name",
+          "label": "NAME",
+          "x": 35.5,
+          "y": 9.5,
+          "w": 27.0,
+          "h": 65.5,
+          "info": "Nom de l'ECB. Cyan = commandable par l'équipage, blanc = non commandable, gris = disjoncteur en panne.",
+          "sys": [
+            "electrical",
+            "Load Distribution"
+          ]
+        },
+        {
+          "id": "ecb-bus",
+          "label": "BUS",
+          "x": 62.5,
+          "y": 9.5,
+          "w": 7.0,
+          "h": 65.5,
+          "info": "Barre qui alimente l'ECB (N/ESS…).",
+          "sys": [
+            "electrical",
+            "Load Distribution"
+          ]
+        },
+        {
+          "id": "ecb-rtg",
+          "label": "RTG",
+          "x": 69.5,
+          "y": 9.5,
+          "w": 6.0,
+          "h": 65.5,
+          "info": "Calibre en ampères.",
+          "sys": [
+            "electrical",
+            "Load Distribution"
+          ]
+        },
+        {
+          "id": "ecb-pos",
+          "label": "POS",
+          "x": 75.5,
+          "y": 9.5,
+          "w": 8.0,
+          "h": 65.5,
+          "info": "Emplacement de l'EPDU (NOSE, CABIN…).",
+          "sys": [
+            "electrical",
+            "Load Distribution"
+          ]
+        },
+        {
+          "id": "ecb-status",
+          "label": "STATUS",
+          "x": 83.5,
+          "y": 9.5,
+          "w": 5.5,
+          "h": 65.5,
+          "info": "IN (fermé), OUT (ouvert), LOCK (verrouillé), TRIP (déclenché), FAIL (en panne), --- (invalide).",
+          "sys": [
+            "electrical",
+            "Load Distribution"
+          ]
+        },
+        {
+          "id": "ecb-sort",
+          "label": "Softkeys ALL / BUS / POS / STATUS",
+          "x": 92,
+          "y": 22,
+          "w": 5.5,
+          "h": 25.5,
+          "info": "Tri et filtre de la liste : tout, par barre, par position, par statut (STATUS montre vite les ECB déclenchés).",
+          "sys": [
+            "electrical",
+            "Load Distribution"
+          ]
+        },
+        {
+          "id": "ecb-set",
+          "label": "Flèches et SET",
+          "x": 92,
+          "y": 56.5,
+          "w": 5.5,
+          "h": 18.5,
+          "info": "Défilement de la liste et changement d'état de l'ECB sélectionné (IN/OUT).",
+          "sys": [
+            "electrical",
+            "Load Distribution"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ecr-syn-brakes",
+      "title": "Synoptique BRAKES",
+      "group": "Écrans avioniques",
+      "image": "ecr-syn-brakes",
+      "aspect": [
+        1125,
+        804
+      ],
+      "intro": "Une page synoptique s'ouvre depuis la softkey **SYN** du MFD bas. Elle occupe les fenêtres du milieu et de droite ; la CAS reste en haut à gauche et la fenêtre avionique en bas à gauche. Les softkeys de droite affichent leur état à gauche (AUTO en magenta = commande automatique de l'UMS) ; les toucher ouvre un menu pour passer en manuel.\n\nLa page **BRAKES** montre la génération hydraulique, l'anti-skid, les freins et le frein de parc/secours. Accumulateurs : vert au-dessus de **2600 psi**, ambre en dessous, rouge avec All Brakes Fail.",
+      "hotspots": [
+        {
+          "id": "brk-cas",
+          "label": "Fenêtre CAS",
+          "x": 1,
+          "y": 1,
+          "w": 32,
+          "h": 47,
+          "info": "Fenêtre CAS, toujours en haut à gauche du MFD bas. Warnings en rouge (non défilables), cautions en ambre (à acquitter au Master Caution avant de pouvoir les faire défiler), advisories en cyan, statuts en blanc.",
+          "sys": [
+            "indicating",
+            "Master Warning System"
+          ]
+        },
+        {
+          "id": "brk-ll",
+          "label": "Onglet WX (radar)",
+          "x": 1,
+          "y": 51,
+          "w": 32,
+          "h": 48,
+          "info": "Réglages du radar météo : Transmit on Ground, GND MAP, gain (CAL = calibré), TILT Auto/Man, Auto Step Scan, Auto Range Limit.",
+          "sys": [
+            "avionics",
+            "Weather Radar System"
+          ],
+          "to": "ecr-radar"
+        },
+        {
+          "id": "brk-syn",
+          "label": "Softkey SYN",
+          "x": 92,
+          "y": 5.5,
+          "w": 5.5,
+          "h": 5.0,
+          "info": "Softkey SYN : ouvre le menu des pages synoptiques (SYS SUM, ENG, FUEL, ELEC, ECB, BRKS, IPS, ECS). La page choisie remplace les fenêtres du milieu et de droite.",
+          "sys": [
+            "indicating",
+            "Display Units"
+          ]
+        },
+        {
+          "id": "brk-pss",
+          "label": "Résumé système permanent",
+          "x": 34.5,
+          "y": 77.5,
+          "w": 48.0,
+          "h": 22.5,
+          "info": "Résumé système permanent, en bas de chaque synoptique : train et volets, trims STAB/AIL/RUD, TAT et IPS, carburant L/R avec annonces PUMP, BAT1/BAT2 (A, V), et altitude cabine, ΔP, vario cabine. Les annonces Lift Dump, AIRBRK, CPCS MANUAL et ICE s'y affichent aussi.",
+          "sys": [
+            "indicating",
+            "Display Units"
+          ],
+          "to": "ecr-mfd-bas"
+        },
+        {
+          "id": "brk-res",
+          "label": "Réservoir hydraulique",
+          "x": 59,
+          "y": 15,
+          "w": 7,
+          "h": 7.5,
+          "info": "Niveau du réservoir : vert, ambre si bas.",
+          "sys": [
+            "landing-gear",
+            "Wheels and Brakes"
+          ]
+        },
+        {
+          "id": "brk-pump",
+          "label": "Moto-pompe",
+          "x": 60.5,
+          "y": 28,
+          "w": 4.0,
+          "h": 6,
+          "info": "Pompe électrique hydraulique : verte en marche.",
+          "sys": [
+            "landing-gear",
+            "Wheels and Brakes"
+          ]
+        },
+        {
+          "id": "brk-acc",
+          "label": "Accumulateur freins principaux",
+          "x": 64.5,
+          "y": 27.5,
+          "w": 14.5,
+          "h": 7.0,
+          "info": "Pression des freins principaux (3091 psi).",
+          "sys": [
+            "landing-gear",
+            "Wheels and Brakes"
+          ]
+        },
+        {
+          "id": "brk-as",
+          "label": "ANTI SKID",
+          "x": 58,
+          "y": 39,
+          "w": 8.5,
+          "h": 7,
+          "info": "État de l'anti-skid : vert = en service, blanc = arrêté, ambre/rouge = panne.",
+          "sys": [
+            "landing-gear",
+            "Wheels and Brakes"
+          ]
+        },
+        {
+          "id": "brk-park",
+          "label": "Frein de parc / secours",
+          "x": 53,
+          "y": 55,
+          "w": 22,
+          "h": 6,
+          "info": "Pression de l'accumulateur PARK/EMER (3044 psi).",
+          "sys": [
+            "landing-gear",
+            "Wheels and Brakes"
+          ]
+        },
+        {
+          "id": "brk-pvalve",
+          "label": "Vanne de frein de parc",
+          "x": 60.5,
+          "y": 62,
+          "w": 4.0,
+          "h": 7,
+          "info": "SET s'affiche quand le frein de parc est serré. Serré au décollage : Takeoff CONFIG ou NO TAKEOFF.",
+          "sys": [
+            "landing-gear",
+            "Wheels and Brakes"
+          ]
+        },
+        {
+          "id": "brk-wheels",
+          "label": "Freins des roues",
+          "x": 42.5,
+          "y": 57.5,
+          "w": 8.5,
+          "h": 12.5,
+          "info": "Icônes de freins : couleur selon la pression (plus ou moins de 100 psi) et les pannes.",
+          "sys": [
+            "landing-gear",
+            "Wheels and Brakes"
+          ]
+        },
+        {
+          "id": "brk-pumpk",
+          "label": "Softkey Pump",
+          "x": 86.5,
+          "y": 28,
+          "w": 11.0,
+          "h": 5,
+          "info": "AUTO (UMS), ON ou OFF. ON force la pompe (sauf fluide > 125 °C, pression > 3200 psi ou réservoir vide) : utile avant l'atterrissage avec Main Brake Fail.",
+          "sys": [
+            "landing-gear",
+            "Wheels and Brakes"
+          ]
+        },
+        {
+          "id": "brk-ask",
+          "label": "Softkey ANTI SKID",
+          "x": 86.5,
+          "y": 34,
+          "w": 11.0,
+          "h": 5.5,
+          "info": "AUTO ou OFF.",
+          "sys": [
+            "landing-gear",
+            "Wheels and Brakes"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ecr-syn-ips",
+      "title": "Synoptique IPS",
+      "group": "Écrans avioniques",
+      "image": "ecr-syn-ips",
+      "aspect": [
+        1125,
+        804
+      ],
+      "intro": "Une page synoptique s'ouvre depuis la softkey **SYN** du MFD bas. Elle occupe les fenêtres du milieu et de droite ; la CAS reste en haut à gauche et la fenêtre avionique en bas à gauche. Les softkeys de droite affichent leur état à gauche (AUTO en magenta = commande automatique de l'UMS) ; les toucher ouvre un menu pour passer en manuel.\n\nLa page **IPS** montre la protection givrage. En **AUTO**, givre détecté en vol : NAI, WAI, HSDI et pare-brise passent au vert ensemble. Les softkeys ne sont actives que lorsque le rotacteur IPS est sur **MAN** (CAS IPS Manual) : chacune passe alors AUTO / ON / OFF, et ALL IPS les commande toutes. Au sol, la détection est inhibée.",
+      "hotspots": [
+        {
+          "id": "ips-cas",
+          "label": "Fenêtre CAS",
+          "x": 1,
+          "y": 1,
+          "w": 32,
+          "h": 47,
+          "info": "Fenêtre CAS, toujours en haut à gauche du MFD bas. Warnings en rouge (non défilables), cautions en ambre (à acquitter au Master Caution avant de pouvoir les faire défiler), advisories en cyan, statuts en blanc.",
+          "sys": [
+            "indicating",
+            "Master Warning System"
+          ]
+        },
+        {
+          "id": "ips-ll",
+          "label": "Onglet TAWS",
+          "x": 1,
+          "y": 51,
+          "w": 32,
+          "h": 48,
+          "info": "Steep APPR (désensibilise l'alerte de taux de descente en approche forte pente) et TAWS Self Test.",
+          "sys": [
+            "avionics",
+            "Enhanced Ground Proximity Warning System"
+          ],
+          "to": "ecr-radar"
+        },
+        {
+          "id": "ips-syn",
+          "label": "Softkey SYN",
+          "x": 92,
+          "y": 5.5,
+          "w": 5.5,
+          "h": 5.0,
+          "info": "Softkey SYN : ouvre le menu des pages synoptiques (SYS SUM, ENG, FUEL, ELEC, ECB, BRKS, IPS, ECS). La page choisie remplace les fenêtres du milieu et de droite.",
+          "sys": [
+            "indicating",
+            "Display Units"
+          ]
+        },
+        {
+          "id": "ips-pss",
+          "label": "Résumé système permanent",
+          "x": 34.5,
+          "y": 77.5,
+          "w": 48.0,
+          "h": 22.5,
+          "info": "Résumé système permanent, en bas de chaque synoptique : train et volets, trims STAB/AIL/RUD, TAT et IPS, carburant L/R avec annonces PUMP, BAT1/BAT2 (A, V), et altitude cabine, ΔP, vario cabine. Les annonces Lift Dump, AIRBRK, CPCS MANUAL et ICE s'y affichent aussi.",
+          "sys": [
+            "indicating",
+            "Display Units"
+          ],
+          "to": "ecr-mfd-bas"
+        },
+        {
+          "id": "ips-id",
+          "label": "Ice Detector",
+          "x": 47.5,
+          "y": 1.5,
+          "w": 28.0,
+          "h": 4.5,
+          "info": "Deux annonces, détecteurs gauche et droit : ICE quand du givre est détecté en vol, FAIL en panne, vide sinon. Avec un seul détecteur en panne, l'AUTO reste disponible.",
+          "sys": [
+            "ice",
+            "Detection"
+          ]
+        },
+        {
+          "id": "ips-tat",
+          "label": "TAT",
+          "x": 68.5,
+          "y": 5.5,
+          "w": 11.0,
+          "h": 4.5,
+          "info": "Température totale (repère des 10 °C pour NAI/WAI)."
+        },
+        {
+          "id": "ips-stby",
+          "label": "STBY PS PROBE",
+          "x": 42,
+          "y": 5.5,
+          "w": 17,
+          "h": 8.0,
+          "info": "Réchauffage de la sonde statique de secours.",
+          "sys": [
+            "ice",
+            "Probes and Sensors"
+          ]
+        },
+        {
+          "id": "ips-wshld",
+          "label": "WSHLD (pare-brise)",
+          "x": 49.5,
+          "y": 12.5,
+          "w": 22.5,
+          "h": 4.5,
+          "info": "Réchauffage des pare-brise gauche et droit. Commandé aussi par le rotacteur WINDSHIELD.",
+          "sys": [
+            "ice",
+            "Anti-Ice and Deice"
+          ]
+        },
+        {
+          "id": "ips-ps",
+          "label": "PS PROBE",
+          "x": 46.5,
+          "y": 18.5,
+          "w": 28.0,
+          "h": 5.0,
+          "info": "Réchauffage des sondes pitot-statiques gauche et droite (vertes moteurs tournants). Les cinq réchauffages de sondes se vérifient ici au Taxi / Before Departure.",
+          "sys": [
+            "ice",
+            "Probes and Sensors"
+          ]
+        },
+        {
+          "id": "ips-aoa",
+          "label": "AOA",
+          "x": 51.5,
+          "y": 24,
+          "w": 18.0,
+          "h": 5.5,
+          "info": "Réchauffage des sondes d'incidence (palette et boîtier).",
+          "sys": [
+            "ice",
+            "Probes and Sensors"
+          ]
+        },
+        {
+          "id": "ips-wing",
+          "label": "Bords d'attaque (WAI)",
+          "x": 40,
+          "y": 30,
+          "w": 42,
+          "h": 11,
+          "info": "État de l'antigivrage voilure gauche et droit : blanc = arrêté, vert = en marche.",
+          "sys": [
+            "ice",
+            "Anti-Ice and Deice"
+          ]
+        },
+        {
+          "id": "ips-waiv",
+          "label": "Vanne WAI",
+          "x": 58.5,
+          "y": 38.5,
+          "w": 4.0,
+          "h": 5.0,
+          "info": "État combiné des vannes WAIV gauche et droite.",
+          "sys": [
+            "ice",
+            "Anti-Ice and Deice"
+          ]
+        },
+        {
+          "id": "ips-nai",
+          "label": "NAI",
+          "x": 45,
+          "y": 44.5,
+          "w": 4.5,
+          "h": 16.5,
+          "info": "Antigivrage des entrées d'air moteur. Ne pas utiliser avec TAT > 10 °C. Aussi affiché sur la page ENG.",
+          "sys": [
+            "ice",
+            "Anti-Ice and Deice"
+          ]
+        },
+        {
+          "id": "ips-sov",
+          "label": "Vannes de prélèvement (SOV)",
+          "x": 53,
+          "y": 50,
+          "w": 17,
+          "h": 8,
+          "info": "État des vannes de prélèvement gauche et droite, avec la température de l'air prélevé au-dessus (181 °C).",
+          "sys": [
+            "environmental",
+            "Pneumatic System"
+          ]
+        },
+        {
+          "id": "ips-hsdi",
+          "label": "HSDI",
+          "x": 49.5,
+          "y": 58,
+          "w": 24.5,
+          "h": 14,
+          "info": "Boudins de dégivrage du stabilisateur et leur vanne EFCV. L'icône indique ON/OFF, pas le gonflage. Pas de gonflage sous TAT −40 °C sauf givre présent.",
+          "sys": [
+            "ice",
+            "Anti-Ice and Deice"
+          ]
+        },
+        {
+          "id": "ips-wshk",
+          "label": "Softkey WSHLD Heat",
+          "x": 86.5,
+          "y": 13,
+          "w": 11.0,
+          "h": 5.5,
+          "info": "AUTO, ON ou OFF (en mode MAN).",
+          "sys": [
+            "ice",
+            "Anti-Ice and Deice"
+          ]
+        },
+        {
+          "id": "ips-waik",
+          "label": "Softkey WAI",
+          "x": 86.5,
+          "y": 41,
+          "w": 11.0,
+          "h": 5.5,
+          "info": "AUTO, ON ou OFF (en mode MAN).",
+          "sys": [
+            "ice",
+            "Anti-Ice and Deice"
+          ]
+        },
+        {
+          "id": "ips-naik",
+          "label": "Softkeys Left / Right NAI",
+          "x": 86.5,
+          "y": 55,
+          "w": 11.0,
+          "h": 12.5,
+          "info": "AUTO, ON ou OFF pour chaque moteur (en mode MAN).",
+          "sys": [
+            "ice",
+            "Anti-Ice and Deice"
+          ]
+        },
+        {
+          "id": "ips-hsdik",
+          "label": "Softkey HSDI",
+          "x": 86.5,
+          "y": 69.5,
+          "w": 11.0,
+          "h": 5.5,
+          "info": "AUTO, ON ou OFF (en mode MAN).",
+          "sys": [
+            "ice",
+            "Anti-Ice and Deice"
+          ]
+        },
+        {
+          "id": "ips-all",
+          "label": "Softkey ALL IPS",
+          "x": 86.5,
+          "y": 82,
+          "w": 11.0,
+          "h": 6.5,
+          "info": "Commande tous les systèmes en une fois : ON les met tous en marche, OFF les coupe.",
+          "sys": [
+            "ice",
+            "Anti-Ice and Deice"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ecr-syn-ecs",
+      "title": "Synoptique ECS",
+      "group": "Écrans avioniques",
+      "image": "ecr-syn-ecs",
+      "aspect": [
+        1124,
+        804
+      ],
+      "intro": "Une page synoptique s'ouvre depuis la softkey **SYN** du MFD bas. Elle occupe les fenêtres du milieu et de droite ; la CAS reste en haut à gauche et la fenêtre avionique en bas à gauche. Les softkeys de droite affichent leur état à gauche (AUTO en magenta = commande automatique de l'UMS) ; les toucher ouvre un menu pour passer en manuel.\n\nLa page **ECS** montre la climatisation, le prélèvement d'air et la **quantité d'oxygène** (affichée nulle part ailleurs). Pour réinitialiser un défaut de climatisation (Heat Fail, Cool Fail, ECS Inflow Degrade…) : Heat Cool sur OFF puis AUTO.",
+      "hotspots": [
+        {
+          "id": "ecs-cas",
+          "label": "Fenêtre CAS",
+          "x": 1,
+          "y": 1,
+          "w": 32,
+          "h": 47,
+          "info": "Fenêtre CAS, toujours en haut à gauche du MFD bas. Warnings en rouge (non défilables), cautions en ambre (à acquitter au Master Caution avant de pouvoir les faire défiler), advisories en cyan, statuts en blanc.",
+          "sys": [
+            "indicating",
+            "Master Warning System"
+          ]
+        },
+        {
+          "id": "ecs-ll",
+          "label": "Onglet MISC",
+          "x": 1,
+          "y": 51,
+          "w": 32,
+          "h": 48,
+          "info": "Pop-Up Keyboard (clavier ABC ou QWERTY) et Crew Profile : profils d'équipage qui rappellent les réglages des PFD et MFD.",
+          "sys": [
+            "indicating",
+            "Interactive Navigation"
+          ]
+        },
+        {
+          "id": "ecs-syn",
+          "label": "Softkey SYN",
+          "x": 92.5,
+          "y": 6,
+          "w": 5.0,
+          "h": 5,
+          "info": "Softkey SYN : ouvre le menu des pages synoptiques (SYS SUM, ENG, FUEL, ELEC, ECB, BRKS, IPS, ECS). La page choisie remplace les fenêtres du milieu et de droite.",
+          "sys": [
+            "indicating",
+            "Display Units"
+          ]
+        },
+        {
+          "id": "ecs-pss",
+          "label": "Résumé système permanent",
+          "x": 34.5,
+          "y": 77.5,
+          "w": 48.0,
+          "h": 22.5,
+          "info": "Résumé système permanent, en bas de chaque synoptique : train et volets, trims STAB/AIL/RUD, TAT et IPS, carburant L/R avec annonces PUMP, BAT1/BAT2 (A, V), et altitude cabine, ΔP, vario cabine. Les annonces Lift Dump, AIRBRK, CPCS MANUAL et ICE s'y affichent aussi.",
+          "sys": [
+            "indicating",
+            "Display Units"
+          ],
+          "to": "ecr-mfd-bas"
+        },
+        {
+          "id": "ecs-temps",
+          "label": "Températures cockpit / cabine",
+          "x": 44.5,
+          "y": 10,
+          "w": 29.5,
+          "h": 5,
+          "info": "Température mesurée du cockpit (23 °C) et de la cabine (20 °C).",
+          "sys": [
+            "environmental",
+            "Conditioned Air System"
+          ]
+        },
+        {
+          "id": "ecs-cool",
+          "label": "COOL",
+          "x": 41,
+          "y": 23,
+          "w": 8,
+          "h": 5,
+          "info": "Refroidissement (cycle à vapeur) : vert en marche, blanc arrêté.",
+          "sys": [
+            "environmental",
+            "Conditioned Air System"
+          ]
+        },
+        {
+          "id": "ecs-heat",
+          "label": "HEAT",
+          "x": 41,
+          "y": 32,
+          "w": 8,
+          "h": 4.5,
+          "info": "Réchauffeurs électriques du cockpit et de la cabine.",
+          "sys": [
+            "environmental",
+            "Conditioned Air System"
+          ]
+        },
+        {
+          "id": "ecs-fan",
+          "label": "Ventilateurs",
+          "x": 38,
+          "y": 27,
+          "w": 4,
+          "h": 6,
+          "info": "Ventilateur évaporateur du cockpit (et ceux de la cabine à droite) : vert = en marche.",
+          "sys": [
+            "environmental",
+            "Conditioned Air System"
+          ]
+        },
+        {
+          "id": "ecs-oxy",
+          "label": "OXY",
+          "x": 37.5,
+          "y": 37.5,
+          "w": 9.5,
+          "h": 23.5,
+          "info": "Quantité d'oxygène en litres. Vert > 1380 L, ambre = utilisable avec prudence, rouge < 680 L (OXY Low). Contrôlée à la check-list de mise en route.",
+          "sys": [
+            "oxygen",
+            "Storage and Supply"
+          ]
+        },
+        {
+          "id": "ecs-inflow",
+          "label": "Températures d'entrée",
+          "x": 50,
+          "y": 41.5,
+          "w": 19.5,
+          "h": 5.0,
+          "info": "Température de l'air de l'échangeur : verte avec débit, ambre sans débit.",
+          "sys": [
+            "environmental",
+            "Conditioned Air System"
+          ]
+        },
+        {
+          "id": "ecs-sov",
+          "label": "ECS SOV",
+          "x": 52.5,
+          "y": 47.5,
+          "w": 14.5,
+          "h": 5.5,
+          "info": "Vannes de régulation de débit vers la cabine : vertes ouvertes.",
+          "sys": [
+            "environmental",
+            "Conditioned Air System"
+          ]
+        },
+        {
+          "id": "ecs-hx",
+          "label": "HEAT XCHG",
+          "x": 52.5,
+          "y": 53.5,
+          "w": 13.5,
+          "h": 5.0,
+          "info": "Échangeur de chaleur : vert avec prélèvement, blanc sans, ambre en panne.",
+          "sys": [
+            "environmental",
+            "Conditioned Air System"
+          ]
+        },
+        {
+          "id": "ecs-xbv",
+          "label": "Vanne de crossbleed (XBV)",
+          "x": 57,
+          "y": 59.5,
+          "w": 4.5,
+          "h": 5.5,
+          "info": "Relie les deux côtés du prélèvement. X-Bleed—Open s'affiche quand elle est ouverte.",
+          "sys": [
+            "environmental",
+            "Pneumatic System"
+          ]
+        },
+        {
+          "id": "ecs-bleed",
+          "label": "Vannes de prélèvement",
+          "x": 43.5,
+          "y": 65,
+          "w": 32.0,
+          "h": 6.5,
+          "info": "Vannes de prélèvement gauche et droite (bleed SOV).",
+          "sys": [
+            "environmental",
+            "Pneumatic System"
+          ]
+        },
+        {
+          "id": "ecs-defog",
+          "label": "De-Fog",
+          "x": 75.5,
+          "y": 46.5,
+          "w": 7.5,
+          "h": 8.5,
+          "info": "État du désembuage du pare-brise.",
+          "sys": [
+            "environmental",
+            "Conditioned Air System"
+          ]
+        },
+        {
+          "id": "ecs-fans",
+          "label": "Softkeys CKPT Fan / CAB Fan",
+          "x": 86.5,
+          "y": 13.5,
+          "w": 11.0,
+          "h": 12.5,
+          "info": "Ventilateurs évaporateurs : AUTO, Silent (moins de bruit) ou vitesse manuelle 1 à 5.",
+          "sys": [
+            "environmental",
+            "Conditioned Air System"
+          ]
+        },
+        {
+          "id": "ecs-vents",
+          "label": "Softkeys WSHLD / Face / Foot Vent",
+          "x": 86.5,
+          "y": 28.5,
+          "w": 11.0,
+          "h": 19.0,
+          "info": "Bouches pare-brise, visage et pieds : ON ou OFF.",
+          "sys": [
+            "environmental",
+            "Conditioned Air System"
+          ]
+        },
+        {
+          "id": "ecs-defogk",
+          "label": "Softkey De-Fog",
+          "x": 86.5,
+          "y": 55,
+          "w": 11.0,
+          "h": 5.5,
+          "info": "AUTO, LOW à HI, ou OFF.",
+          "sys": [
+            "environmental",
+            "Conditioned Air System"
+          ]
+        },
+        {
+          "id": "ecs-xbleed",
+          "label": "Softkey X-Bleed",
+          "x": 86.5,
+          "y": 62,
+          "w": 11.0,
+          "h": 5.5,
+          "info": "AUTO (UMS) ou Closed. Check-list Bleed TEMP Fail : CLOSE 10 s puis AUTO.",
+          "sys": [
+            "environmental",
+            "Pneumatic System"
+          ]
+        },
+        {
+          "id": "ecs-dehum",
+          "label": "Softkey De-Humid",
+          "x": 86.5,
+          "y": 69,
+          "w": 11.0,
+          "h": 5.5,
+          "info": "Déshumidification ON ou OFF.",
+          "sys": [
+            "environmental",
+            "Conditioned Air System"
+          ]
+        },
+        {
+          "id": "ecs-heatcool",
+          "label": "Softkey Heat Cool",
+          "x": 86.5,
+          "y": 91,
+          "w": 11.0,
+          "h": 6.5,
+          "info": "AUTO (UMS), HEAT seul, COOL seul ou OFF. OFF puis AUTO pour réinitialiser un défaut.",
+          "sys": [
+            "environmental",
+            "Conditioned Air System"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ecr-syn-sum",
+      "title": "Synoptique SYS SUM",
+      "group": "Écrans avioniques",
+      "image": "ecr-syn-sum",
+      "aspect": [
+        1126,
+        804
+      ],
+      "intro": "Une page synoptique s'ouvre depuis la softkey **SYN** du MFD bas. Elle occupe les fenêtres du milieu et de droite ; la CAS reste en haut à gauche et la fenêtre avionique en bas à gauche. Les softkeys de droite affichent leur état à gauche (AUTO en magenta = commande automatique de l'UMS) ; les toucher ouvre un menu pour passer en manuel.\n\n**SYS SUM** ramène le résumé systèmes habituel. Ici la fenêtre avionique montre l'onglet **Cust DB** (bases personnalisées).",
+      "hotspots": [
+        {
+          "id": "sum-cas",
+          "label": "Fenêtre CAS",
+          "x": 1,
+          "y": 1,
+          "w": 32,
+          "h": 47,
+          "info": "Fenêtre CAS, toujours en haut à gauche du MFD bas. Warnings en rouge (non défilables), cautions en ambre (à acquitter au Master Caution avant de pouvoir les faire défiler), advisories en cyan, statuts en blanc.",
+          "sys": [
+            "indicating",
+            "Master Warning System"
+          ]
+        },
+        {
+          "id": "sum-cust",
+          "label": "Onglet Cust DB",
+          "x": 1,
+          "y": 51,
+          "w": 32,
+          "h": 48,
+          "info": "Variation magnétique, position, points pilote, et suppression des points pilote, plans de vol stockés et bases personnalisées.",
+          "sys": [
+            "avionics",
+            "Flight Management System"
+          ]
+        },
+        {
+          "id": "sum-config",
+          "label": "Configuration",
+          "x": 34.5,
+          "y": 1,
+          "w": 30.5,
+          "h": 40,
+          "info": "Train et volets.",
+          "sys": [
+            "landing-gear",
+            "Landing Gear"
+          ],
+          "to": "ecr-mfd-bas"
+        },
+        {
+          "id": "sum-fuel",
+          "label": "Fuel",
+          "x": 67,
+          "y": 1,
+          "w": 24,
+          "h": 41,
+          "info": "Jauges, quantités, débit, autonomie, consommé.",
+          "sys": [
+            "fuel",
+            "Storage"
+          ],
+          "to": "ecr-syn-fuel"
+        },
+        {
+          "id": "sum-env",
+          "label": "Environmental",
+          "x": 67,
+          "y": 51,
+          "w": 24,
+          "h": 25,
+          "info": "Destination, altitude cabine, ΔP, vario cabine.",
+          "sys": [
+            "environmental",
+            "Cabin Pressure Control System"
+          ],
+          "to": "ecr-syn-ecs"
+        },
+        {
+          "id": "sum-syn",
+          "label": "Softkey SYN",
+          "x": 91.5,
+          "y": 4.5,
+          "w": 5.5,
+          "h": 4.5,
+          "info": "Softkey SYN : ouvre le menu des pages synoptiques (SYS SUM, ENG, FUEL, ELEC, ECB, BRKS, IPS, ECS). La page choisie remplace les fenêtres du milieu et de droite.",
+          "sys": [
+            "indicating",
+            "Display Units"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ecr-inav",
+      "title": "Carte INAV : calques",
+      "group": "Écrans avioniques",
+      "image": "ecr-inav",
+      "aspect": [
+        1400,
+        1177
+      ],
+      "intro": "Les menus de la **barre des calques** en haut de la carte du MFD haut. Chaque menu est une liste à cocher (coche verte = affiché). Le **relief et la météo ne peuvent pas s'afficher en même temps**. BRT permet de régler la luminosité d'un calque (molette du CCD ou bouton du TSC).",
+      "hotspots": [
+        {
+          "id": "inav-aero",
+          "label": "Aeronautical",
+          "x": 0.8,
+          "y": 0.8,
+          "w": 48.2,
+          "h": 29.0,
+          "info": "Airports (par défaut), VOR, NDB, Intersection, P-E Waypoints, Airways (HI/LOW ALT), Airspaces, INFO.",
+          "sys": [
+            "indicating",
+            "Interactive Navigation"
+          ]
+        },
+        {
+          "id": "inav-fpln",
+          "label": "FPLN",
+          "x": 0.8,
+          "y": 31.2,
+          "w": 48.2,
+          "h": 17.3,
+          "info": "Missed App (par défaut, l'approche interrompue), Alternate (route vers le dégagement), Constraints (contraintes des points).",
+          "sys": [
+            "indicating",
+            "Interactive Navigation"
+          ]
+        },
+        {
+          "id": "inav-geo",
+          "label": "GEO",
+          "x": 0.8,
+          "y": 49.8,
+          "w": 48.2,
+          "h": 29.0,
+          "info": "Calques pour le VFR : Boundaries (par défaut), routes, villes, voies ferrées, frontières, eau, points VFR.",
+          "sys": [
+            "indicating",
+            "Interactive Navigation"
+          ]
+        },
+        {
+          "id": "inav-terr",
+          "label": "TERR",
+          "x": 0.8,
+          "y": 79.8,
+          "w": 48.2,
+          "h": 19.4,
+          "info": "Terrain (relief général, hors EGPWS) et SA Terrain (relief de l'EGPWS), cumulables, avec BRT. Couleurs selon l'altitude : vert, jaune-vert, ocre, bruns, noir au-dessus de 19 000 ft.",
+          "sys": [
+            "indicating",
+            "Interactive Navigation"
+          ]
+        },
+        {
+          "id": "inav-wx",
+          "label": "WX : XM / données",
+          "x": 50.8,
+          "y": 0.7,
+          "w": 48.4,
+          "h": 38.5,
+          "info": "Météo : décocher d'abord All WX off. XM Wx (abonnement) : NEXRAD, satellite, vents, sommets, foudre, turbulence, TFR, AIRMET, SIGMET… WX Radar : radar de bord. LX : foudre, LX CLR l'efface.",
+          "sys": [
+            "indicating",
+            "Interactive Navigation"
+          ]
+        },
+        {
+          "id": "inav-uplink",
+          "label": "WX : Uplink",
+          "x": 50.8,
+          "y": 40.5,
+          "w": 48.4,
+          "h": 32.2,
+          "info": "Uplink Wx : radar, satellite et vents reçus par liaison de données (Request… pour les demander).",
+          "sys": [
+            "indicating",
+            "Interactive Navigation"
+          ]
+        },
+        {
+          "id": "inav-tcas",
+          "label": "TCAS",
+          "x": 50.8,
+          "y": 73.6,
+          "w": 48.4,
+          "h": 25.6,
+          "info": "ON (par défaut), FLIGHT ID (indicatif des intrus), TREND VECTOR (vecteurs), GND TRAFFIC (trafic au sol).",
+          "sys": [
+            "avionics",
+            "Traffic Alert and Collision Avoidance System"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ecr-cmc",
+      "title": "Maintenance (CMC)",
+      "group": "Écrans avioniques",
+      "image": "ecr-cmc",
+      "aspect": [
+        715,
+        785
+      ],
+      "intro": "Pages du calculateur de maintenance (CMC), accessibles par le format Maintenance d'un MFD. Elles servent surtout au sol, pour les mécaniciens.",
+      "hotspots": [
+        {
+          "id": "cmc-main",
+          "label": "CMC MAIN MENU",
+          "x": 1,
+          "y": 1,
+          "w": 48,
+          "h": 48,
+          "info": "Maintenance Messages, System Diagnostics, Extended Maintenance, Data Loader.",
+          "sys": [
+            "indicating",
+            "Display Units"
+          ]
+        },
+        {
+          "id": "cmc-msg",
+          "label": "MAINTENANCE MESSAGES",
+          "x": 51,
+          "y": 1,
+          "w": 48,
+          "h": 48,
+          "info": "Messages actifs, du vol en cours, historiques par date ou par chapitre ATA, effacement de la mémoire de pannes."
+        },
+        {
+          "id": "cmc-rep",
+          "label": "CMC REPORTS",
+          "x": 1,
+          "y": 51,
+          "w": 48,
+          "h": 48,
+          "info": "Téléchargement des rapports ACMF et de l'historique des pannes vers un stockage distant."
+        },
+        {
+          "id": "cmc-active",
+          "label": "ACTIVE MAINTENANCE MESSAGES",
+          "x": 51,
+          "y": 51,
+          "w": 48,
+          "h": 48,
+          "info": "Liste des messages actifs classés par chapitre ATA (22 Auto Flight, 23 Communications, 28 Fuel…)."
+        }
+      ]
+    },
+    {
+      "id": "ecr-capteurs",
+      "title": "Capteurs (FMS, GPS, IRS, AHRS)",
+      "group": "Écrans avioniques",
+      "image": "ecr-capteurs",
+      "aspect": [
+        1480,
+        1154
+      ],
+      "intro": "Pages du menu **Sensors** de la fenêtre avionique (MFD bas). Le FMS calcule une **position hybride** à partir des deux GPS et de l'IRS, et choisit la source la plus fiable.",
+      "hotspots": [
+        {
+          "id": "sen-perf",
+          "label": "Performance",
+          "x": 0.5,
+          "y": 0.7,
+          "w": 24.4,
+          "h": 32.4,
+          "info": "RNP en cours, mode latéral, position et EPU (erreur estimée) de FMS1 et FMS2.",
+          "sys": [
+            "avionics",
+            "Flight Management System"
+          ]
+        },
+        {
+          "id": "sen-fms",
+          "label": "FMS (Single / Synch)",
+          "x": 25.4,
+          "y": 0.7,
+          "w": 24.3,
+          "h": 32.4,
+          "info": "Mode des deux FMS : Synch (synchronisés) ou Single. Si le mode actif diffère du mode choisi, la softkey Problems s'active et liste les causes.",
+          "sys": [
+            "avionics",
+            "Flight Management System"
+          ]
+        },
+        {
+          "id": "sen-gps1",
+          "label": "GPS1",
+          "x": 50.3,
+          "y": 0.7,
+          "w": 24.3,
+          "h": 32.4,
+          "info": "Mode (Differential = SBAS), position, satellites suivis, RAIM/HFOM/HDOP, altitude, VFOM/VDOP, écart avec la position FMS, trace, vitesse sol, UTC.",
+          "sys": [
+            "avionics",
+            "Global Positioning System"
+          ]
+        },
+        {
+          "id": "sen-gps2",
+          "label": "GPS2",
+          "x": 75.1,
+          "y": 0.7,
+          "w": 24.4,
+          "h": 32.4,
+          "info": "Mêmes données pour le GPS2. En cas de panne d'un GPS, le système utilise l'autre.",
+          "sys": [
+            "avionics",
+            "Global Positioning System"
+          ]
+        },
+        {
+          "id": "sen-sbas",
+          "label": "SBAS Setup",
+          "x": 0.5,
+          "y": 33.8,
+          "w": 24.4,
+          "h": 32.4,
+          "info": "Active ou non le SBAS en route (WAAS) pour chaque GPS.",
+          "sys": [
+            "avionics",
+            "Global Positioning System"
+          ]
+        },
+        {
+          "id": "sen-raim",
+          "label": "GPS Pred RAIM",
+          "x": 25.4,
+          "y": 33.8,
+          "w": 24.3,
+          "h": 32.4,
+          "info": "Prévision de disponibilité RAIM à destination et à un aéroport choisi, autour de l'heure estimée. On peut désélectionner des satellites.",
+          "sys": [
+            "avionics",
+            "Global Positioning System"
+          ]
+        },
+        {
+          "id": "sen-irsh",
+          "label": "IRS (Hybrid Data)",
+          "x": 50.3,
+          "y": 33.8,
+          "w": 24.3,
+          "h": 32.4,
+          "info": "Mode Navigation, position hybride, dérive, écart avec le FMS, vent et vitesse sol.",
+          "sys": [
+            "avionics",
+            "Attitude and Heading System"
+          ]
+        },
+        {
+          "id": "sen-irs",
+          "label": "IRS",
+          "x": 75.1,
+          "y": 33.8,
+          "w": 24.4,
+          "h": 32.4,
+          "info": "Page principale de l'IRS : mode, position, dérive, vent, vitesse sol.",
+          "sys": [
+            "avionics",
+            "Attitude and Heading System"
+          ]
+        },
+        {
+          "id": "sen-ahrs",
+          "label": "AHRS",
+          "x": 0.5,
+          "y": 66.9,
+          "w": 24.4,
+          "h": 32.4,
+          "info": "Source du gyro directionnel de l'AHRS 2 (DG Src) : cap IRS, trace GPS ou manuel, puis AHRS Mode (Slaved ou DG). Sert en haute latitude (AHRS 2 LO MAG Field).",
+          "sys": [
+            "avionics",
+            "Attitude and Heading System"
+          ]
+        },
+        {
+          "id": "sen-sel",
+          "label": "Sensor Sel",
+          "x": 25.4,
+          "y": 66.9,
+          "w": 24.3,
+          "h": 32.4,
+          "info": "Capteurs utilisés par chaque FMS (coche = utilisable, U = utilisé), avec gisement et distance par rapport à la position FMS.",
+          "sys": [
+            "avionics",
+            "Flight Management System"
+          ]
+        },
+        {
+          "id": "sen-cfg",
+          "label": "Sys Config",
+          "x": 50.3,
+          "y": 66.9,
+          "w": 24.3,
+          "h": 32.4,
+          "info": "Identification de la configuration avionique : type, numéro de série, références logicielles."
+        },
+        {
+          "id": "sen-upd",
+          "label": "Update FMS Position",
+          "x": 75.1,
+          "y": 66.9,
+          "w": 24.4,
+          "h": 32.4,
+          "info": "Initialisation manuelle de la position FMS sur GPS1, GPS2, IRS1, un point ou des coordonnées, puis Apply. Ouverte depuis l'onglet INIT Time/Date.",
+          "sys": [
+            "avionics",
+            "Flight Management System"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ecr-radar",
+      "title": "Radar, TAWS, foudre",
+      "group": "Écrans avioniques",
+      "image": "ecr-radar",
+      "aspect": [
+        1112,
+        772
+      ],
+      "intro": "Onglets **RAD / WX / TAWS / LX** de la fenêtre avionique (menu RAD/WX/LX/TAWS), aussi accessibles depuis la touche WX LX TAWS du TSC.",
+      "hotspots": [
+        {
+          "id": "rdr-rad",
+          "label": "Onglet RAD",
+          "x": 0.7,
+          "y": 1.0,
+          "w": 32.4,
+          "h": 48.5,
+          "info": "Test du radioaltimètre 1 (Rad Alt 1 Self Test).",
+          "sys": [
+            "avionics",
+            "Enhanced Ground Proximity Warning System"
+          ]
+        },
+        {
+          "id": "rdr-wx1",
+          "label": "Onglet WX (1/3)",
+          "x": 33.8,
+          "y": 1.0,
+          "w": 32.4,
+          "h": 48.5,
+          "info": "Transmit on Ground, GND MAP (cartographie sol), gain (CAL = calibré), TILT Auto ou Man, Auto Step Scan, Auto Range Limit.",
+          "sys": [
+            "avionics",
+            "Weather Radar System"
+          ]
+        },
+        {
+          "id": "rdr-wx2",
+          "label": "Onglet WX (2/3)",
+          "x": 66.9,
+          "y": 1.0,
+          "w": 32.4,
+          "h": 48.5,
+          "info": "Balayage latéral Full / Sector / Off, Vertical Profile et azimut de la coupe verticale.",
+          "sys": [
+            "avionics",
+            "Weather Radar System"
+          ]
+        },
+        {
+          "id": "rdr-wx3",
+          "label": "Onglet WX (3/3)",
+          "x": 0.7,
+          "y": 50.5,
+          "w": 32.4,
+          "h": 48.5,
+          "info": "Stabilisation d'antenne (ANT Stabilize) et trim de roulis du radar (WX Roll Trim).",
+          "sys": [
+            "avionics",
+            "Weather Radar System"
+          ]
+        },
+        {
+          "id": "rdr-taws",
+          "label": "Onglet TAWS",
+          "x": 33.8,
+          "y": 50.5,
+          "w": 32.4,
+          "h": 48.5,
+          "info": "Steep APPR : désensibilise l'alerte de taux de descente en approche forte pente. TAWS Self Test.",
+          "sys": [
+            "avionics",
+            "Enhanced Ground Proximity Warning System"
+          ]
+        },
+        {
+          "id": "rdr-lx",
+          "label": "Onglet LX",
+          "x": 66.9,
+          "y": 50.5,
+          "w": 32.4,
+          "h": 48.5,
+          "info": "Détecteur de foudre (option, 360° et 200 NM) : mode Cell (groupes d'impacts) ou Strike (impacts isolés), et test.",
+          "sys": [
+            "avionics",
+            "Lightning Sensor System"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ecr-radios-1",
+      "title": "Radios : COM, NAV, DME, XPDR",
+      "group": "Écrans avioniques",
+      "image": "ecr-radios-1",
+      "aspect": [
+        1480,
+        772
+      ],
+      "intro": "La **fenêtre radios** du PFD se règle au contrôleur PFD. La softkey encadrée en cyan a le focus : le bouton règle la fréquence en attente (cyan), le bouton de lunette permute avec l'active (blanc). La touche DETAIL ouvre la page de détail de la radio qui a le focus.",
+      "hotspots": [
+        {
+          "id": "rd1-com",
+          "label": "COM1 (focus)",
+          "x": 0.5,
+          "y": 1.0,
+          "w": 24.4,
+          "h": 48.5,
+          "info": "COM1 a le focus : fréquence active 118.200 et attente 125.150 encadrée.",
+          "sys": [
+            "communications",
+            "Very High Frequency"
+          ]
+        },
+        {
+          "id": "rd1-comd",
+          "label": "Détail COM",
+          "x": 25.4,
+          "y": 1.0,
+          "w": 24.3,
+          "h": 48.5,
+          "info": "Espacement 25 kHz ou 8,33 kHz, et mode données (DATA MODE) ON/OFF.",
+          "sys": [
+            "communications",
+            "Very High Frequency"
+          ]
+        },
+        {
+          "id": "rd1-nav",
+          "label": "NAV1 (focus)",
+          "x": 50.3,
+          "y": 1.0,
+          "w": 24.3,
+          "h": 48.5,
+          "info": "NAV1 a le focus, avec le DME associé affiché au-dessus.",
+          "sys": [
+            "communications",
+            "Very High Frequency"
+          ]
+        },
+        {
+          "id": "rd1-navd",
+          "label": "Détail NAV",
+          "x": 75.1,
+          "y": 1.0,
+          "w": 24.4,
+          "h": 48.5,
+          "info": "NAV1/NAV2 MODE : BRG, RAD ou STBY ; DME : accès au détail DME.",
+          "sys": [
+            "communications",
+            "Very High Frequency"
+          ]
+        },
+        {
+          "id": "rd1-navd2",
+          "label": "Détail NAV (DME)",
+          "x": 0.5,
+          "y": 50.5,
+          "w": 24.4,
+          "h": 48.5,
+          "info": "Même page avec le focus sur DME.",
+          "sys": [
+            "communications",
+            "Very High Frequency"
+          ]
+        },
+        {
+          "id": "rd1-dme",
+          "label": "Détail DME",
+          "x": 25.4,
+          "y": 50.5,
+          "w": 24.3,
+          "h": 48.5,
+          "info": "DME1/DME2 PAIR (couplé à NAV1 ou NAV2) et HOLD (garde la fréquence DME).",
+          "sys": [
+            "communications",
+            "Very High Frequency"
+          ]
+        },
+        {
+          "id": "rd1-xpdr",
+          "label": "XPDR1 (focus)",
+          "x": 50.3,
+          "y": 50.5,
+          "w": 24.3,
+          "h": 48.5,
+          "info": "Code transpondeur 1200, mode TA/RA, état (STBY, GND), ADS-B.",
+          "sys": [
+            "avionics",
+            "Traffic Alert and Collision Avoidance System"
+          ]
+        },
+        {
+          "id": "rd1-xpdrd",
+          "label": "Détail XPDR",
+          "x": 75.1,
+          "y": 50.5,
+          "w": 24.4,
+          "h": 48.5,
+          "info": "VFR CODE, REPLY (s'allume à chaque réponse), XPDR SEL (XPDR1 ou 2), TRFC : détail trafic.",
+          "sys": [
+            "avionics",
+            "Traffic Alert and Collision Avoidance System"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ecr-radios-2",
+      "title": "Radios : TCAS, ADF, HF",
+      "group": "Écrans avioniques",
+      "image": "ecr-radios-2",
+      "aspect": [
+        1112,
+        1154
+      ],
+      "intro": "Suite des pages radios du PFD : trafic (TCAS), ADF et HF. PAGE fait passer de COM/NAV/XPDR à ADF/HF.",
+      "hotspots": [
+        {
+          "id": "rd2-adsb",
+          "label": "Détail XPDR (ADS-B)",
+          "x": 0.7,
+          "y": 0.7,
+          "w": 32.4,
+          "h": 32.4,
+          "info": "Même page avec ADS-B OUT ON/OFF ; focus sur TRFC pour ouvrir le détail trafic.",
+          "sys": [
+            "avionics",
+            "Traffic Alert and Collision Avoidance System"
+          ]
+        },
+        {
+          "id": "rd2-trfc",
+          "label": "Détail trafic",
+          "x": 33.8,
+          "y": 0.7,
+          "w": 32.4,
+          "h": 32.4,
+          "info": "XPDR TCAS : ON (mode S seul), TA, ALT, TA/RA. VERT RNG : AB+BW ou NORM. REL/ABS : altitude relative ou absolue des intrus.",
+          "sys": [
+            "avionics",
+            "Traffic Alert and Collision Avoidance System"
+          ]
+        },
+        {
+          "id": "rd2-test",
+          "label": "TCAS TEST",
+          "x": 66.9,
+          "y": 0.7,
+          "w": 32.4,
+          "h": 32.4,
+          "info": "Test du TCAS : maintenir 2 s.",
+          "sys": [
+            "avionics",
+            "Traffic Alert and Collision Avoidance System"
+          ]
+        },
+        {
+          "id": "rd2-goxpdr",
+          "label": "Retour XPDR",
+          "x": 0.7,
+          "y": 33.8,
+          "w": 32.4,
+          "h": 32.4,
+          "info": "Focus sur XPDR : retour au détail transpondeur.",
+          "sys": [
+            "avionics",
+            "Traffic Alert and Collision Avoidance System"
+          ]
+        },
+        {
+          "id": "rd2-page",
+          "label": "PAGE",
+          "x": 33.8,
+          "y": 33.8,
+          "w": 32.4,
+          "h": 32.4,
+          "info": "Focus sur PAGE : passe à la page ADF/HF TUNE.",
+          "sys": [
+            "communications",
+            "Very High Frequency"
+          ]
+        },
+        {
+          "id": "rd2-adf",
+          "label": "ADF / HF (ADF1)",
+          "x": 66.9,
+          "y": 33.8,
+          "w": 32.4,
+          "h": 32.4,
+          "info": "ADF1 200.0, HF en réception (HFRX) et en émission (HFTX), actif et attente.",
+          "sys": [
+            "communications",
+            "High Frequency"
+          ]
+        },
+        {
+          "id": "rd2-hftx",
+          "label": "ADF / HF (HFTX)",
+          "x": 0.7,
+          "y": 66.9,
+          "w": 32.4,
+          "h": 32.4,
+          "info": "Focus sur la fréquence d'émission HF.",
+          "sys": [
+            "communications",
+            "High Frequency"
+          ]
+        },
+        {
+          "id": "rd2-hfd",
+          "label": "Détail HF",
+          "x": 33.8,
+          "y": 66.9,
+          "w": 32.4,
+          "h": 32.4,
+          "info": "Mode (SMPX, SPLT, EMER, ITU), émission (UV…), squelch, puissance d'émission, test, clarifieur (RX CLAR), mémoires.",
+          "sys": [
+            "communications",
+            "High Frequency"
+          ]
+        },
+        {
+          "id": "rd2-hfm",
+          "label": "Mémoires HF",
+          "x": 66.9,
+          "y": 66.9,
+          "w": 32.4,
+          "h": 32.4,
+          "info": "Canal mémorisé (MEM-7), fréquences réception/émission, choix d'une fréquence stockée, détail de réglage.",
+          "sys": [
+            "communications",
+            "High Frequency"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ecr-fms-init",
+      "title": "FMS : INIT et préparation",
+      "group": "Écrans avioniques",
+      "image": "ecr-fms-init",
+      "aspect": [
+        1112,
+        1154
+      ],
+      "intro": "La fenêtre FMS (FMW) du MFD haut. Onglets du haut : **INIT**, puis trois icônes par phase : avion au sol (préparation), avion en montée (départ), avion à l'atterrissage (arrivée). L'initialisation est en général automatique.",
+      "hotspots": [
+        {
+          "id": "fi-fpln",
+          "label": "FPLN Active",
+          "x": 0.7,
+          "y": 0.7,
+          "w": 32.4,
+          "h": 65.5,
+          "info": "Plan de vol actif : route, distance, altitude, vitesse et heure de chaque point, discontinuités, destination, distance restante, temps et carburant à l'arrivée.",
+          "sys": [
+            "avionics",
+            "Flight Management System"
+          ]
+        },
+        {
+          "id": "fi-time",
+          "label": "INIT : Time/Date",
+          "x": 33.8,
+          "y": 0.7,
+          "w": 32.4,
+          "h": 32.4,
+          "info": "Heure, date, position actuelle et accès à Update FMS Position.",
+          "sys": [
+            "avionics",
+            "Flight Management System"
+          ],
+          "to": "ecr-capteurs"
+        },
+        {
+          "id": "fi-db",
+          "label": "INIT : Data Bases",
+          "x": 66.9,
+          "y": 0.7,
+          "w": 32.4,
+          "h": 32.4,
+          "info": "Bases de navigation (la base hors validité est en ambre ; le point indique celle utilisée), base avion, base TOLD, cartes.",
+          "sys": [
+            "avionics",
+            "Flight Management System"
+          ]
+        },
+        {
+          "id": "fi-sw",
+          "label": "INIT : S/W Ident",
+          "x": 33.8,
+          "y": 33.8,
+          "w": 32.4,
+          "h": 32.4,
+          "info": "Versions logicielles FMS et TOLD, immatriculation et Flight ID."
+        },
+        {
+          "id": "fi-fp",
+          "label": "FPLN",
+          "x": 66.9,
+          "y": 33.8,
+          "w": 32.4,
+          "h": 32.4,
+          "info": "Source du plan de vol (pilote, stocké, datalink), origine, destination, dégagement, nom, enregistrement et insertion.",
+          "sys": [
+            "avionics",
+            "Flight Management System"
+          ]
+        },
+        {
+          "id": "fi-alt",
+          "label": "Alt/Spd",
+          "x": 0.7,
+          "y": 66.9,
+          "w": 32.4,
+          "h": 32.4,
+          "info": "Vitesse de croisière (Mach et kt), altitude initiale, mode de performance (Pilot Spd/FF ou Current GS/FF), demande de vents par datalink.",
+          "sys": [
+            "avionics",
+            "Flight Management System"
+          ]
+        },
+        {
+          "id": "fi-fuel",
+          "label": "Fuel/Weight",
+          "x": 33.8,
+          "y": 66.9,
+          "w": 32.4,
+          "h": 32.4,
+          "info": "BOW, carburant, passagers (obligatoire, copilote compris), fret ; Compute calcule la masse totale. Le carburant est repris automatiquement.",
+          "sys": [
+            "avionics",
+            "Flight Management System"
+          ]
+        },
+        {
+          "id": "fi-sec",
+          "label": "Plan de vol secondaire",
+          "x": 66.9,
+          "y": 66.9,
+          "w": 32.4,
+          "h": 32.4,
+          "info": "Le menu FPLN propose Active ou Secondary : un second plan de vol à préparer sans toucher à l'actif.",
+          "sys": [
+            "avionics",
+            "Flight Management System"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ecr-fms-dep",
+      "title": "FMS : départ",
+      "group": "Écrans avioniques",
+      "image": "ecr-fms-dep",
+      "aspect": [
+        1112,
+        772
+      ],
+      "intro": "Préparation du **départ** : piste et SID, puis données de décollage (TOLD) qui donnent les V-speeds envoyées au PFD.",
+      "hotspots": [
+        {
+          "id": "fd-dlg",
+          "label": "Departure : choix",
+          "x": 0.7,
+          "y": 1.0,
+          "w": 32.4,
+          "h": 48.5,
+          "info": "Dialogue Departure : piste, SID et transition, puis Insert.",
+          "sys": [
+            "avionics",
+            "Flight Management System"
+          ]
+        },
+        {
+          "id": "fd-view",
+          "label": "Departure : View",
+          "x": 33.8,
+          "y": 1.0,
+          "w": 32.4,
+          "h": 48.5,
+          "info": "Avec View coché, aperçu des segments (route, distance, altitude) avant insertion.",
+          "sys": [
+            "avionics",
+            "Flight Management System"
+          ]
+        },
+        {
+          "id": "fd-sid",
+          "label": "SID",
+          "x": 66.9,
+          "y": 1.0,
+          "w": 32.4,
+          "h": 48.5,
+          "info": "Origine, piste et SID ; caractéristiques de piste (cap, élévation, pente, longueur, seuil décalé), altitude de transition, hauteur TOSA.",
+          "sys": [
+            "avionics",
+            "Flight Management System"
+          ]
+        },
+        {
+          "id": "fd-cfg",
+          "label": "Takeoff Config",
+          "x": 0.7,
+          "y": 50.5,
+          "w": 32.4,
+          "h": 48.5,
+          "info": "Vent, calage, altitude pression, OAT, IPS, volets, état de piste, masse au décollage, puis Compute.",
+          "sys": [
+            "avionics",
+            "Flight Management System"
+          ]
+        },
+        {
+          "id": "fd-data",
+          "label": "Takeoff Data",
+          "x": 33.8,
+          "y": 50.5,
+          "w": 32.4,
+          "h": 48.5,
+          "info": "V1, VR, V2, VT, distance de décollage et piste disponible ; Send envoie les vitesses au PFD.",
+          "sys": [
+            "avionics",
+            "Flight Management System"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ecr-fms-arr",
+      "title": "FMS : arrivée et atterrissage",
+      "group": "Écrans avioniques",
+      "image": "ecr-fms-arr",
+      "aspect": [
+        1480,
+        772
+      ],
+      "intro": "Préparation de l'**arrivée** : approche et STAR, configuration d'atterrissage, données d'atterrissage, correction de température et résumé du vol.",
+      "hotspots": [
+        {
+          "id": "fa-dlg",
+          "label": "Arrival : choix",
+          "x": 0.5,
+          "y": 1.0,
+          "w": 24.4,
+          "h": 48.5,
+          "info": "Piste, approche et transition, STAR et transition, puis Insert.",
+          "sys": [
+            "avionics",
+            "Flight Management System"
+          ]
+        },
+        {
+          "id": "fa-view",
+          "label": "Arrival : View",
+          "x": 25.4,
+          "y": 1.0,
+          "w": 24.3,
+          "h": 48.5,
+          "info": "Aperçu des segments de l'arrivée avant insertion, avec les discontinuités.",
+          "sys": [
+            "avionics",
+            "Flight Management System"
+          ]
+        },
+        {
+          "id": "fa-star",
+          "label": "STAR/Ldg",
+          "x": 50.3,
+          "y": 1.0,
+          "w": 24.3,
+          "h": 48.5,
+          "info": "Destination, piste, approche, STAR, minima RNAV, caractéristiques de piste, niveau de transition.",
+          "sys": [
+            "avionics",
+            "Flight Management System"
+          ]
+        },
+        {
+          "id": "fa-cfg",
+          "label": "Ldg Config",
+          "x": 75.1,
+          "y": 1.0,
+          "w": 24.4,
+          "h": 48.5,
+          "info": "Vent, calage, altitude pression, OAT, IPS, volets, état de piste, type d'opération, masse à l'atterrissage, puis Compute.",
+          "sys": [
+            "avionics",
+            "Flight Management System"
+          ]
+        },
+        {
+          "id": "fa-man",
+          "label": "Ldg Config : Vspeed manuelle",
+          "x": 0.5,
+          "y": 50.5,
+          "w": 24.4,
+          "h": 48.5,
+          "info": "Vspd coché : les vitesses sont saisies à la main (Manual Vspeed Active).",
+          "sys": [
+            "avionics",
+            "Flight Management System"
+          ]
+        },
+        {
+          "id": "fa-data",
+          "label": "Ldg Data",
+          "x": 25.4,
+          "y": 50.5,
+          "w": 24.3,
+          "h": 48.5,
+          "info": "VREF, VAPP, VT, distances LDA (disponible), LFL et LD ; Send les envoie au PFD.",
+          "sys": [
+            "avionics",
+            "Flight Management System"
+          ]
+        },
+        {
+          "id": "fa-tcomp",
+          "label": "TComp",
+          "x": 50.3,
+          "y": 50.5,
+          "w": 24.3,
+          "h": 48.5,
+          "info": "Correction de température par temps froid : OAT de destination et calculateur d'altitude corrigée.",
+          "sys": [
+            "avionics",
+            "Flight Management System"
+          ]
+        },
+        {
+          "id": "fa-sum",
+          "label": "Flt Sum",
+          "x": 75.1,
+          "y": 50.5,
+          "w": 24.4,
+          "h": 48.5,
+          "info": "Résumé du vol : TAS et GS moyennes, distances air et sol, heures de décollage et d'atterrissage, temps de vol.",
+          "sys": [
+            "avionics",
+            "Flight Management System"
           ]
         }
       ]

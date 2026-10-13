@@ -612,7 +612,8 @@ function viewDrill(deck) {
 // ---------- Cockpit interactif ----------
 // Zones en % de l'image (content/cockpit.json). Images importées à part (IndexedDB).
 
-const cockpitTargets = (view) => (view ? [view] : C.cockpit.views).flatMap((v) => v.hotspots.filter((h) => !h.go));
+const cockpitTargets = (view) => (view ? [view] : C.cockpit.views)
+  .flatMap((v) => v.hotspots.filter((h) => !h.go).map((h) => ({ ...h, group: viewGroup(v) })));
 
 let cockpitMode = 'explore';
 let sysReturn = null; // retour au cockpit depuis un chapitre ouvert par une commande
@@ -634,19 +635,29 @@ function cockpitSys(h, viewId) {
   return { ch, sec: i >= 0 ? ch.sections[i].title : '', href: `#/sys/${ch.id}${i >= 0 ? '/' + i : ''}` };
 }
 
+// Groupes de vues : le cockpit lui-même, puis les écrans avioniques (pack d'images séparé).
+const COCKPIT_GROUP = 'Cockpit';
+const groupPack = { [COCKPIT_GROUP]: 'pc24-cockpit.pack.json', 'Écrans avioniques': 'pc24-ecrans.pack.json' };
+const viewGroup = (v) => v.group || COCKPIT_GROUP;
+
 async function viewCockpitList() {
   const keys = new Set(await images.keys());
   const best = store.get('cockpitBest', {});
-  const missing = C.cockpit.views.filter((v) => !keys.has(v.image)).length;
+  const groups = [...new Set(C.cockpit.views.map(viewGroup))];
   render(`
     ${crumbs(['#/', 'Accueil'], [null, 'Cockpit interactif'])}
     <h1>Cockpit interactif</h1>
-    ${missing ? `<div class="card small"><strong>Images non importées.</strong> Les zones s'affichent sur un fond neutre.
-      Importe <code>pc24-cockpit.pack.json</code> dans <a href="#/settings">⚙︎ Réglages</a> pour voir le vrai cockpit.</div>` : ''}
-    <ul class="list card">${C.cockpit.views.map((v) => {
-      const n = v.hotspots.filter((h) => !h.go).length;
-      return `<li><a href="#/cockpit/${esc(v.id)}">${esc(v.title)}<span class="small muted">${n ? `${n} commandes` : 'navigation'}${best[v.id] !== undefined ? ` · meilleur ${best[v.id]}%` : ''}</span></a></li>`;
-    }).join('')}</ul>
+    ${groups.map((g) => {
+      const views = C.cockpit.views.filter((v) => viewGroup(v) === g);
+      const missing = views.some((v) => !keys.has(v.image));
+      return `${groups.length > 1 ? `<h2>${esc(g)}</h2>` : ''}
+        ${missing ? `<div class="card small"><strong>Images non importées.</strong> Les zones s'affichent sur un fond neutre.
+          Importe <code>${esc(groupPack[g] || 'le pack d\'images')}</code> dans <a href="#/settings">⚙︎ Réglages</a>.</div>` : ''}
+        <ul class="list card">${views.map((v) => {
+          const n = v.hotspots.filter((h) => !h.go).length;
+          return `<li><a href="#/cockpit/${esc(v.id)}">${esc(v.title)}<span class="small muted">${n ? `${n} ${g === COCKPIT_GROUP ? 'commandes' : 'zones'}` : 'navigation'}${best[v.id] !== undefined ? ` · meilleur ${best[v.id]}%` : ''}</span></a></li>`;
+        }).join('')}</ul>`;
+    }).join('')}
   `);
 }
 
@@ -658,13 +669,17 @@ async function viewCockpit(id, focus) {
   const src = await images.get(v.image);
   const [aw, ah] = v.aspect || [4, 3];
 
+  const siblings = v.group ? C.cockpit.views.filter((x) => x.group === v.group) : [];
   render(`
     ${crumbs(['#/', 'Accueil'], ['#/cockpit', 'Cockpit'], [null, v.title])}
     <h1>${esc(v.title)}</h1>
+    ${siblings.length > 1 ? `<label class="ck-nav">${esc(v.group)} :
+      <select id="cknav">${siblings.map((x) => `<option value="${esc(x.id)}"${x === v ? ' selected' : ''}>${esc(x.title)}</option>`).join('')}</select></label>` : ''}
+    ${v.intro ? `<details class="card prose ck-intro"><summary>Comment lire cette page</summary>${md(v.intro)}</details>` : ''}
     ${targets.length ? `<div class="chips">${[['explore', 'Explorer'], ['find', 'Trouve la commande'], ['name', 'Identifie']].map(([m, l]) => (
       `<button class="chip" data-mode="${m}" aria-pressed="${m === cockpitMode}">${l}</button>`
     )).join('')}</div>` : ''}
-    <div class="ck-stage ${src ? '' : 'noimg'}" id="stage" style="aspect-ratio:${aw}/${ah};max-width:max(320px, calc((100dvh - 210px) * ${(aw / ah).toFixed(3)}))">
+    <div class="ck-stage ${src ? '' : 'noimg'}" id="stage" style="aspect-ratio:${aw}/${ah};max-width:max(320px, calc((100dvh - ${siblings.length > 1 || v.intro ? 330 : 210}px) * ${(aw / ah).toFixed(3)}))">
       ${src ? `<img src="${src}" alt="${esc(v.title)}" draggable="false">` : ''}
       ${v.hotspots.map((h) => `<button class="ck-hs${h.go ? ' go' : ''}" data-id="${esc(h.id)}"
         style="left:${h.x}%;top:${h.y}%;width:${h.w}%;height:${h.h}%" aria-label="${esc(h.label)}"><span>${esc(h.label)}</span></button>`).join('')}
@@ -679,6 +694,7 @@ async function viewCockpit(id, focus) {
     stage.querySelectorAll('.ck-hs').forEach((b) => b.classList.remove('sel', 'right', 'wrong', 'ask'));
     stage.querySelectorAll('.ck-tap').forEach((d) => d.remove());
   };
+  document.getElementById('cknav')?.addEventListener('change', (e) => { location.hash = '#/cockpit/' + e.target.value; });
   app.querySelectorAll('.chip[data-mode]').forEach((b) => b.addEventListener('click', () => {
     cockpitMode = b.dataset.mode;
     viewCockpit(id);
@@ -689,14 +705,22 @@ async function viewCockpit(id, focus) {
     stage.classList.add('explore');
     const show = (h) => {
       clearMarks();
-      hsEl(h.id).classList.add('sel');
+      const el = hsEl(h.id);
+      el.classList.add('sel');
       const sys = cockpitSys(h, v.id);
+      const to = h.to && C.cockpit.views.find((x) => x.id === h.to);
       panel.innerHTML = `<div class="card"><strong>${esc(h.label)}</strong>${h.info ? `<div class="muted">${esc(h.info)}</div>` : ''}
-        ${sys ? `${sys.ch.summary ? `<details class="ck-sum"><summary>L'essentiel : ${esc(sys.ch.title)}</summary><div class="prose">${md(sys.ch.summary)}</div></details>` : ''}
-        <div class="btns"><a class="btn primary" id="sysgo" href="${sys.href}">📖 Description complète${sys.sec ? ` : ${esc(sys.sec)}` : ` : ${esc(sys.ch.title)}`}</a></div>` : ''}</div>`;
+        ${sys?.ch.summary ? `<details class="ck-sum"><summary>L'essentiel : ${esc(sys.ch.title)}</summary><div class="prose">${md(sys.ch.summary)}</div></details>` : ''}
+        ${sys || to ? `<div class="btns">
+          ${to ? `<a class="btn primary" href="#/cockpit/${esc(to.id)}">🖥️ Ouvrir : ${esc(to.title)}</a>` : ''}
+          ${sys ? `<a class="btn${to ? '' : ' primary'}" id="sysgo" href="${sys.href}">📖 Description complète${sys.sec ? ` : ${esc(sys.sec)}` : ` : ${esc(sys.ch.title)}`}</a>` : ''}
+        </div>` : ''}</div>`;
       document.getElementById('sysgo')?.addEventListener('click', () => {
         sysReturn = { href: `#/cockpit/${v.id}/${h.id}`, label: v.title };
       });
+      // La zone choisie ne doit pas rester cachée sous le panneau collé en bas.
+      const hidden = el.getBoundingClientRect().bottom - panel.getBoundingClientRect().top + 12;
+      if (hidden > 0) window.scrollBy({ top: hidden, behavior: 'smooth' });
     };
     panel.innerHTML = `<p class="small muted">${src ? 'Touche une commande pour voir son nom.' : 'Touche une zone.'}
       <button class="btn" id="zones" aria-pressed="false" style="min-height:32px;margin-left:8px">Afficher les zones</button></p>`;
@@ -750,7 +774,7 @@ async function viewCockpit(id, focus) {
     } else {
       stage.classList.add('name');
       hsEl(h.id).classList.add('ask');
-      const others = shuffle(cockpitTargets().filter((x) => x.label !== h.label).map((x) => x.label));
+      const others = shuffle(cockpitTargets().filter((x) => x.label !== h.label && x.group === viewGroup(v)).map((x) => x.label));
       const choices = shuffle([h.label, ...[...new Set(others)].slice(0, 3)]);
       panel.innerHTML = `${head}<div class="card">Quelle est la commande encadrée ?
         <div class="choices">${choices.map((c) => `<button class="choice">${esc(c)}</button>`).join('')}</div></div>`;

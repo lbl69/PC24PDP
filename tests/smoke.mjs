@@ -81,6 +81,17 @@ ok(true, 'cockpit : la commande ouvre la description de son système');
 await page.click('a:has-text("Retour au cockpit")');
 await page.waitForSelector('.ck-hs.sel[data-id="gen1"]');
 ok(true, 'cockpit : retour sur la commande depuis le système');
+await page.goto(BASE + '#/cockpit/glare-center');
+await page.waitForSelector('.ck-hs[data-id="gc-fuel"]');
+await page.click('.ck-hs[data-id="gc-fuel"]');
+await page.click('a:has-text("Ouvrir : Synoptique FUEL")');
+await page.waitForSelector('h1:has-text("Synoptique FUEL")');
+ok(true, 'écrans : une commande du cockpit ouvre son écran');
+await page.click('.ck-hs[data-id="fuel-xfeed"]');
+ok((await page.textContent('#panel')).includes('crossfeed'), 'écrans : la zone explique le synoptique');
+await page.selectOption('#cknav', 'ecr-syn-elec');
+await page.waitForSelector('h1:has-text("Synoptique ELEC")');
+ok(true, 'écrans : navigation entre les pages');
 
 const pngPx = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==';
 const views = JSON.parse(readFileSync(new URL('../content/cockpit.json', import.meta.url))).views;
