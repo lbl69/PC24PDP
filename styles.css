@@ -440,3 +440,28 @@ mark { background: color-mix(in srgb, var(--accent) 30%, transparent); color: in
 .ck-panel .card { margin-bottom: 0; box-shadow: 0 -4px 16px rgb(0 0 0 / .12); }
 .ck-prompt { font-size: 19px; }
 .ck-bad { border-color: var(--danger); }
+
+/* ---------- Chapitres systèmes longs ---------- */
+
+.essentiel { border-left: 4px solid var(--accent); }
+.prose h4 { font-size: 16px; margin: 16px 0 6px; letter-spacing: .02em; }
+.prose .fig { font-size: 13px; color: var(--muted); border-left: 2px dashed var(--line); padding-left: 8px; }
+details.sec { padding: 0; }
+details.sec > summary {
+  padding: 14px 16px;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  min-height: var(--tap);
+}
+details.sec > summary::-webkit-details-marker { display: none; }
+details.sec > summary::after { content: "+"; margin-left: auto; color: var(--muted); font-size: 22px; }
+details.sec[open] > summary::after { content: "−"; }
+details.sec > :not(summary) { margin-left: 16px; margin-right: 16px; }
+details.sec[open] { padding-bottom: 8px; }
+.prose li.sub { margin-left: 20px; list-style: circle; }
+.prose ol.mix { list-style: none; padding-left: 0; margin: 0 0 10px; }
+.prose ol.mix li { margin: 4px 0; }
+.prose ol.mix li.sub { margin-left: 26px; list-style: disc; }

@@ -113,7 +113,7 @@
           "y": 30,
           "w": 7,
           "h": 9,
-          "info": "Position haute / 50% / OFF"
+          "info": "COCKPIT DOME (100 %) / 50 % / OFF. Plafonnier et éclairage des pieds."
         },
         {
           "id": "cabin-lights",
@@ -122,7 +122,7 @@
           "y": 30,
           "w": 7,
           "h": 9,
-          "info": "Position haute / AUTO / OFF"
+          "info": "CABIN LIGHTS (100 %) / AUTO (50 %) / OFF"
         },
         {
           "id": "no-smoking",
@@ -131,7 +131,7 @@
           "y": 30,
           "w": 7,
           "h": 9,
-          "info": "ON / OFF"
+          "info": "NO SMOKING / OFF"
         },
         {
           "id": "seat-belts",
@@ -140,7 +140,7 @@
           "y": 30,
           "w": 7,
           "h": 9,
-          "info": "ON / OFF"
+          "info": "SEAT BELTS / OFF"
         },
         {
           "id": "bus-tie",
@@ -149,7 +149,7 @@
           "y": 41,
           "w": 6,
           "h": 6,
-          "info": "Bouton-poussoir, au-dessus des interrupteurs BAT/GEN"
+          "info": "Sorti = automatique (barre blanche si couplé). Enfoncé = OPEN, côtés séparés."
         },
         {
           "id": "gen1",
@@ -194,7 +194,7 @@
           "y": 57.5,
           "w": 5.5,
           "h": 6,
-          "info": "Bouton-poussoir ON/OFF"
+          "info": "AVAIL (source branchée) / ON (alimente l'avion)"
         },
         {
           "id": "start-l",
@@ -212,7 +212,7 @@
           "y": 55.5,
           "w": 14,
           "h": 13,
-          "info": "DRY MOTOR · OFF · RUN · IGN"
+          "info": "DRY MOTOR · OFF · RUN (1 bougie) · IGN (2 bougies)"
         },
         {
           "id": "start-r",
@@ -230,7 +230,7 @@
           "y": 55.5,
           "w": 14,
           "h": 13,
-          "info": "DRY MOTOR · OFF · RUN · IGN"
+          "info": "DRY MOTOR · OFF · RUN (1 bougie) · IGN (2 bougies)"
         },
         {
           "id": "wing",
@@ -239,16 +239,16 @@
           "y": 69,
           "w": 6,
           "h": 8,
-          "info": "ON / OFF"
+          "info": "ON / OFF. Phare d'inspection de l'aile gauche, obligatoire de nuit en givrage."
         },
         {
           "id": "logo",
-          "label": "LOGO",
+          "label": "LOGO / NAV",
           "x": 35,
           "y": 69,
           "w": 6,
           "h": 8,
-          "info": "ON / OFF"
+          "info": "LOGO/NAV : LOGO / NAV / OFF"
         },
         {
           "id": "strobe",
@@ -257,7 +257,7 @@
           "y": 69,
           "w": 6,
           "h": 8,
-          "info": "ON / OFF"
+          "info": "STROBE / BEACON / OFF. BEACON au sol, STROBE en vol."
         },
         {
           "id": "taxi",
@@ -275,7 +275,7 @@
           "y": 69,
           "w": 6,
           "h": 8,
-          "info": "ON / OFF"
+          "info": "LANDING / PULSE / OFF. Sur OFF, le TCAS fait clignoter les phares."
         },
         {
           "id": "recog",
@@ -284,7 +284,7 @@
           "y": 69,
           "w": 6,
           "h": 8,
-          "info": "ON / OFF"
+          "info": "RECOG / PULSE / OFF"
         }
       ]
     },
@@ -822,6 +822,15 @@
           "w": 15,
           "h": 22,
           "info": "Poignée rouge"
+        },
+        {
+          "id": "emer-com",
+          "label": "EMER COM 1 121.5 MHz",
+          "x": 34.5,
+          "y": 75,
+          "w": 10,
+          "h": 9,
+          "info": "Bouton gardé : 121,5 en active sur COM 1 (2ᵉ appui en attente, 3ᵉ retour)."
         },
         {
           "id": "mic",

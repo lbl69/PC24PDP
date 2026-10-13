@@ -41,7 +41,7 @@
       "sections": [
         {
           "title": "Éclairage intérieur",
-          "body": "Rangée du haut, quatre interrupteurs :\n- **COCKPIT DOME** : position haute / 50% / OFF\n- **CABIN LIGHTS** : position haute / AUTO / OFF\n- **NO SMOKING** : ON / OFF\n- **SEAT BELTS** : ON / OFF"
+          "body": "Rangée du haut, quatre interrupteurs :\n- **COCKPIT DOME** : COCKPIT DOME (100 %) / 50 % / OFF\n- **CABIN LIGHTS** : CABIN LIGHTS (100 %) / AUTO (50 %) / OFF\n- **NO SMOKING** : ON / OFF\n- **SEAT BELTS** : ON / OFF"
         },
         {
           "title": "Électrique",
@@ -53,7 +53,7 @@
         },
         {
           "title": "Éclairage extérieur",
-          "body": "Rangée du bas, de gauche à droite : **WING · LOGO · STROBE/BEACON · TAXI · LANDING · RECOG**."
+          "body": "Rangée du bas, de gauche à droite : **WING** (ON/OFF) · **LOGO/NAV** · **STROBE/BEACON** · **TAXI** (ON/OFF) · **LANDING/PULSE** · **RECOG/PULSE**."
         }
       ]
     },
@@ -97,7 +97,7 @@
         },
         {
           "title": "Partie basse",
-          "body": "- **PARK/EMER BRAKE** : poignée rouge, à gauche\n- **MIC SELECT** : LEFT / OFF / RIGHT\n- **FLAPS EMER PWR** et **WS EMER PWR** : boutons-poussoirs à droite\n- **SWPS ICE MODE** (avertisseur de décrochage) : RESET / AUTO / OVRD (tirer pour sélectionner)"
+          "body": "- **PARK/EMER BRAKE** : poignée rouge, à gauche\n- **EMER COM 1 121.5 MHz** : bouton gardé, à gauche du micro\n- **MIC SELECT** : LEFT / OFF / RIGHT\n- **FLAPS EMER PWR** et **WS EMER PWR** : boutons-poussoirs à droite\n- **SWPS ICE MODE** (avertisseur de décrochage) : RESET / AUTO / OVRD (tirer pour sélectionner)"
         },
         {
           "title": "Arrière : poignées de secours",

@@ -100,8 +100,15 @@ function md(text) {
   return String(text ?? '').split(/\n{2,}/).map((block) => {
     const lines = block.split('\n');
     if (lines.every((l) => /^\s*-\s+/.test(l))) {
-      return '<ul>' + lines.map((l) => `<li>${inline(l.replace(/^\s*-\s+/, ''))}</li>`).join('') + '</ul>';
+      return '<ul>' + lines.map((l) => `<li${/^\s{2,}/.test(l) ? ' class="sub"' : ''}>${inline(l.replace(/^\s*-\s+/, ''))}</li>`).join('') + '</ul>';
     }
+    if (/^\d+\.\s/.test(lines[0]) && lines.every((l) => /^(\d+\.|\s+-)\s/.test(l))) {
+      return '<ol class="mix">' + lines.map((l) => (/^\s/.test(l)
+        ? `<li class="sub">${inline(l.replace(/^\s*-\s+/, ''))}</li>`
+        : `<li><b>${l.match(/^\d+/)[0]}.</b> ${inline(l.replace(/^\d+\.\s+/, ''))}</li>`)).join('') + '</ol>';
+    }
+    if (lines.every((l) => /^###\s+/.test(l))) return `<h4>${inline(lines.join(' ').replace(/^###\s+/, ''))}</h4>`;
+    if (lines.every((l) => /^>\s?/.test(l))) return `<p class="fig">${lines.map((l) => inline(l.replace(/^>\s?/, ''))).join('<br>')}</p>`;
     return `<p>${lines.map(inline).join('<br>')}</p>`;
   }).join('');
 }
@@ -220,9 +227,10 @@ function viewSearch(query) {
     if (hit(p.title) || hit(p.cas) || hit(p.category)) hits.push(['Anormales', p.title, `#/abn/${p.id}`]);
   }
   for (const ch of C.systems.chapters) {
-    for (const sec of ch.sections) {
-      if (hit(sec.title) || hit(sec.body)) hits.push(['Systèmes', `${ch.title} — ${sec.title}`, `#/sys/${ch.id}`]);
-    }
+    if (hit(ch.summary)) hits.push(['Systèmes', `${ch.title} — L'essentiel`, `#/sys/${ch.id}`]);
+    ch.sections.forEach((sec, i) => {
+      if (hit(sec.title) || hit(sec.body)) hits.push(['Systèmes', `${ch.title} — ${sec.title}`, `#/sys/${ch.id}/${i}`]);
+    });
   }
   for (const v of C.cockpit.views) {
     for (const h of v.hotspots) {
@@ -386,16 +394,28 @@ function viewSysList() {
   `);
 }
 
-function viewSys(id) {
+function viewSys(id, focus) {
   const ch = C.systems.chapters.find((x) => x.id === id);
   if (!ch) return viewNotFound();
   const n = C.quiz.questions.filter((q) => q.chapter === ch.id).length;
   render(`
     ${crumbs(['#/', 'Accueil'], ['#/sys', 'Systèmes'], [null, ch.title])}
     <h1>${esc(ch.title)}</h1>
-    ${ch.sections.map((s) => `<div class="card prose"><h3>${esc(s.title)}</h3>${md(s.body)}</div>`).join('')}
     ${n ? `<div class="btns"><a class="btn primary" href="#/quiz/${esc(ch.id)}">Quiz : ${n} question(s)</a></div>` : ''}
+    ${ch.summary ? `<div class="card prose essentiel"><h3>L'essentiel</h3>${md(ch.summary)}</div>` : ''}
+    ${ch.source ? `<h2>${esc(ch.source)}</h2>` : ''}
+    ${ch.sections.map((s, i) => {
+      // Chapitres longs (manuel) : sections repliables ; contenu court : cartes ouvertes.
+      const body = `${s.pages ? `<p class="small muted">Pages ${esc(s.pages)}</p>` : ''}${md(s.body)}`;
+      return ch.summary || ch.sections.length > 6
+        ? `<details class="card prose sec" id="s${i}"><summary>${esc(s.title)}</summary>${body}</details>`
+        : `<div class="card prose"><h3>${esc(s.title)}</h3>${body}</div>`;
+    }).join('')}
   `);
+  if (focus) {
+    const el = document.getElementById('s' + focus);
+    if (el) { el.open = true; el.scrollIntoView(); }
+  }
 }
 
 // ---------- Quiz ----------
@@ -880,7 +900,7 @@ function route() {
     case '': return viewHome();
     case 'normal': return b ? viewNormal(b) : viewNormalList();
     case 'abn': return b ? viewAbn(b) : viewAbnList();
-    case 'sys': return b ? viewSys(b) : viewSysList();
+    case 'sys': return b ? viewSys(b, c) : viewSysList();
     case 'quiz': return viewQuiz(b || 'all');
     case 'lim': return viewLim();
     case 'cockpit': return b ? viewCockpit(b, c) : viewCockpitList();
